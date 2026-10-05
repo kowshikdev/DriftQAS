@@ -1,0 +1,19 @@
+# Single-seed development comparison. Freeze and repeat a research protocol separately.
+task: ising
+n_qubits: 4
+field: 0.5
+candidates: 12
+training_evaluations: 160
+seed: 19
+epochs: 4
+scenario: recurring
+base_error: 0.005
+drift_error: 0.04
+changed_edge: 1-2
+budget_per_epoch: 16384
+confirmation_fraction: 0.2
+low_shots: 128
+high_shots: 512
+initial_seeds: 3
+policies: [random, restart, reuse, global_forgetting, periodic_refresh, driftqas]
+

@@ -1,0 +1,16 @@
+# Small development run. It is not a research comparison or proof of novelty.
+task: h2
+candidates: 6
+training_evaluations: 100
+seed: 7
+epochs: 3
+scenario: abrupt
+base_error: 0.005
+drift_error: 0.04
+budget_per_epoch: 8192
+confirmation_fraction: 0.2
+low_shots: 128
+high_shots: 512
+initial_seeds: 3
+policies: [restart, reuse, driftqas]
+
