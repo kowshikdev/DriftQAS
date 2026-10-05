@@ -1,0 +1,70 @@
+{
+  "configuration": {
+    "task": "h2",
+    "n_qubits": 4,
+    "field": 0.5,
+    "candidates": 6,
+    "training_evaluations": 100,
+    "seed": 7,
+    "epochs": 3,
+    "scenario": "abrupt",
+    "base_error": 0.005,
+    "drift_error": 0.04,
+    "changed_edge": "0-1",
+    "budget_per_epoch": 8192,
+    "confirmation_fraction": 0.2,
+    "low_shots": 128,
+    "high_shots": 512,
+    "initial_seeds": 3,
+    "policies": [
+      "restart",
+      "reuse",
+      "driftqas"
+    ],
+    "drift_scale": 0.02,
+    "forgetting": 1.0
+  },
+  "task": {
+    "name": "h2",
+    "n_qubits": 2,
+    "terms": [
+      [
+        "II",
+        -1.052373245772859
+      ],
+      [
+        "IZ",
+        0.39793742484318045
+      ],
+      [
+        "ZI",
+        -0.39793742484318045
+      ],
+      [
+        "ZZ",
+        -0.01128010425623538
+      ],
+      [
+        "XX",
+        0.18093119978423156
+      ]
+    ],
+    "provenance": "Qiskit Algorithms H2 at 0.735 A; this operator's eigenvalue convention, without adding a nuclear-energy offset. https://qiskit-community.github.io/qiskit-algorithms/tutorials/01_algorithms_introduction.html"
+  },
+  "reference_energy": -1.8572750302023795,
+  "python": "3.12.14",
+  "versions": {
+    "driftqas": "0.2.0",
+    "qiskit": "2.5.2",
+    "qiskit-aer": "0.17.2",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "scikit-learn": "1.8.0",
+    "PyYAML": "6.0.3",
+    "matplotlib": "3.10.8"
+  },
+  "source_digest": "07ad4c5da38fd92ce5e84b8ee1ca91f1b93a38e36ae82d0c250cbb0bcee3b2fd",
+  "scope": "frozen-parameter finite-library selection under synthetic CX noise",
+  "seed_convention": "SHA256(seed, task, candidate, calibration, phase, repetition); shared streams across matched policy actions; confirmation uses a distinct phase",
+  "status": "completed"
+}

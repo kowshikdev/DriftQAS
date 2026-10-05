@@ -1,0 +1,189 @@
+{
+  "scope": "frozen-parameter finite-library selection under synthetic CX noise",
+  "preparation": {
+    "shared_wall_seconds": 0.786643771999934,
+    "ideal_objective_calls": 542,
+    "sampled_shots": 0,
+    "accounting": "Shared ideal preparation reported separately, not hidden inside online-shot savings. No QPU training performed."
+  },
+  "audit_wall_seconds": 0.07317744600004517,
+  "outcomes": [
+    {
+      "policy": "restart",
+      "epoch": 0,
+      "candidate_id": "ba25c9ab660a7770",
+      "confirmation_energy": -1.84578883175279,
+      "confirmation_standard_error": 0.008916071524700442,
+      "shots": 8192,
+      "budget_limit": 8192,
+      "by_phase": {
+        "seed": 768,
+        "exploration": 768,
+        "precision": 5018,
+        "confirmation": 1638
+      },
+      "policy_elapsed_seconds": 0.1264289450000433,
+      "audit_energy": -1.843700547642176,
+      "best_library_energy": -1.853250521280045,
+      "selection_regret": 0.009549973637869025,
+      "ground_state_excess": 0.013574482560203549
+    },
+    {
+      "policy": "restart",
+      "epoch": 1,
+      "candidate_id": "80a64a6b7d586fa6",
+      "confirmation_energy": -1.8340960673968856,
+      "confirmation_standard_error": 0.006325314058035325,
+      "shots": 8038,
+      "budget_limit": 8192,
+      "by_phase": {
+        "seed": 768,
+        "exploration": 512,
+        "precision": 5120,
+        "confirmation": 1638
+      },
+      "policy_elapsed_seconds": 0.25332225100009964,
+      "audit_energy": -1.8369679912029073,
+      "best_library_energy": -1.8369679912029782,
+      "selection_regret": 7.083222897108499e-14,
+      "ground_state_excess": 0.02030703899947217
+    },
+    {
+      "policy": "restart",
+      "epoch": 2,
+      "candidate_id": "2d0663f151883e6f",
+      "confirmation_energy": -1.8416072527359135,
+      "confirmation_standard_error": 0.00632403111705075,
+      "shots": 8038,
+      "budget_limit": 8192,
+      "by_phase": {
+        "seed": 768,
+        "exploration": 512,
+        "precision": 5120,
+        "confirmation": 1638
+      },
+      "policy_elapsed_seconds": 0.37603269700002784,
+      "audit_energy": -1.8369679912029782,
+      "best_library_energy": -1.8369679912029782,
+      "selection_regret": 0.0,
+      "ground_state_excess": 0.02030703899940134
+    },
+    {
+      "policy": "reuse",
+      "epoch": 0,
+      "candidate_id": "ba25c9ab660a7770",
+      "confirmation_energy": -1.84578883175279,
+      "confirmation_standard_error": 0.008916071524700442,
+      "shots": 8192,
+      "budget_limit": 8192,
+      "by_phase": {
+        "seed": 768,
+        "exploration": 768,
+        "precision": 5018,
+        "confirmation": 1638
+      },
+      "policy_elapsed_seconds": 0.1232525870000245,
+      "audit_energy": -1.843700547642176,
+      "best_library_energy": -1.853250521280045,
+      "selection_regret": 0.009549973637869025,
+      "ground_state_excess": 0.013574482560203549
+    },
+    {
+      "policy": "reuse",
+      "epoch": 1,
+      "candidate_id": "2d0663f151883e6f",
+      "confirmation_energy": -1.832770564101763,
+      "confirmation_standard_error": 0.006324408479650188,
+      "shots": 8038,
+      "budget_limit": 8192,
+      "by_phase": {
+        "revalidation": 1280,
+        "precision": 5120,
+        "confirmation": 1638
+      },
+      "policy_elapsed_seconds": 0.30365221400006703,
+      "audit_energy": -1.8369679912029782,
+      "best_library_energy": -1.8369679912029782,
+      "selection_regret": 0.0,
+      "ground_state_excess": 0.02030703899940134
+    },
+    {
+      "policy": "reuse",
+      "epoch": 2,
+      "candidate_id": "2d0663f151883e6f",
+      "confirmation_energy": -1.8416072527359135,
+      "confirmation_standard_error": 0.00632403111705075,
+      "shots": 8038,
+      "budget_limit": 8192,
+      "by_phase": {
+        "revalidation": 1024,
+        "precision": 5376,
+        "confirmation": 1638
+      },
+      "policy_elapsed_seconds": 0.5064809149998837,
+      "audit_energy": -1.8369679912029782,
+      "best_library_energy": -1.8369679912029782,
+      "selection_regret": 0.0,
+      "ground_state_excess": 0.02030703899940134
+    },
+    {
+      "policy": "driftqas",
+      "epoch": 0,
+      "candidate_id": "ba25c9ab660a7770",
+      "confirmation_energy": -1.84578883175279,
+      "confirmation_standard_error": 0.008916071524700442,
+      "shots": 8192,
+      "budget_limit": 8192,
+      "by_phase": {
+        "seed": 768,
+        "exploration": 768,
+        "precision": 5018,
+        "confirmation": 1638
+      },
+      "policy_elapsed_seconds": 0.1312380200001826,
+      "audit_energy": -1.843700547642176,
+      "best_library_energy": -1.853250521280045,
+      "selection_regret": 0.009549973637869025,
+      "ground_state_excess": 0.013574482560203549
+    },
+    {
+      "policy": "driftqas",
+      "epoch": 1,
+      "candidate_id": "596008601ae343c2",
+      "confirmation_energy": -1.8425721509073412,
+      "confirmation_standard_error": 0.009866876125288079,
+      "shots": 8038,
+      "budget_limit": 8192,
+      "by_phase": {
+        "revalidation": 1280,
+        "precision": 5120,
+        "confirmation": 1638
+      },
+      "policy_elapsed_seconds": 0.3079723060000106,
+      "audit_energy": -1.825078958825018,
+      "best_library_energy": -1.8369679912029782,
+      "selection_regret": 0.01188903237796013,
+      "ground_state_excess": 0.03219607137736147
+    },
+    {
+      "policy": "driftqas",
+      "epoch": 2,
+      "candidate_id": "596008601ae343c2",
+      "confirmation_energy": -1.806036214467909,
+      "confirmation_standard_error": 0.012319133174845747,
+      "shots": 8038,
+      "budget_limit": 8192,
+      "by_phase": {
+        "revalidation": 1024,
+        "precision": 5376,
+        "confirmation": 1638
+      },
+      "policy_elapsed_seconds": 0.516574717000367,
+      "audit_energy": -1.825078958825018,
+      "best_library_energy": -1.8369679912029782,
+      "selection_regret": 0.01188903237796013,
+      "ground_state_excess": 0.03219607137736147
+    }
+  ],
+  "claims": "Smoke/development result only; no novelty, superiority, hardware speedup, or quantum-advantage claim."
+}

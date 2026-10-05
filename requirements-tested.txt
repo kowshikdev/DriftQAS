@@ -1,0 +1,11 @@
+# Direct versions verified with Python 3.12 on Linux.
+# Transitive dependencies are resolved by pip; this is not a full cross-platform lockfile.
+qiskit==2.5.2
+qiskit-aer==0.17.2
+numpy==2.3.5
+scipy==1.17.0
+scikit-learn==1.8.0
+PyYAML==6.0.3
+matplotlib==3.10.8
+pytest==9.1.1
+ruff==0.16.10
