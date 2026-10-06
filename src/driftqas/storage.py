@@ -1,14 +1,18 @@
 """Append-only JSON experiment events in SQLite and portable JSONL export."""
 
 import json
+import os
 import sqlite3
+from contextlib import closing
 from pathlib import Path
 
 
 class Store:
     def __init__(self, directory: Path):
         self.directory = directory
-        self.connection = sqlite3.connect(directory / "experiments.sqlite")
+        # The live pager and its journals never use the final artifact's name.
+        self.live_path = directory / "experiments.live.sqlite"
+        self.connection = sqlite3.connect(self.live_path)
         self.connection.execute(
             "CREATE TABLE events (id INTEGER PRIMARY KEY AUTOINCREMENT, "
             "kind TEXT NOT NULL, payload TEXT NOT NULL)"
@@ -33,4 +37,15 @@ class Store:
                 )
 
     def close(self) -> None:
-        self.connection.close()
+        # Publish a closed snapshot atomically. No writer retains a handle to the
+        # final artifact, and the backup includes all committed pager state.
+        snapshot = self.directory / "experiments.snapshot.sqlite"
+        try:
+            with closing(sqlite3.connect(snapshot)) as destination:
+                self.connection.backup(destination)
+        finally:
+            self.connection.close()
+        with snapshot.open("rb") as stream:
+            os.fsync(stream.fileno())
+        snapshot.replace(self.directory / "experiments.sqlite")
+        self.live_path.unlink()

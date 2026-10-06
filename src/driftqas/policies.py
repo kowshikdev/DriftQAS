@@ -5,7 +5,7 @@ Audit energies and future calibration are absent from this module's interface.
 """
 
 import warnings
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 
 import numpy as np
 from sklearn.exceptions import ConvergenceWarning
@@ -15,7 +15,30 @@ from sklearn.gaussian_process.kernels import ConstantKernel, Matern
 from driftqas.calibration import Calibration
 from driftqas.circuits import Candidate
 
-POLICIES = ("random", "restart", "reuse", "global_forgetting", "periodic_refresh", "driftqas")
+
+@dataclass(frozen=True)
+class Components:
+    relevance: str = "none"
+    refresh: str = "none"
+    allocation: str = "staged"
+    restart: bool = False
+    random: bool = False
+
+
+_DRIFTQAS = Components(relevance="circuit", refresh="affected")
+POLICY_COMPONENTS = {
+    "random": Components(random=True),
+    "restart": Components(restart=True),
+    "reuse": Components(),
+    "global_forgetting": Components(relevance="global"),
+    "periodic_refresh": Components(refresh="periodic"),
+    "driftqas": _DRIFTQAS,
+    # Each ablation changes exactly one control; the model/features are unchanged.
+    "driftqas_global_relevance": replace(_DRIFTQAS, relevance="global"),
+    "driftqas_no_refresh": replace(_DRIFTQAS, refresh="none"),
+    "driftqas_fixed_shots": replace(_DRIFTQAS, allocation="fixed"),
+}
+POLICIES = tuple(POLICY_COMPONENTS)
 
 
 @dataclass
@@ -39,6 +62,7 @@ class Policy:
         if name not in POLICIES:
             raise ValueError(f"Unknown policy: {name}")
         self.name, self.bank = name, bank
+        self.components = POLICY_COMPONENTS[name]
         self.rng = np.random.default_rng(seed)
         self.observations: list[Observation] = []
         self.by_id = {c.candidate_id: c for c in bank}
@@ -48,11 +72,14 @@ class Policy:
     def add(self, observation: Observation) -> None:
         self.observations.append(observation)
 
+    def minimum_shots(self, low_shots: int, high_shots: int) -> int:
+        return high_shots if self.components.allocation == "fixed" else low_shots
+
     def begin_epoch(self, calibration: Calibration) -> None:
         self.refresh_queue = []
-        if self.name == "restart":
+        if self.components.restart:
             self.observations = []
-        elif self.name in {"periodic_refresh", "driftqas"} and self.observations:
+        elif self.components.refresh != "none" and self.observations:
             means, _ = self.predict(calibration)
             for i in np.argsort(means)[:3]:
                 candidate = self.bank[int(i)]
@@ -61,7 +88,7 @@ class Policy:
                     calibration.exposure(candidate.footprint, o.calibration, self.drift_scale) > 0
                     for o in old
                 )
-                if old and (self.name == "periodic_refresh" or affected):
+                if old and (self.components.refresh == "periodic" or affected):
                     self.refresh_queue.append(candidate.candidate_id)
 
     def _features(self, candidate: Candidate, calibration: Calibration) -> list[float]:
@@ -79,7 +106,7 @@ class Policy:
         ]
 
     def relevance(self, observation: Observation, current: Calibration) -> float:
-        if self.name == "global_forgetting":
+        if self.components.relevance == "global":
             exposure = (
                 max(
                     abs(current.errors[e] - observation.calibration.errors[e])
@@ -87,7 +114,7 @@ class Policy:
                 )
                 / self.drift_scale
             )
-        elif self.name == "driftqas":
+        elif self.components.relevance == "circuit":
             exposure = current.exposure(
                 self.by_id[observation.candidate_id].footprint,
                 observation.calibration,
@@ -128,7 +155,11 @@ class Policy:
         self, current: Calibration, low_shots: int, high_shots: int
     ) -> tuple[Candidate, int, str] | None:
         if self.refresh_queue:
-            return self.by_id[self.refresh_queue.pop(0)], low_shots, "revalidation"
+            return (
+                self.by_id[self.refresh_queue.pop(0)],
+                self.minimum_shots(low_shots, high_shots),
+                "revalidation",
+            )
         totals = {
             c.candidate_id: sum(
                 o.shots_per_group
@@ -141,14 +172,20 @@ class Policy:
         eligible = [i for i, c in enumerate(self.bank) if totals[c.candidate_id] < 2 * high_shots]
         if not eligible:
             return None
-        if self.name == "random":
+        if self.components.random:
             index = int(self.rng.choice(eligible))
         else:
             means, std = self.predict(current)
             index = min(eligible, key=lambda i: means[i] - 0.5 * std[i])
         candidate = self.bank[index]
         total = totals[candidate.candidate_id]
-        shots = low_shots if total == 0 else max(low_shots, high_shots - total)
+        shots = (
+            high_shots
+            if self.components.allocation == "fixed"
+            else low_shots
+            if total == 0
+            else max(low_shots, high_shots - total)
+        )
         old = any(o.candidate_id == candidate.candidate_id for o in self.observations)
         phase = "precision" if total else "revalidation" if old else "exploration"
         return candidate, shots, phase

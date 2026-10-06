@@ -1,0 +1,32 @@
+# Small, untuned development pilot to exercise real paired intervals and Ising drift.
+name: ising-pilot-v1
+split: development
+seed_sets:
+  development: [7, 19, 31, 43, 59]
+  held_out: [1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010]
+primary_target: driftqas
+primary_comparator: reuse
+bootstrap_samples: 5000
+bootstrap_seed: 2026
+base:
+  task: ising
+  n_qubits: 4
+  field: 0.5
+  candidates: 6
+  training_evaluations: 80
+  epochs: 3
+  base_error: 0.005
+  drift_error: 0.04
+  changed_edge: 1-2
+  budget_per_epoch: 4096
+  confirmation_fraction: 0.2
+  low_shots: 64
+  high_shots: 256
+  initial_seeds: 2
+  policies: [random, restart, reuse, global_forgetting, periodic_refresh, driftqas,
+             driftqas_global_relevance, driftqas_no_refresh, driftqas_fixed_shots]
+cases:
+  - id: ising-stable
+    overrides: {scenario: stable}
+  - id: ising-abrupt
+    overrides: {scenario: abrupt}

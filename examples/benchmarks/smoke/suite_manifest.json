@@ -1,0 +1,378 @@
+{
+  "declaration": {
+    "bootstrap_samples": 5000,
+    "bootstrap_seed": 2026,
+    "cases": [
+      {
+        "case_id": "h2-stable",
+        "configuration": {
+          "base_error": 0.005,
+          "budget_per_epoch": 1024,
+          "candidates": 3,
+          "changed_edge": "0-1",
+          "confirmation_fraction": 0.2,
+          "drift_error": 0.04,
+          "drift_scale": 0.02,
+          "epochs": 2,
+          "field": 0.5,
+          "forgetting": 1.0,
+          "high_shots": 64,
+          "initial_seeds": 1,
+          "low_shots": 32,
+          "n_qubits": 4,
+          "policies": [
+            "random",
+            "restart",
+            "reuse",
+            "global_forgetting",
+            "periodic_refresh",
+            "driftqas",
+            "driftqas_global_relevance",
+            "driftqas_no_refresh",
+            "driftqas_fixed_shots"
+          ],
+          "scenario": "stable",
+          "seed": 0,
+          "task": "h2",
+          "training_evaluations": 40
+        }
+      },
+      {
+        "case_id": "h2-abrupt",
+        "configuration": {
+          "base_error": 0.005,
+          "budget_per_epoch": 1024,
+          "candidates": 3,
+          "changed_edge": "0-1",
+          "confirmation_fraction": 0.2,
+          "drift_error": 0.04,
+          "drift_scale": 0.02,
+          "epochs": 2,
+          "field": 0.5,
+          "forgetting": 1.0,
+          "high_shots": 64,
+          "initial_seeds": 1,
+          "low_shots": 32,
+          "n_qubits": 4,
+          "policies": [
+            "random",
+            "restart",
+            "reuse",
+            "global_forgetting",
+            "periodic_refresh",
+            "driftqas",
+            "driftqas_global_relevance",
+            "driftqas_no_refresh",
+            "driftqas_fixed_shots"
+          ],
+          "scenario": "abrupt",
+          "seed": 0,
+          "task": "h2",
+          "training_evaluations": 40
+        }
+      }
+    ],
+    "name": "suite-smoke",
+    "primary_comparator": "reuse",
+    "primary_metric": "mean_selection_regret",
+    "primary_scope": "equal-weight mean over all declared cases and epochs",
+    "primary_target": "driftqas",
+    "seed_sets": {
+      "development": [
+        7,
+        19,
+        31
+      ],
+      "held_out": [
+        1001,
+        1002,
+        1003,
+        1004,
+        1005,
+        1006,
+        1007,
+        1008,
+        1009,
+        1010
+      ]
+    },
+    "split": "development"
+  },
+  "episodes": [
+    {
+      "case_id": "h2-stable",
+      "configuration": {
+        "base_error": 0.005,
+        "budget_per_epoch": 1024,
+        "candidates": 3,
+        "changed_edge": "0-1",
+        "confirmation_fraction": 0.2,
+        "drift_error": 0.04,
+        "drift_scale": 0.02,
+        "epochs": 2,
+        "field": 0.5,
+        "forgetting": 1.0,
+        "high_shots": 64,
+        "initial_seeds": 1,
+        "low_shots": 32,
+        "n_qubits": 4,
+        "policies": [
+          "random",
+          "restart",
+          "reuse",
+          "global_forgetting",
+          "periodic_refresh",
+          "driftqas",
+          "driftqas_global_relevance",
+          "driftqas_no_refresh",
+          "driftqas_fixed_shots"
+        ],
+        "scenario": "stable",
+        "seed": 7,
+        "task": "h2",
+        "training_evaluations": 40
+      },
+      "seed": 7
+    },
+    {
+      "case_id": "h2-stable",
+      "configuration": {
+        "base_error": 0.005,
+        "budget_per_epoch": 1024,
+        "candidates": 3,
+        "changed_edge": "0-1",
+        "confirmation_fraction": 0.2,
+        "drift_error": 0.04,
+        "drift_scale": 0.02,
+        "epochs": 2,
+        "field": 0.5,
+        "forgetting": 1.0,
+        "high_shots": 64,
+        "initial_seeds": 1,
+        "low_shots": 32,
+        "n_qubits": 4,
+        "policies": [
+          "random",
+          "restart",
+          "reuse",
+          "global_forgetting",
+          "periodic_refresh",
+          "driftqas",
+          "driftqas_global_relevance",
+          "driftqas_no_refresh",
+          "driftqas_fixed_shots"
+        ],
+        "scenario": "stable",
+        "seed": 19,
+        "task": "h2",
+        "training_evaluations": 40
+      },
+      "seed": 19
+    },
+    {
+      "case_id": "h2-stable",
+      "configuration": {
+        "base_error": 0.005,
+        "budget_per_epoch": 1024,
+        "candidates": 3,
+        "changed_edge": "0-1",
+        "confirmation_fraction": 0.2,
+        "drift_error": 0.04,
+        "drift_scale": 0.02,
+        "epochs": 2,
+        "field": 0.5,
+        "forgetting": 1.0,
+        "high_shots": 64,
+        "initial_seeds": 1,
+        "low_shots": 32,
+        "n_qubits": 4,
+        "policies": [
+          "random",
+          "restart",
+          "reuse",
+          "global_forgetting",
+          "periodic_refresh",
+          "driftqas",
+          "driftqas_global_relevance",
+          "driftqas_no_refresh",
+          "driftqas_fixed_shots"
+        ],
+        "scenario": "stable",
+        "seed": 31,
+        "task": "h2",
+        "training_evaluations": 40
+      },
+      "seed": 31
+    },
+    {
+      "case_id": "h2-abrupt",
+      "configuration": {
+        "base_error": 0.005,
+        "budget_per_epoch": 1024,
+        "candidates": 3,
+        "changed_edge": "0-1",
+        "confirmation_fraction": 0.2,
+        "drift_error": 0.04,
+        "drift_scale": 0.02,
+        "epochs": 2,
+        "field": 0.5,
+        "forgetting": 1.0,
+        "high_shots": 64,
+        "initial_seeds": 1,
+        "low_shots": 32,
+        "n_qubits": 4,
+        "policies": [
+          "random",
+          "restart",
+          "reuse",
+          "global_forgetting",
+          "periodic_refresh",
+          "driftqas",
+          "driftqas_global_relevance",
+          "driftqas_no_refresh",
+          "driftqas_fixed_shots"
+        ],
+        "scenario": "abrupt",
+        "seed": 7,
+        "task": "h2",
+        "training_evaluations": 40
+      },
+      "seed": 7
+    },
+    {
+      "case_id": "h2-abrupt",
+      "configuration": {
+        "base_error": 0.005,
+        "budget_per_epoch": 1024,
+        "candidates": 3,
+        "changed_edge": "0-1",
+        "confirmation_fraction": 0.2,
+        "drift_error": 0.04,
+        "drift_scale": 0.02,
+        "epochs": 2,
+        "field": 0.5,
+        "forgetting": 1.0,
+        "high_shots": 64,
+        "initial_seeds": 1,
+        "low_shots": 32,
+        "n_qubits": 4,
+        "policies": [
+          "random",
+          "restart",
+          "reuse",
+          "global_forgetting",
+          "periodic_refresh",
+          "driftqas",
+          "driftqas_global_relevance",
+          "driftqas_no_refresh",
+          "driftqas_fixed_shots"
+        ],
+        "scenario": "abrupt",
+        "seed": 19,
+        "task": "h2",
+        "training_evaluations": 40
+      },
+      "seed": 19
+    },
+    {
+      "case_id": "h2-abrupt",
+      "configuration": {
+        "base_error": 0.005,
+        "budget_per_epoch": 1024,
+        "candidates": 3,
+        "changed_edge": "0-1",
+        "confirmation_fraction": 0.2,
+        "drift_error": 0.04,
+        "drift_scale": 0.02,
+        "epochs": 2,
+        "field": 0.5,
+        "forgetting": 1.0,
+        "high_shots": 64,
+        "initial_seeds": 1,
+        "low_shots": 32,
+        "n_qubits": 4,
+        "policies": [
+          "random",
+          "restart",
+          "reuse",
+          "global_forgetting",
+          "periodic_refresh",
+          "driftqas",
+          "driftqas_global_relevance",
+          "driftqas_no_refresh",
+          "driftqas_fixed_shots"
+        ],
+        "scenario": "abrupt",
+        "seed": 31,
+        "task": "h2",
+        "training_evaluations": 40
+      },
+      "seed": 31
+    }
+  ],
+  "plan": {
+    "cases": 2,
+    "ideal_objective_call_upper_bound": 720,
+    "matrix": [
+      {
+        "budget_per_epoch": 1024,
+        "case_id": "h2-stable",
+        "epochs": 2,
+        "field": null,
+        "n_qubits": 2,
+        "scenario": "stable",
+        "task": "h2"
+      },
+      {
+        "budget_per_epoch": 1024,
+        "case_id": "h2-abrupt",
+        "epochs": 2,
+        "field": null,
+        "n_qubits": 2,
+        "scenario": "abrupt",
+        "task": "h2"
+      }
+    ],
+    "name": "suite-smoke",
+    "note": "Simulation only. Preparation repeats per case/seed and is shared across policies, not charged as online shots. A held_out label does not prove an unseen run.",
+    "offline_audit_evaluations": 36,
+    "online_shot_upper_bound": 110592,
+    "paired_episodes": 6,
+    "policies": [
+      "random",
+      "restart",
+      "reuse",
+      "global_forgetting",
+      "periodic_refresh",
+      "driftqas",
+      "driftqas_global_relevance",
+      "driftqas_no_refresh",
+      "driftqas_fixed_shots"
+    ],
+    "policy_episodes": 54,
+    "primary_contrast": "driftqas minus reuse",
+    "primary_metric": "mean_selection_regret",
+    "seeds": [
+      7,
+      19,
+      31
+    ],
+    "split": "development"
+  },
+  "protocol_digest": "1917ad3076b307d8c4d9199d77b468473ecfb06facc4e07fe152570be9145ac5",
+  "runtime": {
+    "python": "3.12.14",
+    "source_digest": "ba3dba3e2eaa4970c942d2e25cb28cdbd7641de1cf5703ab0a93b9010446ecc1",
+    "versions": {
+      "PyYAML": "6.0.3",
+      "driftqas": "0.3.0",
+      "matplotlib": "3.10.8",
+      "numpy": "2.3.5",
+      "qiskit": "2.5.2",
+      "qiskit-aer": "0.17.2",
+      "scikit-learn": "1.8.0",
+      "scipy": "1.17.0"
+    }
+  },
+  "schema_version": 1
+}
