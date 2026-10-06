@@ -1,0 +1,18 @@
+{
+  "complete_paired_episodes": 10,
+  "files_sha256": {
+    "audit_receipts.json": "c67d76d6b61b7626c14013595a3cdb94c094cdb004d9911f8093a22d521257ac",
+    "diagnostics_summary.json": "3958385d09a17dbc103bcaa036e47538710c833489fc2ca514d9b9e2fd676f35",
+    "episodes.csv": "3fc16b15511facbfc36d44b3015cc8baf6f9948f29a0967b5c69563b3b468538",
+    "exposure_episodes.csv": "7ba6d6d63b813e6822860e54871d216fc431b71f14e7bd44c52109000be669b4",
+    "paired_comparisons.csv": "698f09077809c029139d1c790618128901529ca8ba4f82da20c385698e5ac281",
+    "policy_summary.csv": "5cfd34f43b1e789136b8516c26335057e9deb7dd7a00215f3ba1457d7c87b8f8",
+    "report.md": "a590b8ec89722ba292958354194472f1a18b27a0ca17e642954f6c46673a8fa0",
+    "suite_manifest.json": "0270f55cb8b3bbe2e67c2d8db7ca156bb0bdc8aecef9deb723663107833bedbf",
+    "suite_status.json": "bf952a77486a83fdb60b3ac7a8b65342e9ee3d21f88e7ca2a198c300e76e7cd1",
+    "suite_summary.json": "2025e49b0834b80a7f2ea99923192beae19760cb5eccc05e04cf6385ff263dcd"
+  },
+  "schema_version": 1,
+  "scope": "Compact verified reports and raw artifact hashes only. Raw databases, counts, QASM and original completion receipts are not included. This export cannot be used as input to analyze-suite, diagnose-suite, or interval fitting/evaluation. Rerun the declared configuration to regenerate complete suites.",
+  "suite_protocol_digest": "b1380f3f1f72982b1ee4ff17dd256db292aa7913d476ebadd5aabbd98efbc723"
+}

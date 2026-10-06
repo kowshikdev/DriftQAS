@@ -9,6 +9,7 @@ from itertools import zip_longest
 from pathlib import Path
 
 from driftqas.config import config_from_mapping
+from driftqas.protocol import validate_frozen
 from driftqas.provenance import (
     canonical,
     digest,
@@ -150,7 +151,7 @@ def completed_episodes(output: Path) -> tuple[dict, list[tuple[dict, dict]]]:
     return manifest, completed
 
 
-def run_suite(suite: Suite, output: Path, resume: bool = False) -> dict:
+def run_suite(suite: Suite, output: Path, resume: bool = False, frozen: Path | None = None) -> dict:
     # All configs/resources have already passed load_suite's preflight, before any write.
     manifest = {
         "schema_version": 1,
@@ -159,6 +160,12 @@ def run_suite(suite: Suite, output: Path, resume: bool = False) -> dict:
         "runtime": runtime_identity(),
         "plan": suite.plan(),
     }
+    if frozen is not None:
+        manifest["frozen_protocol"] = validate_frozen(suite, frozen, manifest["runtime"])
+    elif suite.split == "calibration" or (
+        suite.split == "held_out" and "calibration" in suite.seed_sets
+    ):
+        raise ValueError("Calibration/held_out study execution requires --frozen protocol.json")
     manifest["protocol_digest"] = digest(manifest)
     if resume:
         previous = load_manifest(output)

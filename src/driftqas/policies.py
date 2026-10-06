@@ -18,6 +18,7 @@ from driftqas.circuits import Candidate
 
 @dataclass(frozen=True)
 class Components:
+    model: str = "gp"
     relevance: str = "none"
     refresh: str = "none"
     allocation: str = "staged"
@@ -37,6 +38,14 @@ POLICY_COMPONENTS = {
     "driftqas_global_relevance": replace(_DRIFTQAS, relevance="global"),
     "driftqas_no_refresh": replace(_DRIFTQAS, refresh="none"),
     "driftqas_fixed_shots": replace(_DRIFTQAS, allocation="fixed"),
+    "ideal_only": Components(model="ideal"),
+    "fresh_racing": Components(model="racing", restart=True),
+    "reuse_racing": Components(model="racing"),
+    "global_racing": Components(model="racing", relevance="matching_global"),
+    "driftqas_racing": Components(model="racing", relevance="matching_circuit"),
+    "driftqas_racing_uniform": Components(
+        model="racing", relevance="matching_circuit", allocation="uniform"
+    ),
 }
 POLICIES = tuple(POLICY_COMPONENTS)
 
@@ -58,6 +67,8 @@ class Policy:
         seed: int,
         drift_scale: float = 0.02,
         forgetting: float = 1.0,
+        racing_beta: float = 2.0,
+        racing_floor: float = 0.002,
     ):
         if name not in POLICIES:
             raise ValueError(f"Unknown policy: {name}")
@@ -68,6 +79,7 @@ class Policy:
         self.by_id = {c.candidate_id: c for c in bank}
         self.drift_scale, self.forgetting = drift_scale, forgetting
         self.refresh_queue: list[str] = []
+        self.racing_beta, self.racing_floor = racing_beta, racing_floor
 
     def add(self, observation: Observation) -> None:
         self.observations.append(observation)
@@ -106,6 +118,19 @@ class Policy:
         ]
 
     def relevance(self, observation: Observation, current: Calibration) -> float:
+        if self.components.relevance == "matching_global":
+            return float(current.errors == observation.calibration.errors)
+        if self.components.relevance == "matching_circuit":
+            # Exact component matching is valid only for the declared synthetic CX model.
+            edges = self.by_id[observation.candidate_id].footprint
+            return float(
+                all(
+                    edge in current.errors
+                    and edge in observation.calibration.errors
+                    and current.errors[edge] == observation.calibration.errors[edge]
+                    for edge in edges
+                )
+            )
         if self.components.relevance == "global":
             exposure = (
                 max(
@@ -126,6 +151,10 @@ class Policy:
 
     def predict(self, current: Calibration) -> tuple[np.ndarray, np.ndarray]:
         ideal = np.array([c.ideal_energy for c in self.bank])
+        if self.components.model == "ideal":
+            return ideal, np.full(len(self.bank), 0.1)
+        if self.components.model == "racing":
+            return self._racing_statistics(current)[:2]
         if not self.observations:
             return ideal, np.full(len(self.bank), 0.1)
         x, y, noise = [], [], []
@@ -151,9 +180,58 @@ class Policy:
         )
         return ideal + residual, std
 
+    def _racing_statistics(self, current: Calibration) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+        means = np.array([candidate.ideal_energy for candidate in self.bank])
+        errors = np.full(len(self.bank), 0.1)
+        totals = np.zeros(len(self.bank), dtype=int)
+        for i, candidate in enumerate(self.bank):
+            usable = [
+                observation
+                for observation in self.observations
+                if observation.candidate_id == candidate.candidate_id
+                and self.relevance(observation, current) == 1
+            ]
+            if not usable:
+                continue
+            shots = np.array([observation.shots_per_group for observation in usable])
+            weights = shots / shots.sum()
+            means[i] = float(np.dot(weights, [observation.energy for observation in usable]))
+            variance = float(np.dot(weights**2, [observation.variance for observation in usable]))
+            errors[i] = max(self.racing_floor, float(np.sqrt(max(0, variance))))
+            totals[i] = int(shots.sum())
+        return means, errors, totals
+
+    def _choose_racing(
+        self, current: Calibration, low_shots: int, high_shots: int
+    ) -> tuple[Candidate, int, str] | None:
+        means, errors, totals = self._racing_statistics(current)
+        missing = [i for i in range(len(self.bank)) if totals[i] == 0]
+        if missing:
+            index = min(missing, key=lambda i: self.bank[i].ideal_energy)
+            old = any(o.candidate_id == self.bank[index].candidate_id for o in self.observations)
+            return self.bank[index], low_shots, "revalidation" if old else "exploration"
+        if self.components.allocation == "uniform":
+            index = int(np.argmin(totals))
+        else:
+            incumbent = int(np.argmin(means))
+            rivals = [i for i in range(len(self.bank)) if i != incumbent]
+            if not rivals:
+                return None
+            challenger = min(rivals, key=lambda i: means[i] - self.racing_beta * errors[i])
+            if means[incumbent] + self.racing_beta * errors[incumbent] < (
+                means[challenger] - self.racing_beta * errors[challenger]
+            ):
+                return None
+            index = max((incumbent, challenger), key=lambda i: errors[i])
+        return self.bank[index], high_shots, "precision"
+
     def choose(
         self, current: Calibration, low_shots: int, high_shots: int
     ) -> tuple[Candidate, int, str] | None:
+        if self.components.model == "ideal":
+            return None
+        if self.components.model == "racing":
+            return self._choose_racing(current, low_shots, high_shots)
         if self.refresh_queue:
             return (
                 self.by_id[self.refresh_queue.pop(0)],

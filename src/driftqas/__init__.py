@@ -1,3 +1,3 @@
 """DriftQAS: reproducible, budgeted circuit selection under simulated drift."""
 
-__version__ = "0.3.0"
+__version__ = "0.4.0"

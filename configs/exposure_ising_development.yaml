@@ -1,0 +1,34 @@
+# Secondary transfer check, development only. H2 is the primary frozen study.
+name: exposure-ising-development-v04
+split: development
+seed_sets:
+  development: [7, 19, 31, 43, 59]
+  held_out: [3001, 3002, 3003, 3004, 3005]
+base:
+  task: ising
+  n_qubits: 4
+  field: 0.5
+  candidates: 8
+  bank_design: stratified
+  training_evaluations: 120
+  epochs: 4
+  base_error: 0.005
+  drift_error: 0.12
+  changed_edge: 1-2
+  budget_per_epoch: 2048
+  confirmation_fraction: 0.2
+  low_shots: 32
+  high_shots: 128
+  initial_seeds: 2
+  racing_beta: 2.0
+  racing_floor: 0.002
+  policies: [reuse, driftqas, ideal_only, fresh_racing, reuse_racing, global_racing, driftqas_racing, driftqas_racing_uniform]
+cases:
+  - id: stable
+    overrides: {scenario: stable}
+  - id: abrupt-stress
+    overrides: {scenario: abrupt}
+primary_target: driftqas_racing
+primary_comparator: reuse_racing
+bootstrap_samples: 10000
+bootstrap_seed: 2026

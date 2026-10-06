@@ -20,12 +20,17 @@ prototype with explicit measurement costs and independent scoring.
   CSV results, plots, and OpenQASM 3 circuit exports.
 - Declared repeated-seed suites, separate development/held-out seeds, paired bootstrap
   intervals, empirical coverage diagnostics, and verified episode-level resumption.
+- Component-matched racing with fresh/global/blind/uniform controls and an ideal-only baseline.
+- Stratified footprint anchors, offline exposure/ranking checks, full-bank prediction locks,
+  and frozen development/calibration/held-out evaluation with posthoc interval scales.
 
 **Scope:** candidates and parameters are frozen before the online comparison. This is
 finite-library selection under synthetic entangler noise. Preparation cost is reported
 separately. Dynamic architecture generation, noisy parameter training inside the online
 budget, joint evaluation-source acquisition, and physical QPU execution are future milestones.
 The GP uncertainty and relevance weights are heuristics, not proven calibrated guarantees.
+The racing bounds are also heuristic. Posthoc calibrated intervals never affect the controller;
+their assumptions and width penalties are reported separately.
 
 ## Quick start
 
@@ -132,6 +137,27 @@ Verified smoke and five-seed pilot exports are in [examples/benchmarks](examples
 DriftQAS tied reuse on the pilot's primary metric; the coverage checks also expose limitations
 of the current heuristic uncertainty. See [the interpretation](docs/development_results.md).
 
+## Exposure and uncertainty milestone (v0.4)
+
+The [v0.4 protocol](docs/exposure_protocol.md) adds same-family racing controls, structurally
+diverse banks, and read-only exposure/ranking diagnostics. It freezes every experimental
+choice before separate calibration and held-out partitions. Interval calibration is posthoc;
+it never changes the controller's recommendations or stopping rule.
+
+```bash
+export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
+python -m driftqas suite --config configs/exposure_h2.yaml --plan
+python -m driftqas suite --config configs/exposure_h2.yaml --output results/exposure-dev
+python -m driftqas diagnose-suite --suite-dir results/exposure-dev
+python -m driftqas freeze --config configs/exposure_h2.yaml --output results/frozen.json
+```
+
+Use the full calibration/test command sequence in the protocol. Those runs require the
+matching freeze and disjoint seed partitions; changing source, versions or settings is
+rejected before execution. The primary contrast is circuit-aware racing minus blind racing
+reuse, not a claim of beating every baseline. Stable/mild/stress cases remain in the primary
+average. Coverage must be interpreted alongside interval widths and seed-level dependence.
+
 ## Budget and scoring
 
 `low_shots` and `high_shots` mean shots **per measurement group**. `budget_per_epoch`
@@ -178,6 +204,7 @@ advantage, or hardware-speedup claim is made.
 - [Complete research and implementation plan](docs/project_plan.md)
 - [Development result interpretation](docs/development_results.md)
 - [Repeated-seed benchmark protocol and ablations](docs/benchmark_protocol.md)
+- [Exposure, racing, and frozen interval-calibration protocol](docs/exposure_protocol.md)
 
 ## References
 

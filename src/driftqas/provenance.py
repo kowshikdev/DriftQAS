@@ -1,6 +1,7 @@
 """Common experiment identity and strict, atomic JSON records."""
 
 import json
+import os
 import platform
 from hashlib import sha256
 from importlib.metadata import version
@@ -41,6 +42,10 @@ def write_json(path: Path, value: object) -> None:
 def runtime_identity() -> dict:
     return {
         "python": platform.python_version(),
+        "thread_environment": {
+            name: os.environ.get(name)
+            for name in ("OPENBLAS_NUM_THREADS", "OMP_NUM_THREADS", "MKL_NUM_THREADS")
+        },
         "versions": {
             package: version(package)
             for package in (
