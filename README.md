@@ -128,6 +128,10 @@ bound of 53,084,160 online simulator shots. Inspect `--plan` before running it. 
 after development and use a new output directory for `split: held_out`; labels alone cannot
 prove that seeds were never inspected.
 
+Verified smoke and five-seed pilot exports are in [examples/benchmarks](examples/benchmarks).
+DriftQAS tied reuse on the pilot's primary metric; the coverage checks also expose limitations
+of the current heuristic uncertainty. See [the interpretation](docs/development_results.md).
+
 ## Budget and scoring
 
 `low_shots` and `high_shots` mean shots **per measurement group**. `budget_per_epoch`

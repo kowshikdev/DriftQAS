@@ -1,0 +1,522 @@
+{
+  "declaration": {
+    "bootstrap_samples": 5000,
+    "bootstrap_seed": 2026,
+    "cases": [
+      {
+        "case_id": "ising-stable",
+        "configuration": {
+          "base_error": 0.005,
+          "budget_per_epoch": 4096,
+          "candidates": 6,
+          "changed_edge": "1-2",
+          "confirmation_fraction": 0.2,
+          "drift_error": 0.04,
+          "drift_scale": 0.02,
+          "epochs": 3,
+          "field": 0.5,
+          "forgetting": 1.0,
+          "high_shots": 256,
+          "initial_seeds": 2,
+          "low_shots": 64,
+          "n_qubits": 4,
+          "policies": [
+            "random",
+            "restart",
+            "reuse",
+            "global_forgetting",
+            "periodic_refresh",
+            "driftqas",
+            "driftqas_global_relevance",
+            "driftqas_no_refresh",
+            "driftqas_fixed_shots"
+          ],
+          "scenario": "stable",
+          "seed": 0,
+          "task": "ising",
+          "training_evaluations": 80
+        }
+      },
+      {
+        "case_id": "ising-abrupt",
+        "configuration": {
+          "base_error": 0.005,
+          "budget_per_epoch": 4096,
+          "candidates": 6,
+          "changed_edge": "1-2",
+          "confirmation_fraction": 0.2,
+          "drift_error": 0.04,
+          "drift_scale": 0.02,
+          "epochs": 3,
+          "field": 0.5,
+          "forgetting": 1.0,
+          "high_shots": 256,
+          "initial_seeds": 2,
+          "low_shots": 64,
+          "n_qubits": 4,
+          "policies": [
+            "random",
+            "restart",
+            "reuse",
+            "global_forgetting",
+            "periodic_refresh",
+            "driftqas",
+            "driftqas_global_relevance",
+            "driftqas_no_refresh",
+            "driftqas_fixed_shots"
+          ],
+          "scenario": "abrupt",
+          "seed": 0,
+          "task": "ising",
+          "training_evaluations": 80
+        }
+      }
+    ],
+    "name": "ising-pilot-v1",
+    "primary_comparator": "reuse",
+    "primary_metric": "mean_selection_regret",
+    "primary_scope": "equal-weight mean over all declared cases and epochs",
+    "primary_target": "driftqas",
+    "seed_sets": {
+      "development": [
+        7,
+        19,
+        31,
+        43,
+        59
+      ],
+      "held_out": [
+        1001,
+        1002,
+        1003,
+        1004,
+        1005,
+        1006,
+        1007,
+        1008,
+        1009,
+        1010
+      ]
+    },
+    "split": "development"
+  },
+  "episodes": [
+    {
+      "case_id": "ising-stable",
+      "configuration": {
+        "base_error": 0.005,
+        "budget_per_epoch": 4096,
+        "candidates": 6,
+        "changed_edge": "1-2",
+        "confirmation_fraction": 0.2,
+        "drift_error": 0.04,
+        "drift_scale": 0.02,
+        "epochs": 3,
+        "field": 0.5,
+        "forgetting": 1.0,
+        "high_shots": 256,
+        "initial_seeds": 2,
+        "low_shots": 64,
+        "n_qubits": 4,
+        "policies": [
+          "random",
+          "restart",
+          "reuse",
+          "global_forgetting",
+          "periodic_refresh",
+          "driftqas",
+          "driftqas_global_relevance",
+          "driftqas_no_refresh",
+          "driftqas_fixed_shots"
+        ],
+        "scenario": "stable",
+        "seed": 7,
+        "task": "ising",
+        "training_evaluations": 80
+      },
+      "seed": 7
+    },
+    {
+      "case_id": "ising-stable",
+      "configuration": {
+        "base_error": 0.005,
+        "budget_per_epoch": 4096,
+        "candidates": 6,
+        "changed_edge": "1-2",
+        "confirmation_fraction": 0.2,
+        "drift_error": 0.04,
+        "drift_scale": 0.02,
+        "epochs": 3,
+        "field": 0.5,
+        "forgetting": 1.0,
+        "high_shots": 256,
+        "initial_seeds": 2,
+        "low_shots": 64,
+        "n_qubits": 4,
+        "policies": [
+          "random",
+          "restart",
+          "reuse",
+          "global_forgetting",
+          "periodic_refresh",
+          "driftqas",
+          "driftqas_global_relevance",
+          "driftqas_no_refresh",
+          "driftqas_fixed_shots"
+        ],
+        "scenario": "stable",
+        "seed": 19,
+        "task": "ising",
+        "training_evaluations": 80
+      },
+      "seed": 19
+    },
+    {
+      "case_id": "ising-stable",
+      "configuration": {
+        "base_error": 0.005,
+        "budget_per_epoch": 4096,
+        "candidates": 6,
+        "changed_edge": "1-2",
+        "confirmation_fraction": 0.2,
+        "drift_error": 0.04,
+        "drift_scale": 0.02,
+        "epochs": 3,
+        "field": 0.5,
+        "forgetting": 1.0,
+        "high_shots": 256,
+        "initial_seeds": 2,
+        "low_shots": 64,
+        "n_qubits": 4,
+        "policies": [
+          "random",
+          "restart",
+          "reuse",
+          "global_forgetting",
+          "periodic_refresh",
+          "driftqas",
+          "driftqas_global_relevance",
+          "driftqas_no_refresh",
+          "driftqas_fixed_shots"
+        ],
+        "scenario": "stable",
+        "seed": 31,
+        "task": "ising",
+        "training_evaluations": 80
+      },
+      "seed": 31
+    },
+    {
+      "case_id": "ising-stable",
+      "configuration": {
+        "base_error": 0.005,
+        "budget_per_epoch": 4096,
+        "candidates": 6,
+        "changed_edge": "1-2",
+        "confirmation_fraction": 0.2,
+        "drift_error": 0.04,
+        "drift_scale": 0.02,
+        "epochs": 3,
+        "field": 0.5,
+        "forgetting": 1.0,
+        "high_shots": 256,
+        "initial_seeds": 2,
+        "low_shots": 64,
+        "n_qubits": 4,
+        "policies": [
+          "random",
+          "restart",
+          "reuse",
+          "global_forgetting",
+          "periodic_refresh",
+          "driftqas",
+          "driftqas_global_relevance",
+          "driftqas_no_refresh",
+          "driftqas_fixed_shots"
+        ],
+        "scenario": "stable",
+        "seed": 43,
+        "task": "ising",
+        "training_evaluations": 80
+      },
+      "seed": 43
+    },
+    {
+      "case_id": "ising-stable",
+      "configuration": {
+        "base_error": 0.005,
+        "budget_per_epoch": 4096,
+        "candidates": 6,
+        "changed_edge": "1-2",
+        "confirmation_fraction": 0.2,
+        "drift_error": 0.04,
+        "drift_scale": 0.02,
+        "epochs": 3,
+        "field": 0.5,
+        "forgetting": 1.0,
+        "high_shots": 256,
+        "initial_seeds": 2,
+        "low_shots": 64,
+        "n_qubits": 4,
+        "policies": [
+          "random",
+          "restart",
+          "reuse",
+          "global_forgetting",
+          "periodic_refresh",
+          "driftqas",
+          "driftqas_global_relevance",
+          "driftqas_no_refresh",
+          "driftqas_fixed_shots"
+        ],
+        "scenario": "stable",
+        "seed": 59,
+        "task": "ising",
+        "training_evaluations": 80
+      },
+      "seed": 59
+    },
+    {
+      "case_id": "ising-abrupt",
+      "configuration": {
+        "base_error": 0.005,
+        "budget_per_epoch": 4096,
+        "candidates": 6,
+        "changed_edge": "1-2",
+        "confirmation_fraction": 0.2,
+        "drift_error": 0.04,
+        "drift_scale": 0.02,
+        "epochs": 3,
+        "field": 0.5,
+        "forgetting": 1.0,
+        "high_shots": 256,
+        "initial_seeds": 2,
+        "low_shots": 64,
+        "n_qubits": 4,
+        "policies": [
+          "random",
+          "restart",
+          "reuse",
+          "global_forgetting",
+          "periodic_refresh",
+          "driftqas",
+          "driftqas_global_relevance",
+          "driftqas_no_refresh",
+          "driftqas_fixed_shots"
+        ],
+        "scenario": "abrupt",
+        "seed": 7,
+        "task": "ising",
+        "training_evaluations": 80
+      },
+      "seed": 7
+    },
+    {
+      "case_id": "ising-abrupt",
+      "configuration": {
+        "base_error": 0.005,
+        "budget_per_epoch": 4096,
+        "candidates": 6,
+        "changed_edge": "1-2",
+        "confirmation_fraction": 0.2,
+        "drift_error": 0.04,
+        "drift_scale": 0.02,
+        "epochs": 3,
+        "field": 0.5,
+        "forgetting": 1.0,
+        "high_shots": 256,
+        "initial_seeds": 2,
+        "low_shots": 64,
+        "n_qubits": 4,
+        "policies": [
+          "random",
+          "restart",
+          "reuse",
+          "global_forgetting",
+          "periodic_refresh",
+          "driftqas",
+          "driftqas_global_relevance",
+          "driftqas_no_refresh",
+          "driftqas_fixed_shots"
+        ],
+        "scenario": "abrupt",
+        "seed": 19,
+        "task": "ising",
+        "training_evaluations": 80
+      },
+      "seed": 19
+    },
+    {
+      "case_id": "ising-abrupt",
+      "configuration": {
+        "base_error": 0.005,
+        "budget_per_epoch": 4096,
+        "candidates": 6,
+        "changed_edge": "1-2",
+        "confirmation_fraction": 0.2,
+        "drift_error": 0.04,
+        "drift_scale": 0.02,
+        "epochs": 3,
+        "field": 0.5,
+        "forgetting": 1.0,
+        "high_shots": 256,
+        "initial_seeds": 2,
+        "low_shots": 64,
+        "n_qubits": 4,
+        "policies": [
+          "random",
+          "restart",
+          "reuse",
+          "global_forgetting",
+          "periodic_refresh",
+          "driftqas",
+          "driftqas_global_relevance",
+          "driftqas_no_refresh",
+          "driftqas_fixed_shots"
+        ],
+        "scenario": "abrupt",
+        "seed": 31,
+        "task": "ising",
+        "training_evaluations": 80
+      },
+      "seed": 31
+    },
+    {
+      "case_id": "ising-abrupt",
+      "configuration": {
+        "base_error": 0.005,
+        "budget_per_epoch": 4096,
+        "candidates": 6,
+        "changed_edge": "1-2",
+        "confirmation_fraction": 0.2,
+        "drift_error": 0.04,
+        "drift_scale": 0.02,
+        "epochs": 3,
+        "field": 0.5,
+        "forgetting": 1.0,
+        "high_shots": 256,
+        "initial_seeds": 2,
+        "low_shots": 64,
+        "n_qubits": 4,
+        "policies": [
+          "random",
+          "restart",
+          "reuse",
+          "global_forgetting",
+          "periodic_refresh",
+          "driftqas",
+          "driftqas_global_relevance",
+          "driftqas_no_refresh",
+          "driftqas_fixed_shots"
+        ],
+        "scenario": "abrupt",
+        "seed": 43,
+        "task": "ising",
+        "training_evaluations": 80
+      },
+      "seed": 43
+    },
+    {
+      "case_id": "ising-abrupt",
+      "configuration": {
+        "base_error": 0.005,
+        "budget_per_epoch": 4096,
+        "candidates": 6,
+        "changed_edge": "1-2",
+        "confirmation_fraction": 0.2,
+        "drift_error": 0.04,
+        "drift_scale": 0.02,
+        "epochs": 3,
+        "field": 0.5,
+        "forgetting": 1.0,
+        "high_shots": 256,
+        "initial_seeds": 2,
+        "low_shots": 64,
+        "n_qubits": 4,
+        "policies": [
+          "random",
+          "restart",
+          "reuse",
+          "global_forgetting",
+          "periodic_refresh",
+          "driftqas",
+          "driftqas_global_relevance",
+          "driftqas_no_refresh",
+          "driftqas_fixed_shots"
+        ],
+        "scenario": "abrupt",
+        "seed": 59,
+        "task": "ising",
+        "training_evaluations": 80
+      },
+      "seed": 59
+    }
+  ],
+  "plan": {
+    "cases": 2,
+    "ideal_objective_call_upper_bound": 4800,
+    "matrix": [
+      {
+        "budget_per_epoch": 4096,
+        "case_id": "ising-stable",
+        "epochs": 3,
+        "field": 0.5,
+        "n_qubits": 4,
+        "scenario": "stable",
+        "task": "ising"
+      },
+      {
+        "budget_per_epoch": 4096,
+        "case_id": "ising-abrupt",
+        "epochs": 3,
+        "field": 0.5,
+        "n_qubits": 4,
+        "scenario": "abrupt",
+        "task": "ising"
+      }
+    ],
+    "name": "ising-pilot-v1",
+    "note": "Simulation only. Preparation repeats per case/seed and is shared across policies, not charged as online shots. A held_out label does not prove an unseen run.",
+    "offline_audit_evaluations": 180,
+    "online_shot_upper_bound": 1105920,
+    "paired_episodes": 10,
+    "policies": [
+      "random",
+      "restart",
+      "reuse",
+      "global_forgetting",
+      "periodic_refresh",
+      "driftqas",
+      "driftqas_global_relevance",
+      "driftqas_no_refresh",
+      "driftqas_fixed_shots"
+    ],
+    "policy_episodes": 90,
+    "primary_contrast": "driftqas minus reuse",
+    "primary_metric": "mean_selection_regret",
+    "seeds": [
+      7,
+      19,
+      31,
+      43,
+      59
+    ],
+    "split": "development"
+  },
+  "protocol_digest": "b487372b07ec22729d494bfd784f0776886f476c67e94f646d1c95dc837b4756",
+  "runtime": {
+    "python": "3.12.14",
+    "source_digest": "ba3dba3e2eaa4970c942d2e25cb28cdbd7641de1cf5703ab0a93b9010446ecc1",
+    "versions": {
+      "PyYAML": "6.0.3",
+      "driftqas": "0.3.0",
+      "matplotlib": "3.10.8",
+      "numpy": "2.3.5",
+      "qiskit": "2.5.2",
+      "qiskit-aer": "0.17.2",
+      "scikit-learn": "1.8.0",
+      "scipy": "1.17.0"
+    }
+  },
+  "schema_version": 1
+}
