@@ -3,6 +3,7 @@ import json
 import runpy
 import shutil
 from dataclasses import replace
+from zipfile import ZipFile
 
 import numpy as np
 import pytest
@@ -387,3 +388,20 @@ def test_compact_export_is_verified_non_overwriting_and_not_a_raw_suite(tmp_path
     with pytest.raises(ValueError, match="checksum"):
         export(corrupt, tmp_path / "never-written")
     assert not (tmp_path / "never-written").exists()
+
+
+def test_raw_evidence_bundle_verifies_and_excludes_incidental_files(tmp_path, verified_episode):
+    bundle = runpy.run_path("scripts/bundle_evidence.py")["bundle"]
+    output = tmp_path / "evidence.zip"
+    incidental = verified_episode / "unrelated-runtime-file"
+    incidental.write_text("not experiment evidence")
+    result = bundle([verified_episode], output)
+    assert result["suites"][0]["paired_episodes"] == 1
+    with ZipFile(output) as archive:
+        assert archive.testzip() is None
+        assert "EVIDENCE.json" in archive.namelist()
+        assert any(name.endswith("experiments.sqlite") for name in archive.namelist())
+        assert not any(name.endswith(incidental.name) for name in archive.namelist())
+        assert not any(name.endswith(".py") for name in archive.namelist())
+    with pytest.raises(ValueError, match="overwrite"):
+        bundle([verified_episode], output)

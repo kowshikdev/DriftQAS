@@ -11,6 +11,7 @@ using the [protocol](../../../docs/exposure_protocol.md).
 |---|---|---:|---:|---:|
 | `h2-development/` | Development, not final evidence | 4 | 5 | 8 |
 | `ising-development/` | Secondary development transfer check | 2 | 5 | 8 |
+| `h2-calibration/` | Independent interval calibration, not final test evidence | 4 | 20 | 8 |
 
 The H2 development primary difference was −0.0103877 (circuit-aware racing minus blind
 racing reuse). The Ising difference was +0.000215842, with no true winner-rank reversals.
@@ -43,3 +44,10 @@ a different environment, create your own new freeze and use new output directori
 Results remain specific to frozen, ideal-trained libraries under synthetic CX-only noise.
 The calibration output is posthoc: it never adjusts acquisition or stopping. Any reported
 coverage must be read alongside interval width and the limited number of seed clusters.
+
+`interval_calibration.json` was fitted on the verified replacement calibration suite before
+primary held-out execution. Its ID is
+`a6704be0324a78626cc7e96e57b1df9300d4c0371143ef3b746c17737d262ce2`.
+Circuit-aware racing's temperature is about 2.193; blind racing reuse needs about 10.083.
+These are fixed posthoc interval multipliers, not changed policy settings. Calibration
+partition performance is not final held-out evidence.
