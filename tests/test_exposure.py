@@ -1,5 +1,6 @@
 import copy
 import json
+import runpy
 import shutil
 from dataclasses import replace
 
@@ -365,3 +366,24 @@ def test_calibration_rejects_protocol_or_seed_mismatch(tmp_path, monkeypatch):
         write_json(path, changed)
         with pytest.raises(ValueError, match=message):
             uncertainty.evaluate_calibration(tmp_path, path)
+
+
+def test_compact_export_is_verified_non_overwriting_and_not_a_raw_suite(tmp_path, verified_episode):
+    export = runpy.run_path("scripts/export_study.py")["export"]
+    output = tmp_path / "export"
+    result = export(verified_episode, output)
+    assert result["complete_paired_episodes"] == 1
+    assert "experiments.sqlite" not in result["files_sha256"]
+    assert not (output / "episodes").exists()
+    assert read_json(output / "audit_receipts.json")["episodes"][0]["core_artifact_sha256"][
+        "experiments.jsonl"
+    ]
+    with pytest.raises(ValueError, match="new compact-export"):
+        export(verified_episode, output)
+    corrupt = tmp_path / "corrupt"
+    shutil.copytree(verified_episode, corrupt)
+    path = corrupt / "episodes/abrupt/seed_7/attempt_0001/experiments.jsonl"
+    path.write_text(path.read_text() + "\n")
+    with pytest.raises(ValueError, match="checksum"):
+        export(corrupt, tmp_path / "never-written")
+    assert not (tmp_path / "never-written").exists()

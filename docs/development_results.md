@@ -81,3 +81,11 @@ against held-out outcomes to manufacture a win.
 Compact exports and manifests are in [examples/benchmarks](../examples/benchmarks).
 Reproduce with `configs/suite_smoke.yaml` and `configs/suite_pilot.yaml`. The proposed full
 matrix is in `configs/benchmark_ising.yaml`; it has not been executed as a final study.
+
+## Current continuation
+
+The v0.4 exposure/racing study is documented separately in
+[the exposure protocol](exposure_protocol.md) and
+[its compact exports](../examples/benchmarks/v04/README.md).
+The earlier findings above remain unchanged; they are not replaced by a more favorable
+study or relabeled held-out.

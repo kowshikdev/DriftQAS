@@ -22,3 +22,10 @@ jobs:
       - run: python -m driftqas run --config configs/smoke.yaml --output results/ci-smoke
       - run: python -m driftqas suite --config configs/suite_smoke.yaml --output results/ci-suite
       - run: python -m driftqas suite --config configs/suite_smoke.yaml --output results/ci-suite --resume
+      - run: python -m driftqas freeze --config configs/exposure_ci.yaml --output results/ci-frozen.json
+      - run: python -m driftqas suite --config configs/exposure_ci.yaml --split calibration --frozen results/ci-frozen.json --output results/ci-calibration
+      - run: python -m driftqas calibrate --suite-dir results/ci-calibration --output results/ci-intervals.json
+      - run: python -m driftqas suite --config configs/exposure_ci.yaml --split held_out --frozen results/ci-frozen.json --output results/ci-held-out
+      - run: python -m driftqas diagnose-suite --suite-dir results/ci-held-out
+      - run: python -m driftqas evaluate-calibration --suite-dir results/ci-held-out --calibration results/ci-intervals.json
+      - run: python -m driftqas suite --config configs/exposure_ci.yaml --split held_out --frozen results/ci-frozen.json --output results/ci-held-out --resume

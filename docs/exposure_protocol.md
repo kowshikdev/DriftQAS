@@ -164,6 +164,11 @@ Diagnostic and interval reports reject incomplete full-bank prediction/audit gri
 invalid chronology. `diagnose-suite` requires v0.4 full-bank snapshots; old suites remain
 readable using `analyze-suite`.
 
+Seals cover the five canonical core artifacts and every declared policy/epoch QASM, not
+incidental environment-created files. A first calibration attempt exposed this distinction;
+[its failure record](../examples/benchmarks/v04/calibration_failure.md) is retained. Its
+replacement freeze changes sealing only, not the controller or experimental choices.
+
 New exports: `exposure_pairs.csv`, `exposure_episodes.csv`, `prediction_diagnostics.csv`,
 `diagnostics_summary.json`, `calibrated_seed_coverage.csv`, `calibrated_policy_summary.csv`
 and `calibrated_summary.json`. These are derived reports, not replacements for complete

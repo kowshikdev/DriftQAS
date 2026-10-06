@@ -189,6 +189,9 @@ CI runs checks, the H₂ smoke example, and the repeated-seed smoke suite with v
 on Python 3.12. Numerical tests cover the reference,
 zero-noise behavior, sampling, Pauli ordering and covariance; protocol tests cover budgets,
 configuration, drift relevance, deterministic replay, and confirmation/audit isolation.
+It also executes a tiny frozen calibration/held-out workflow, including interval fitting,
+exposure diagnostics, calibrated coverage and verified resumption. That CI workflow is
+validation, not scientific evidence.
 
 Suite resumption skips verified completed episodes and preserves unfinished attempts before
 retrying. Standalone interrupted runs preserve events but need a new directory to replay.

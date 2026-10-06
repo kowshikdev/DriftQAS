@@ -1,5 +1,9 @@
 # Verified v0.3 development examples
 
+The separate [v0.4 study](v04/README.md) retains these earlier findings and adds exposure
+checks, racing controls, and independent calibration/test partitions. The v0.3 results
+below remain development-only.
+
 These are compact exports from actual simulator suites using the final v0.3 source. Both
 suites completed all declared episodes, passed database/JSONL consistency and artifact
 checks, and then resumed without rerunning completed episodes. Full raw event ledgers,

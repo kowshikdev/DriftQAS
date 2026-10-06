@@ -1,0 +1,238 @@
+{
+  "declaration": {
+    "bootstrap_samples": 10000,
+    "bootstrap_seed": 2026,
+    "cases": [
+      {
+        "case_id": "stable",
+        "configuration": {
+          "bank_design": "stratified",
+          "base_error": 0.005,
+          "budget_per_epoch": 2048,
+          "candidates": 8,
+          "changed_edge": "0-1",
+          "confirmation_fraction": 0.2,
+          "drift_error": 0.12,
+          "drift_scale": 0.02,
+          "epochs": 4,
+          "field": 0.5,
+          "forgetting": 1.0,
+          "high_shots": 128,
+          "initial_seeds": 2,
+          "low_shots": 32,
+          "n_qubits": 4,
+          "policies": [
+            "reuse",
+            "driftqas",
+            "ideal_only",
+            "fresh_racing",
+            "reuse_racing",
+            "global_racing",
+            "driftqas_racing",
+            "driftqas_racing_uniform"
+          ],
+          "racing_beta": 2.0,
+          "racing_floor": 0.002,
+          "scenario": "stable",
+          "seed": 0,
+          "task": "h2",
+          "training_evaluations": 120
+        }
+      },
+      {
+        "case_id": "abrupt-mild",
+        "configuration": {
+          "bank_design": "stratified",
+          "base_error": 0.005,
+          "budget_per_epoch": 2048,
+          "candidates": 8,
+          "changed_edge": "0-1",
+          "confirmation_fraction": 0.2,
+          "drift_error": 0.04,
+          "drift_scale": 0.02,
+          "epochs": 4,
+          "field": 0.5,
+          "forgetting": 1.0,
+          "high_shots": 128,
+          "initial_seeds": 2,
+          "low_shots": 32,
+          "n_qubits": 4,
+          "policies": [
+            "reuse",
+            "driftqas",
+            "ideal_only",
+            "fresh_racing",
+            "reuse_racing",
+            "global_racing",
+            "driftqas_racing",
+            "driftqas_racing_uniform"
+          ],
+          "racing_beta": 2.0,
+          "racing_floor": 0.002,
+          "scenario": "abrupt",
+          "seed": 0,
+          "task": "h2",
+          "training_evaluations": 120
+        }
+      },
+      {
+        "case_id": "abrupt-stress",
+        "configuration": {
+          "bank_design": "stratified",
+          "base_error": 0.005,
+          "budget_per_epoch": 2048,
+          "candidates": 8,
+          "changed_edge": "0-1",
+          "confirmation_fraction": 0.2,
+          "drift_error": 0.12,
+          "drift_scale": 0.02,
+          "epochs": 4,
+          "field": 0.5,
+          "forgetting": 1.0,
+          "high_shots": 128,
+          "initial_seeds": 2,
+          "low_shots": 32,
+          "n_qubits": 4,
+          "policies": [
+            "reuse",
+            "driftqas",
+            "ideal_only",
+            "fresh_racing",
+            "reuse_racing",
+            "global_racing",
+            "driftqas_racing",
+            "driftqas_racing_uniform"
+          ],
+          "racing_beta": 2.0,
+          "racing_floor": 0.002,
+          "scenario": "abrupt",
+          "seed": 0,
+          "task": "h2",
+          "training_evaluations": 120
+        }
+      },
+      {
+        "case_id": "recurring-stress",
+        "configuration": {
+          "bank_design": "stratified",
+          "base_error": 0.005,
+          "budget_per_epoch": 2048,
+          "candidates": 8,
+          "changed_edge": "0-1",
+          "confirmation_fraction": 0.2,
+          "drift_error": 0.12,
+          "drift_scale": 0.02,
+          "epochs": 4,
+          "field": 0.5,
+          "forgetting": 1.0,
+          "high_shots": 128,
+          "initial_seeds": 2,
+          "low_shots": 32,
+          "n_qubits": 4,
+          "policies": [
+            "reuse",
+            "driftqas",
+            "ideal_only",
+            "fresh_racing",
+            "reuse_racing",
+            "global_racing",
+            "driftqas_racing",
+            "driftqas_racing_uniform"
+          ],
+          "racing_beta": 2.0,
+          "racing_floor": 0.002,
+          "scenario": "recurring",
+          "seed": 0,
+          "task": "h2",
+          "training_evaluations": 120
+        }
+      }
+    ],
+    "name": "exposure-h2-v04",
+    "primary_comparator": "reuse_racing",
+    "primary_metric": "mean_selection_regret",
+    "primary_scope": "equal-weight mean over all declared cases and epochs",
+    "primary_target": "driftqas_racing",
+    "seed_sets": {
+      "calibration": [
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120
+      ],
+      "development": [
+        7,
+        19,
+        31,
+        43,
+        59
+      ],
+      "held_out": [
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    }
+  },
+  "frozen_id": "7e83867a6aecdec9674879b60c1755ac59675ac92b3f64998607853eb8480c7a",
+  "interval_calibration": {
+    "alpha": 0.05,
+    "method": "per-policy seed-cluster maximum normalized absolute residual",
+    "shrink_intervals": false,
+    "standard_deviation_floor": 0.002
+  },
+  "meaning": "Content-addressed pre-execution declaration, not proof of an unseen test. Calibration scales are posthoc diagnostics and never alter the online policy.",
+  "runtime": {
+    "python": "3.12.14",
+    "source_digest": "84e6275b57217e321bf6ea0e5486f36929af252ad8844ae963344cc633bcebd7",
+    "thread_environment": {
+      "MKL_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1"
+    },
+    "versions": {
+      "PyYAML": "6.0.3",
+      "driftqas": "0.4.0",
+      "matplotlib": "3.10.8",
+      "numpy": "2.3.5",
+      "qiskit": "2.5.2",
+      "qiskit-aer": "0.17.2",
+      "scikit-learn": "1.8.0",
+      "scipy": "1.17.0"
+    }
+  },
+  "schema_version": 1
+}

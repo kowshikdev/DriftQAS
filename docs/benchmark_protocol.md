@@ -101,7 +101,11 @@ certify GP calibration or relevance weights.
 
 `suite_manifest.json` freezes the normalized declaration, every expanded episode, package
 versions, Python version and complete package source digest. `suite_status.json` tracks
-progress. Every completed attempt receives a receipt containing hashes of its artifacts.
+progress. Every completed attempt receives a receipt containing hashes of its canonical
+artifacts: manifest, summary, candidate bank, both event representations, and every declared
+policy/epoch QASM export. Missing circuits are rejected. Incidental transport/runtime files
+are not experiment evidence and are not sealed. Checksums and database/export parity on
+actual experiment artifacts remain mandatory.
 Active events use a separate `experiments.live.sqlite` pager. The final `experiments.sqlite`
 is published through an atomic, closed snapshot and completion is published
 only after both event artifacts are closed. Database and JSONL export must agree before sealing.
