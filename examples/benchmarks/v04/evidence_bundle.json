@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "filename": "DriftQAS_v04_raw_evidence.zip",
+  "size_bytes": 48314609,
+  "sha256": "9b6338cbb1b5a86e041de44af773bca62f21c0045df3bf984c9c2f863446f9bf",
+  "canonical_and_receipt_files": 10270,
+  "verified_completed_paired_episodes": 190,
+  "audit_only_failed_paired_episodes": 80,
+  "primary_held_out_seed_clusters": 20,
+  "suites": [
+    {
+      "directory": "v04-h2-development",
+      "status": "completed",
+      "paired_episodes": 20,
+      "protocol_digest": "224e2735393e0044bdece13588934faa684c72f7df50528ef6a217f7228a2f34"
+    },
+    {
+      "directory": "v04-ising-development",
+      "status": "completed",
+      "paired_episodes": 10,
+      "protocol_digest": "b1380f3f1f72982b1ee4ff17dd256db292aa7913d476ebadd5aabbd98efbc723"
+    },
+    {
+      "directory": "v04-h2-calibration-v2",
+      "status": "completed",
+      "paired_episodes": 80,
+      "protocol_digest": "c1db893564dff694eb935d216785d7d17444dde266ca25a33d9b6a52c5173b13"
+    },
+    {
+      "directory": "v04-h2-held-out",
+      "status": "completed",
+      "paired_episodes": 80,
+      "protocol_digest": "424b12c357430b32fbde3d6b24ea7d1ba7a53bdbf1ea36765099a99135090980"
+    },
+    {
+      "directory": "v04-h2-calibration",
+      "status": "failed",
+      "paired_episodes": 80,
+      "protocol_digest": "b7a62e7be9334e1ea762f897f246b75c16f6c73ebb0da15c8b493f53820a7089"
+    }
+  ],
+  "scope": "Raw counts, locked predictions, audits, ledgers, trained banks, QASM, manifests, original completion receipts and an embedded per-file SHA256 index. Source code and incidental runtime files are excluded. The failed first calibration remains audit-only and is not additional independent evidence or valid input to complete-pair analysis."
+}

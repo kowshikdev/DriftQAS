@@ -12,6 +12,19 @@ using the [protocol](../../../docs/exposure_protocol.md).
 | `h2-development/` | Development, not final evidence | 4 | 5 | 8 |
 | `ising-development/` | Secondary development transfer check | 2 | 5 | 8 |
 | `h2-calibration/` | Independent interval calibration, not final test evidence | 4 | 20 | 8 |
+| `h2-held-out/` | Frozen fresh-seed test and calibrated interval evaluation | 4 | 20 | 8 |
+
+The held-out primary contrast is **−0.00710821**, with paired seed-cluster 95% interval
+**[−0.00909278, −0.00505381]**. Component-matched racing's mean regret is 0.00360119,
+compared with blind reuse's 0.0107094 (66.4% lower); 18 seeds favored matching and 2 favored
+blind reuse. The GP, fresh, global and uniform controls are not separated on mean regret.
+Joint calibrated coverage is 19/20 seed clusters, with mean full-bank interval width 0.20944.
+Read [the full interpretation, controls, and widths](../../../docs/exposure_results.md).
+
+The separately downloadable `DriftQAS_v04_raw_evidence.zip` preserves complete data for
+190 verified paired episodes plus 80 failed-calibration episodes for audit only. Its
+[catalogue and SHA256](evidence_bundle.json) record the exact archive. Raw data, original
+receipts, banks and QASM are included; source code remains in this repository.
 
 The H2 development primary difference was −0.0103877 (circuit-aware racing minus blind
 racing reuse). The Ising difference was +0.000215842, with no true winner-rank reversals.

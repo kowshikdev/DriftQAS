@@ -1,0 +1,1044 @@
+{
+  "episodes": [
+    {
+      "attempt": "attempt_0001",
+      "case_id": "stable",
+      "completion_receipt_sha256": "cf7adba090d0f87441b0021414844e158f9fca751f383ef410e798fb92e8eaa4",
+      "core_artifact_sha256": {
+        "candidates.json": "230aad2cc02782603925ec361cd3c6049112659929ca19d0eb834912ac6bcdd1",
+        "experiments.jsonl": "1fd5a5da235ad7d9b6fc9e26b4eea247468c1eecae28c1562ec0336fefecf013",
+        "experiments.sqlite": "630036b2a87527806f0895049e0a43683a2da6ac937efb882326e659d38cfe4c",
+        "manifest.json": "8771cb836d3a7975f94fcac2efd3150cb39a9ce38983e47e49467a4c9b259d8a",
+        "summary.json": "772eb857e605d7e5c3a874c3737daa6e69aac3275c9406bb633aa991e6a32902"
+      },
+      "seed": 2001
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "stable",
+      "completion_receipt_sha256": "f2fb44cf304cf2505d0e2b82287b7a3220f76e023093e52ad050dbde7751672a",
+      "core_artifact_sha256": {
+        "candidates.json": "5089dbcd4c402e189300f0b0619ee9d0ef9d66a84bd8b55073fb602e789efe7c",
+        "experiments.jsonl": "59ba335602de9408dbce3ae082c52a9cced144a4dee1a8961c4d27e294b194cf",
+        "experiments.sqlite": "4d6b0c6fdc50655c33e18df4fd1299de9ef050469d011cd3f9556038ff0c61c3",
+        "manifest.json": "76a2715aff4b85f1c094da8405042d96448818026bd995f5771e38456f82db25",
+        "summary.json": "3b9b25e803de0ef3c3ca3b8a9c06f7674743e3f170f2084f6990f989f728cdd0"
+      },
+      "seed": 2002
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "stable",
+      "completion_receipt_sha256": "55485abf8e38d2cb94795e5d7bf37b5210a2ef8542d2ba50986765bcc6866427",
+      "core_artifact_sha256": {
+        "candidates.json": "a429698c246770574ca782bf4bbb84a4490f5d0bdc905884228695b43b361820",
+        "experiments.jsonl": "40cf7360d9c1b256c2b2382f3f4243968c077d4873e91e7c9fed74a2a0dc3827",
+        "experiments.sqlite": "be1be47321f93b28bbc31b43498f7dc47f9fe9d0c822f8ce4d1aa3d8d6ce21fc",
+        "manifest.json": "9d1bab833182cbc111b6ef614cde5e4eb4c2eb3d1ce3b5343a426bc464966346",
+        "summary.json": "de18e32892d3bf58e46038e41416135d2953839f3702c0baa56c10bbbbe4ecb2"
+      },
+      "seed": 2003
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "stable",
+      "completion_receipt_sha256": "ce00d9393f8d0970407907cdc5f4be50b694b7996410f2df2228085ec610fd8e",
+      "core_artifact_sha256": {
+        "candidates.json": "545905072491393a658ce4227b707dba70b2ac02fc431a169f4dc738e04b1115",
+        "experiments.jsonl": "91ce1769a8096b43efb2da6e51e491cffcd7647d9d22531326b540105e165ce7",
+        "experiments.sqlite": "49d93c46f6640735da45ee02d74b4c6ff8af384343742da5c4c577344192ebd4",
+        "manifest.json": "9487795a7646b4ac0dde985227cd57d4d55cd1318668277a61e71fccb0e57070",
+        "summary.json": "39e009a8820795abc292d40196a12191b45c7b51d4399d1d115e4737f8a459eb"
+      },
+      "seed": 2004
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "stable",
+      "completion_receipt_sha256": "097be82e8b419374e30b66dc0389ba78a170f5bb311e4d694ea07daa5444e0ac",
+      "core_artifact_sha256": {
+        "candidates.json": "d7ff650af379fcfcdd4a859b41ee03e96cfaedd4df36d5b7d9d23f931983e236",
+        "experiments.jsonl": "ca7d88a50184e36450b9b3e330b376901ea515e06c5bf51e4a982e182ed89d4c",
+        "experiments.sqlite": "ee876f8fcf1e7dc6176909a04961c26bc46f2c331e368a7c9c5dfdcf824b8df3",
+        "manifest.json": "b0b62c8b442b2f4aa14875aa55cecfca5eb46dded837204bce2ba9a3be4aa2f2",
+        "summary.json": "5d16e224f976fca0742a7bf53331be73f1fae4bd4ebb117f4600d1b02116af34"
+      },
+      "seed": 2005
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "stable",
+      "completion_receipt_sha256": "f95782ddfb7fbb3a627f72d4bc2b151129854528a356488303676acc2442e9a2",
+      "core_artifact_sha256": {
+        "candidates.json": "d08a65cbef82519a43df0eed4a5087df9bfcfffa753f51a7d282c91e6cc46eaf",
+        "experiments.jsonl": "4b42605774b71f6b02c263a6935abb3d7d94b2035e80cbba8e683716eab6fe0c",
+        "experiments.sqlite": "bdc3da68c78b394f084c4ca3df3206f8224402da144ff5669dd14c5bd0f9139c",
+        "manifest.json": "28cd56e4b37a0b6f91824c73e1477f72506c033bfb15790b831b7f8edc199eae",
+        "summary.json": "f6cbd2eeaefbbfe40e739795716b6c879125f3745c4aad2acaa4dc41b9c2734c"
+      },
+      "seed": 2006
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "stable",
+      "completion_receipt_sha256": "53c238ab20ab3c466f63a8537daf4648a543fc49807fc70f4f6d042d33692951",
+      "core_artifact_sha256": {
+        "candidates.json": "0bbe80600a1c42ee0f2be9afd0e631d45b7d6d9a2a10e22d18fc463a535b81fe",
+        "experiments.jsonl": "d135f10430af5594ccb8f6cb087bc953531ca52aa8fd54e2269da6a767e53b50",
+        "experiments.sqlite": "dd8815ff458aee1afc6e0bc69740efec634374263932aac3c6c1113a9db008c3",
+        "manifest.json": "1f3ce86a75f35b3388307919ec6cf4c1724b30c389e48901b0a3386cb272ee8a",
+        "summary.json": "bb32a4f6d4ee27eb867073ee534e2a32583a4dd07e3be898c78c1f472e425c88"
+      },
+      "seed": 2007
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "stable",
+      "completion_receipt_sha256": "a2b315dab45bc8f95bc3c8765f9f016a8185a68fdfc9151912ae1af245b981a6",
+      "core_artifact_sha256": {
+        "candidates.json": "b83a13448011e845a1d841b3396499f2486ea9ab6ed4108c2c5eb582271ff20e",
+        "experiments.jsonl": "b19120b78015bc375601714f877a75317ac37752be69b03f7730a708e8a618b1",
+        "experiments.sqlite": "ea9f55a3feae1a704b0fdba7868d3a4eb86de3b7950c015f7a94bb456e9eeda4",
+        "manifest.json": "c30477ca9087d475f5cf46f1779c0777e49dfbc507417b4c3d6c38cffef007fa",
+        "summary.json": "ea613ba19a1769fc729a1017bba1922c2c659a53c7aff515bd0c1644c8557644"
+      },
+      "seed": 2008
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "stable",
+      "completion_receipt_sha256": "a00a9f1837659b09a2888b9120bed7ef4bff3421a90aefe52bb55d29b418580d",
+      "core_artifact_sha256": {
+        "candidates.json": "88e496416e50eb3d62bf1f34df072077b287ea7594503443fb25636414c7d3a4",
+        "experiments.jsonl": "a1523dbcb64335677bba57d8278ff171010bf331fd11e85c9e3ebc86336f30a3",
+        "experiments.sqlite": "a84c6f47fb81be7ef959b4c505957968de313e2a27eff6799d923c265873b864",
+        "manifest.json": "0d20b85af2ef9c7d67992be71a846f80e4aea866281d0f917bff306eff034286",
+        "summary.json": "767108ae98593e35b693aebc5368d784376d612a42c3582c1a093502e2f7c04b"
+      },
+      "seed": 2009
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "stable",
+      "completion_receipt_sha256": "b9315650fb62481444b626dbff9ab2d1f26b65e9c6d752c736d112d95fc2de07",
+      "core_artifact_sha256": {
+        "candidates.json": "d7c984a2ff9e027632125abab1a93e5454a826ab1af4cceb475181bdb1c62398",
+        "experiments.jsonl": "c050c0ebe76948ed318cf78e637a206bba4bcbc05c36f159a3a09f13f5accd7e",
+        "experiments.sqlite": "05bb133c4cbf270919491edfcc559b03fd854796b1438d71cf501de6f0d001e5",
+        "manifest.json": "112b9ab4a83815b883e717e0dd659b04b643a5364d8ed8a160ea487879b6d0ad",
+        "summary.json": "c80e524b118063a9a7c928e049b8965cc92f2d1a4e0b733a5bc1ebceb89365e4"
+      },
+      "seed": 2010
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "stable",
+      "completion_receipt_sha256": "06cd26ceab057648df7046a9ab2077e6449d0b54335121807963c0ca589b9b18",
+      "core_artifact_sha256": {
+        "candidates.json": "6336f614ec88f109831fbc26b95394606b6bab5f22fe732381867d17444f36e7",
+        "experiments.jsonl": "ade6da9637e1d2d4d60de634791227c9f364a8d55015043ceeb349544b64e6d7",
+        "experiments.sqlite": "d7e803f1e84525d90f7e6f287ac8d10868c8291cc30a484234449336f6c4649e",
+        "manifest.json": "764fb316b8d477ef11a98a1ef26a051bf497fdf6b1f3282aaa06d2a653fc592c",
+        "summary.json": "7080a93b17dc9ee5ce2570e500e6681f4140efa2852b6f6948ae11614b192558"
+      },
+      "seed": 2011
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "stable",
+      "completion_receipt_sha256": "08c9e6b68117df86c9d20889c9c36de7b51df5bc5670d4fd6be0fa874d8ee707",
+      "core_artifact_sha256": {
+        "candidates.json": "026f8f057e5b9c193fa14c163ce454474824891c8dbbf8c3e2f5ac8f90db39a2",
+        "experiments.jsonl": "c0013c5abe32b317e308daae9a4f54d992aacb967e102c5eb2754cc738849ac1",
+        "experiments.sqlite": "4146ecb4aff3332de0186f3e994eef91bf3e59c634316aa92602ee1eb43f5889",
+        "manifest.json": "93c286b5c61fce1ddfdca900e505e41cc68ec2acfcf29e2cbd49b24a760be03b",
+        "summary.json": "4bcb39305a75f5425f75110d50ca58e2a0127f9720e76b5f8ca415c616a584a4"
+      },
+      "seed": 2012
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "stable",
+      "completion_receipt_sha256": "6fad9e1475404435b6f07feb6f20d30264c34f167e37ea5ed88d3faff797f76f",
+      "core_artifact_sha256": {
+        "candidates.json": "ee124fb5c4ef5388004c82dc8bbc6b1fe0a85a8c35913abbe36dcd7c11ad28aa",
+        "experiments.jsonl": "24f5fc2e19196acdacd78f0106b15be07544acb092949b94fc8cb7ede43b0da5",
+        "experiments.sqlite": "e03cd16ab018ec860e7dbe525bb5910747b08bc196a356c9c887232371dcd1c2",
+        "manifest.json": "7749cf9368b7c4a5bbbcffa3847d5441b5d01c7c95b1f8eebb81f2b6fba58d99",
+        "summary.json": "e220ab73c3c3e72d6ec12923b17fca58b8f115804a153df2dde7baf2259d3227"
+      },
+      "seed": 2013
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "stable",
+      "completion_receipt_sha256": "c6299af5cb03e207e4d62c0ba6795e91d1d9a0d600f4fe4567c25b513f14d9fe",
+      "core_artifact_sha256": {
+        "candidates.json": "4a736bae6cbdbad4d9866f172bba79b4cb06c8357307b1a093f74ce91d7d98f5",
+        "experiments.jsonl": "4ae7ee59c7e0c306b112ac965f283c9d868cac19d9f36ef4749c97a2a32971bc",
+        "experiments.sqlite": "9fdb5c93e4b49930ac8cdbfe27c565f699c94e5bc91641631105ee05d3d32a2f",
+        "manifest.json": "1475af23c8e7697ca4248ec76ed096e5c95bceddb3092b5c5321e57c690f011b",
+        "summary.json": "9a2c25a5cc57c8613b355231a7571c29ac09e3f0223680042ec77192b5d6bceb"
+      },
+      "seed": 2014
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "stable",
+      "completion_receipt_sha256": "0c9945b4c7b7730b75a7d1f59d537f3ae29d1c28f3874c1ab4e6017b267b6243",
+      "core_artifact_sha256": {
+        "candidates.json": "a559f86f6aff0a5e32c0238708afa37be40fa2882f935f6af1445405318dd369",
+        "experiments.jsonl": "c1a22419931ac84825e32be4a5425a1d8e09f28079cea07fe9020dd59dfaf5a3",
+        "experiments.sqlite": "75407206c40490f501ca3c125983f73eeec1d63a7141978c22dff3f5418db3ad",
+        "manifest.json": "01f32c3cf45efb0e3002e407e1700c3db52e3f05770f00ce0b84d681aab918ac",
+        "summary.json": "3b6620a47d912d669f185dbd1a7520e33cecfca80e511fda4d9780ba20f253fa"
+      },
+      "seed": 2015
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "stable",
+      "completion_receipt_sha256": "922ddd55da2cc50d477247d59415ab0a7b948abc2547cec47c3392d627835d67",
+      "core_artifact_sha256": {
+        "candidates.json": "3a48a2acad9d22a88cb82f3de16e01e07263b0894ec2fae2f6b744a7dfde9530",
+        "experiments.jsonl": "ab6a851904d83e0434f4255d6fd92468d93415cc8621d2a96027027efb911827",
+        "experiments.sqlite": "cb124c935c14521f41d386a6484f5a16d9f44e01f209b3f176c7748c8ec00896",
+        "manifest.json": "c4f4455b81ebb99dcb0165142851265828a8d7a46171e9cd225df312a701faca",
+        "summary.json": "fe1090f8fbf22073bd97ea4586439cfe2680337b59be2a78b57510ee850871df"
+      },
+      "seed": 2016
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "stable",
+      "completion_receipt_sha256": "1c2754b9b42cae9239bafca0b7b8ddb0ddd29a682710afe6e084ba938de85ecc",
+      "core_artifact_sha256": {
+        "candidates.json": "f0d38e1b9aabb7773790f57f6eb4a96db2d98e036713872b1d4aac111520847e",
+        "experiments.jsonl": "5a67e67671f050257d3989057377d004d33cdf2fb86fc1d24f86f66d0e016a44",
+        "experiments.sqlite": "ce4dda0c3fef24b9e982eea05f2ab945a098f55986b86fa5a7ae545f89ad3b59",
+        "manifest.json": "0dab5c162f8d544ea2c66d26d602c7883fe6eb802a99c9b3e7ecd897c9b86d58",
+        "summary.json": "50b37d9eb05c7c2ba6fbb745df90afaf4ac2e98d356b574b55c741147da2f30b"
+      },
+      "seed": 2017
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "stable",
+      "completion_receipt_sha256": "c60b5250d491941e7071dc34f50bec2c6691aaa842d4eb0811a648e9f663ef08",
+      "core_artifact_sha256": {
+        "candidates.json": "90bfa1e8a37c134851b5d41d5e51cd44861b3a61893f9bbd24718de3cfc334f3",
+        "experiments.jsonl": "71bd1bfe749e195fd7f196ca9b55e296fbe3576f5b95f87db069a6acb8f8d9ed",
+        "experiments.sqlite": "163c5e128413cda2916bd73d20b431facd71d0efa797df20f2fb22ebd1bad357",
+        "manifest.json": "074be7c180a17f9d180ead570747e4ec40ab475ddd3e580cd006d060fe04d2df",
+        "summary.json": "8bc2d822cd0bcdf2db271f6f47f503b92ea8e140d383e5d7e3a10961473d6bbf"
+      },
+      "seed": 2018
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "stable",
+      "completion_receipt_sha256": "c35b83d87ea49f359362f4e15655db2779afd434720f77924e9552375aa96239",
+      "core_artifact_sha256": {
+        "candidates.json": "4f17b53a81362ebd0ffa40796f77ee385b4e7fce26ff92d8a0c1f04583a0c840",
+        "experiments.jsonl": "522db20020c4dca4364357ace535c5a4815a95ed7034fb2b252970313071520b",
+        "experiments.sqlite": "c27599a1c863d71bfd0ba396779e7ae03e851db6ffe03d0df403e8bb44f848bb",
+        "manifest.json": "181554bc9518c0915bf0d7f15847844514ffafaf93e2ac6c4dcc91b6a1e0754e",
+        "summary.json": "16baa94e32db9fda2edb5861e32e1b69e868fd823d01d429107cbd4bc1001a24"
+      },
+      "seed": 2019
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "stable",
+      "completion_receipt_sha256": "75e3a80fb07b4c32229b5e0437605876a268b8b17a467e5a3bfc0d17b89a2fcc",
+      "core_artifact_sha256": {
+        "candidates.json": "1f3b66779656f20ad11b12d71819648a55d9601e353ca0b1fd52b7f0ce91e8cb",
+        "experiments.jsonl": "d9462a7c41489b35d9b80fc5a2814167c0d4a923f094adec32c31a8fca040552",
+        "experiments.sqlite": "693cbff53c10dfce5ab97ccb99cc3234447ad2f58bee0fb995f5cdeb2680dcf9",
+        "manifest.json": "d0222382ce40aaa737431534d8986ded3e9949a721dfa4182a5de63835464c80",
+        "summary.json": "b73160ebe4161332462127a6a711d889ae51eea8230d6e629b3a09f2e972635a"
+      },
+      "seed": 2020
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-mild",
+      "completion_receipt_sha256": "5af8d7f03856cb37d93cfee6b88e04f7389de635b47ca2fa936d251e765ada41",
+      "core_artifact_sha256": {
+        "candidates.json": "fb1ea67a5d8804a5d09387f1baf2541938bae42c7111edbeb27d506f162e6695",
+        "experiments.jsonl": "74eece5847cca19f420a379a6d8820624750d31b96085018d965a7a40db76009",
+        "experiments.sqlite": "5111d5a67e86c4e471215393d79efd045bfd8a9f60bfe5859ae3d405231faa2b",
+        "manifest.json": "2411d1f5d5275e807f0a393a55890d120fdc5cf47c9462afa2adf9e6864670de",
+        "summary.json": "7be9e44e90bcf50c81d7dcec803856cc0694caecc911aa30ebbde7832c83d576"
+      },
+      "seed": 2001
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-mild",
+      "completion_receipt_sha256": "0a57c743fa2423b272ed64c568d0b71fffe70c8afa6135a3d203f5ce051ac573",
+      "core_artifact_sha256": {
+        "candidates.json": "69132b1ab7e628d3bb0d41a99965e44fc3d33334c9f2208276abcd2ce511e924",
+        "experiments.jsonl": "c44b64212e2d67a680cc57bc077f976a75f0837986d0a4bf2df3ff47ab7622c3",
+        "experiments.sqlite": "cd3a340f9a16a026e166f347a978b62cff57abdc8155f24b8d4394404686e941",
+        "manifest.json": "3b4600a7b06f51bfb6d05de68118e7b7f1480756f377579006e7913d21daf557",
+        "summary.json": "4bc64bc662589825e3fe5de4da9e7c380e8d41cbb5b048e0e8bef82505ba1955"
+      },
+      "seed": 2002
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-mild",
+      "completion_receipt_sha256": "f5e5dcb74ab5cc2ceceb2ba29b39ce2ae5bec8722f02add797f8a90cd02c0b4c",
+      "core_artifact_sha256": {
+        "candidates.json": "c2f5715f585c186f82447ecdbd5311b034b163677e1660866e98b63c2b976d5c",
+        "experiments.jsonl": "64dfb3ff6a6459885c42870fc2b04fee554e4d0f885a24588cfd0339f27d3da6",
+        "experiments.sqlite": "a71e3c3129928729311450cc94591587a97db8c1c62a1c55792da555ed6c08ee",
+        "manifest.json": "4d1fba8997b16de7ecaa3edef0e45c5fe4946c4a8ff9aea4d6f6db73abd372c0",
+        "summary.json": "caeea40948111561520c68cf70334bcb9a6316892e31300a257962321cc5a1a3"
+      },
+      "seed": 2003
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-mild",
+      "completion_receipt_sha256": "23ee58eea73d800a7d2e255ef1ed28229db912799c10a9516c8e98e26c231773",
+      "core_artifact_sha256": {
+        "candidates.json": "f3e8355927d57ffb36af2badf0c77893af5af478af5f6be7976bc4b791f10fee",
+        "experiments.jsonl": "3923c39d82253c51503b2483cadc3fe5bfa75725fa3877736169287c4b82c239",
+        "experiments.sqlite": "197360d967f758fe5fc45588b443ee7d9792dabb185f66337d6432105d117e46",
+        "manifest.json": "aea6b4fd2d136d8daf33a93dce41a63891da4d704b30242b6ef260db434dddc7",
+        "summary.json": "bc94944472e0375d6f1c6b40f67fa959f75bbcae2df966aff66964a197f39e52"
+      },
+      "seed": 2004
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-mild",
+      "completion_receipt_sha256": "ef996c642363a6123a89450dd8289c61a7268bff7aeeacdadbdf9767820c7e38",
+      "core_artifact_sha256": {
+        "candidates.json": "12f7f682c31c0a856ac32c071d005a99987b4a5b007b6775bc4a8009ee62dcd9",
+        "experiments.jsonl": "aac5a6c9f46169738e5e76d6e6893de653ad168e4ef0600635ae39b4651e81cc",
+        "experiments.sqlite": "4c870016e4e261153878d9b55bdf54f57765a43cbde0023a838215892ffa11fa",
+        "manifest.json": "66c4ba981f671553fe227bc13c2caadabfe8d48f742a84f00cab4b3f55713cab",
+        "summary.json": "bb09420592ee4d4a41987e3324e90aa337377b936064e2ae040753a7145de502"
+      },
+      "seed": 2005
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-mild",
+      "completion_receipt_sha256": "f200494fefd3f5c1a02a61691f355fc8ceef64892b55e59c8e8ba98f622c1b0c",
+      "core_artifact_sha256": {
+        "candidates.json": "6fcc059330253bc648768fdd666212ec9b77e1f436c170c314e802a7e3aa341a",
+        "experiments.jsonl": "0cacaf4f3a6c77ac2a7c88af4f43002c3d981d72e894188bc1c11bb60009a84e",
+        "experiments.sqlite": "be787411226dcb86ddadae7c6c7e7a52532f410b12d128522099c0263da826dd",
+        "manifest.json": "83913a2f6273ddd1721a27d4010d365cde596b04bf01dcb06cf148ba3208f93e",
+        "summary.json": "eebb5502dcb3c33a8305be7cd47052aab379bf02a8b8692502c7632e4d4c0cd3"
+      },
+      "seed": 2006
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-mild",
+      "completion_receipt_sha256": "e6124edf28066dc21465be14ac3739098997e1dadcc4826fb75d9b16ebae9e88",
+      "core_artifact_sha256": {
+        "candidates.json": "cb206dea3961183e2f56b1ca7e2a945d1a1025bfcdec69cdb703af78e8deb9a3",
+        "experiments.jsonl": "89314ed9ee6d9a2f6cf0350be2760b39528adb3149309c6fb9dfaa782e2df5cf",
+        "experiments.sqlite": "d3774ffaf646a578db5c7d0e14d7df858ca065872c60f3fa298e26d66f75e2f9",
+        "manifest.json": "846cb812b34f086f01efbe0c7fdb6021afd53a10b0c185bb913bf7dfd6455a3f",
+        "summary.json": "21bb4878904b056dafc279c6adbdf20d02d4aa54d8be02f1b07f019d59f41c36"
+      },
+      "seed": 2007
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-mild",
+      "completion_receipt_sha256": "0281ffae176d8ea8f9bca109fdce04be8e3b0e8cae6229eeaafde135f5acbe47",
+      "core_artifact_sha256": {
+        "candidates.json": "7d0a2bdd5ce1f2f33cb5282d2de9a218fe7022e2e87f8dcd31cfbf8cc2266cd9",
+        "experiments.jsonl": "53c7579e537d6fa856ee4fc9de49612d408310409cf2427443c537947699b198",
+        "experiments.sqlite": "bdd2b6d81889aa24e479b3c03c4417ecda7a5e3aa1c53110d4229fc5acbb155a",
+        "manifest.json": "e6fe886a19fbc6bef3624ae666439cbd761220a4751056f219d939d544f7a469",
+        "summary.json": "3000c47a0b38816a34a14946cac8f22d05099e654054c5665ab287d127084f90"
+      },
+      "seed": 2008
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-mild",
+      "completion_receipt_sha256": "eb1cd44f91ff2bb6c1d821fa2e5918bf0e6653349ebbaf817066e7c59287e454",
+      "core_artifact_sha256": {
+        "candidates.json": "90f0ee36dda2a8a757902f9c55b181d9928b6fc79de284e27ba07f097b684e2f",
+        "experiments.jsonl": "2c43181ab762007fc4f5361302efdbae0e840347c0b26b023044bc125110e03e",
+        "experiments.sqlite": "54de29c1f14f07029c2676ef6a06459909d7854c3fea061681fa7503fa050a52",
+        "manifest.json": "6d56c97c5d1674b8ce3276f4bdbdacd2e63d45034a4c6800fa3837f87ecfa306",
+        "summary.json": "bf3925327754b77cb1d322977c84e787a193d9c9219d2c7a6792e409bab25576"
+      },
+      "seed": 2009
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-mild",
+      "completion_receipt_sha256": "594014b4658f629525889f638cb68f09c428cac415daf6d0dd97b9fa3e48c84b",
+      "core_artifact_sha256": {
+        "candidates.json": "e9015f6a905d4ffd310b27a5307abcc88f790e64d5ee027ac1d4e6b28ae252a8",
+        "experiments.jsonl": "1176f1e3d2d1e980982a81b4af0d9380605a3f947fe0954c35eff38e88e54827",
+        "experiments.sqlite": "d12ddf0ba693b5147cab69ea08b59ee27a4ed94fefff29577d1da104a4497502",
+        "manifest.json": "5a9d80c5cf07b7c6573976497b38e981b7bf8c5063f4a8ad01bf0b25b4ce6240",
+        "summary.json": "e39c63d0eb35f29283b0d050855671e8efc4945dd94b821a3ce7931abb7e43c1"
+      },
+      "seed": 2010
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-mild",
+      "completion_receipt_sha256": "3380a54fe530dbe30db4c589047d8f55f63efcd8e750e920d5275619ce6163e2",
+      "core_artifact_sha256": {
+        "candidates.json": "1facbf6d846043e860c258292c79182c4e62f020c2a87ca8577efc7aa0e701df",
+        "experiments.jsonl": "cd734244057a39b3d2bf3732d2d3eac7ad744e06a1b11aa4d5eb7669b15f1852",
+        "experiments.sqlite": "fd20b4020765e475af1e7118a2ba54b852cc3924ca08510eecf458cc3bc7dc59",
+        "manifest.json": "0ebc9ee6979456ee44b40fc3bd179774c0788341fc7963bef9e9835837b463a2",
+        "summary.json": "07317d0121e6603b2dc75f21dfd2040ba1c00f84db6573bcdc2cb15fbdccd0b0"
+      },
+      "seed": 2011
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-mild",
+      "completion_receipt_sha256": "09297c2f21b3c4e5332083fec4b17238c6a0ed681f07758bcca26237fdc82d67",
+      "core_artifact_sha256": {
+        "candidates.json": "ab64a54842580d6ac4e3efc6ae4277156a2661e23c3fe0819482498e33331477",
+        "experiments.jsonl": "c46ef3b3e0ebded987935cadb7036177a49c2bf8a9fc64c37c9aa667f674fa85",
+        "experiments.sqlite": "b8d0f798d4c9cbe8fd411a74dcbae6af43becccc6476e10901b2378869cdaa07",
+        "manifest.json": "5bdea3150a6e421f12de17be0735d6a4871a212f34c9b634ab546dbf34133d91",
+        "summary.json": "daf95f82378238a0ffb43d7ecc4802f17bc71b73e431f6bc5c57b35567ff8ead"
+      },
+      "seed": 2012
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-mild",
+      "completion_receipt_sha256": "11e49142a97940af1e137eef731f17b5ddaa6c8a906226ebf12ba91e1a941440",
+      "core_artifact_sha256": {
+        "candidates.json": "14fc61283c383010a18276630e23509719fc7ff51e430e6907dfd4440b5672b8",
+        "experiments.jsonl": "d7e15344122bfdf4e313bdb61b6f94058e8aeefe070c10a8363f19c116fa4966",
+        "experiments.sqlite": "642dd5187c4745ae9921e834eb296dc8adafd91f40bb59835d6819fa41e053de",
+        "manifest.json": "2749e917a4bdc020ebb347004e8f9975bee16a02b11a10a43425c2a80ee68ff2",
+        "summary.json": "8d8ffa1a86335a4e292b95db866204a782b230a3283a424ab13dff5f160e5e85"
+      },
+      "seed": 2013
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-mild",
+      "completion_receipt_sha256": "f00f5818d515a6786f6de69e3bfd32d55edccef831625da366a6ce3b7c68414f",
+      "core_artifact_sha256": {
+        "candidates.json": "ce7071855b136b3ab72fd294f5e4e4d860061d7c5f35cee2f8521245acda9af4",
+        "experiments.jsonl": "3eb590599f3c4d2a519985bf26b70af0731a3b99f8e9340ed064c4dbae1bc63f",
+        "experiments.sqlite": "580e9df5b64d77033eb7ae2eee311aafd15ac105c0e61107b5258beaa19c07f5",
+        "manifest.json": "3096ff7016a9d0724774131239043a00a775ac82c2afb632ccee16838984d376",
+        "summary.json": "3f982eaeeea840f4208d26a4fcf5ea6e58f301d858c4a2a67603fab9465d5680"
+      },
+      "seed": 2014
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-mild",
+      "completion_receipt_sha256": "6733fdbd503c395bd1258c3c395cb87df40d6af2a83097b23b7742169288304a",
+      "core_artifact_sha256": {
+        "candidates.json": "7531ff32e104ac3726009344ee3d3d573b243d76f6066af5444e3eedf7a91a9a",
+        "experiments.jsonl": "31b329cb8f95fa893227eb2596306df83125630593344f29a7b74be744e290b9",
+        "experiments.sqlite": "fcf486d6165a9d7b580892d95170d567154301caf9cbac733ab14ef3219931b6",
+        "manifest.json": "51cf8a9b8a1b8fed152682bcef7a5bc14828893e3446a77d819b5117eca8220b",
+        "summary.json": "f33ef4f33ee3fa1c2849d7e735ce4449dfd306ea56ee036b9bea00111c717f28"
+      },
+      "seed": 2015
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-mild",
+      "completion_receipt_sha256": "bc55edfca3f4df2ab2024958da03617807016fed522abe5d54e48f019871ab20",
+      "core_artifact_sha256": {
+        "candidates.json": "472748b1a26542b5a0c52ecb9c3ce4cdcb288a6c2b8cd5ef50e21004402ef3a9",
+        "experiments.jsonl": "5775f1cf4ffbc5b8be4985e65a1e9985e9a14aae5e2313a2d44df37c4ea8b0f0",
+        "experiments.sqlite": "5fe2e4a3f82e3ec3566ebd11aa7af7f30a7d20ef2b62efed411eb210a7f16777",
+        "manifest.json": "0954ad7b09bfe6447f171db4541dacca4211a583690f7dcfd44ed4cd38b15a25",
+        "summary.json": "32710ca9533257ee7b691c60c65796e128dfcdb4d1ac8377fa0acab693fbfd2a"
+      },
+      "seed": 2016
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-mild",
+      "completion_receipt_sha256": "4d36ee67aa13f69d938f1f61ea675f39d163bc7fe045cc1af9301ac7c799070b",
+      "core_artifact_sha256": {
+        "candidates.json": "2d5db706c435bf24826d00fd81806b7c15246af685423ee90ba47a66a0a3c2f8",
+        "experiments.jsonl": "3b1e536da926adf83d41a642559dee1e30d323ccee8b6bea3aaa60f2d0bd11b8",
+        "experiments.sqlite": "71e23a5d8dfc0c20ce1c17b9a4ef8246d6292a086fd7dddfaaf63588ade694b2",
+        "manifest.json": "d9cffe84e3f1117c7b2913851eb294891dc8af889f50dd854c0262d55b9303d3",
+        "summary.json": "4b828cb8c3de23f7731b4f1d33f07b9eb162334edf9ec226cb09907f1df4b86d"
+      },
+      "seed": 2017
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-mild",
+      "completion_receipt_sha256": "78af8e963943bfd74a394e9908169624fd02ce6c1b1a20e7193a57bc734f1d92",
+      "core_artifact_sha256": {
+        "candidates.json": "81929e3a7d55181496d641bf5d0c09e2a030e036866456afb6e4ab935f529a0e",
+        "experiments.jsonl": "eb48f95505f241e1e668832d9ba5cac27fe2099b1b03fa763f4e767176bbd066",
+        "experiments.sqlite": "6f030d24985c200342ec6b93408441e93d24c9d2aaa5e3170cb027434beac074",
+        "manifest.json": "44fa8a42aee7ff3cac84e03159fb97b1b67cbef0046a9b938233c7174a6773e7",
+        "summary.json": "d589b12cc486831326a2d272b4e3c5a59c5ffd3db51d4b1676cbd9b05e104068"
+      },
+      "seed": 2018
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-mild",
+      "completion_receipt_sha256": "29543d12e2271beada7c9bac6eb0179a7a49f29e10c5027fab03e0de3218db1f",
+      "core_artifact_sha256": {
+        "candidates.json": "28ce4d73a4b4e7be40a380d98e1f12d06d899fb015a3ff9aa640a73342f08b15",
+        "experiments.jsonl": "33152fa625264f905eeadd733b5a174006e819968e296ed50f83b618302ccea3",
+        "experiments.sqlite": "4c14745d771742be91ad77d675b1d4e37c368300b91726ec3258d78db3b28e27",
+        "manifest.json": "54abb9c7dcdffbbfd1b58e4df82e71ba12aab50c07d57cf1d5ba236f29227dc1",
+        "summary.json": "2550c1663280cc7db5dca1ea9f63dee2f09f9c3fdf4f92250d9d4006647ff602"
+      },
+      "seed": 2019
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-mild",
+      "completion_receipt_sha256": "52d968f02c30f0d2bf693f13e1abc38f93ae674d5cb4f627c2500627cd9b3343",
+      "core_artifact_sha256": {
+        "candidates.json": "a6769062d0fca2fca40c468b9cf8b14acb9305eef6b9095adfc9835be6161a0e",
+        "experiments.jsonl": "20a464cc014b8be0beeca578a6f5b0b9dca9fae34638569e4119367ff20996ea",
+        "experiments.sqlite": "81cf3c836961f82977b812f856527852ce80a370bcf2ebc13e9ccbba63258652",
+        "manifest.json": "cf5b8de43313b467220c1f77f30956edc471b2a76adde26cb3178aa4d8295b0b",
+        "summary.json": "453d957ed7ba1e0236946ee127b9a2d3f94002b047e5fdb1db1bef6a2b9f20bf"
+      },
+      "seed": 2020
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-stress",
+      "completion_receipt_sha256": "f2ea2fd22fcbb49958af112548e390081b2b85d2880a10d16cf9b354c361c31f",
+      "core_artifact_sha256": {
+        "candidates.json": "b499922ed2124f104d6f5a7268102d08ba0093dc1c49185e963b7f552127cd16",
+        "experiments.jsonl": "05e3052b8699d47683924105b08a9ddf8a585caea547572c55216042c2deedf8",
+        "experiments.sqlite": "cdce84aa1bf5fd53c701e20e631c34cf621c48a0531536f402ae85cd542a49bc",
+        "manifest.json": "17a8cefaf464010fb3b702d1f5b427684040c8ef4500f2e1f731c088dd5b5104",
+        "summary.json": "53d5c2899e6a7a7fa351170246591a333dbfeb9aa19ae99cf5d9987abcabf879"
+      },
+      "seed": 2001
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-stress",
+      "completion_receipt_sha256": "c2e5cefda36605938a6bf106ec69918f6ce745c2f8b1a87254a494a206ad0194",
+      "core_artifact_sha256": {
+        "candidates.json": "cff1b4a1edb6a07ed2999dc7689279da7ce20bbbe42c1a3ba922f729cabc180a",
+        "experiments.jsonl": "e86ed1c569199a8ec0cc260a9ce91fb948d629c6d6b514f1c9eaab27683c2938",
+        "experiments.sqlite": "ef64bb2d1d718ec12627f5de287a1968a8779430ec30c9bf35831896607d318f",
+        "manifest.json": "a60c03f141b882e0b6e1f0f32a5de8f8bca6b09c7f2ded5186bee3f999365e2a",
+        "summary.json": "a7bda208df255e8b38044c1148e6f26f564b90885f957d33049122a09e4db776"
+      },
+      "seed": 2002
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-stress",
+      "completion_receipt_sha256": "c8c20905f255884728251f73d92acb9e472e1276c37770dbba621d99da7af256",
+      "core_artifact_sha256": {
+        "candidates.json": "762ef6f8dd4a4931d20c3b8176a7ead28ef17ce4be7e9b5d997143c74fe9db10",
+        "experiments.jsonl": "7b680710f647d0df1baf100b5394a43b1f4a4590cd90d06d31cd747f4381b60b",
+        "experiments.sqlite": "89304045286ee4605c8ab40ecba1f41b9cdbda5268365e7ae29be064dc61afdc",
+        "manifest.json": "a9a1c55442ba1db76c421d52bae4aaed30863e807231cd1388f75346bc458ad1",
+        "summary.json": "8e24433f5001d07d88876fe06f20f08efc8edb52256ccfd9737ae874ec41c5d7"
+      },
+      "seed": 2003
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-stress",
+      "completion_receipt_sha256": "591a54904d07dcec62db7d4450991af0edd732b288da059bace9a83ceaa0c35c",
+      "core_artifact_sha256": {
+        "candidates.json": "143c782d8f79be6701f8ebdbfd41fb33e58d13b71c5de544e457f7be0b266e99",
+        "experiments.jsonl": "69568d680fc3d560ef977e1047d04a29733444429c18c655214cabb1e81df674",
+        "experiments.sqlite": "6b4e8db16dd61070c9f2c1095f762e1043d1a00c90cb555bcf874280c48dda83",
+        "manifest.json": "c5d97f829ab68f67369ce0a517bfca0fa0c845c3ff14887ee7bb5fea7afc3193",
+        "summary.json": "bfac758e3f2dcf11f3917e6ae6f18b32416955a39414de589d3501c6093b5457"
+      },
+      "seed": 2004
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-stress",
+      "completion_receipt_sha256": "aaf84073fc03d5fbbd5baa3c4eb0c5a0fe0baadabfea066987c748f7232a569c",
+      "core_artifact_sha256": {
+        "candidates.json": "7a09d82c426df9c8749e27d1dc31486440b3f71beab15bd0606ec426c59d2496",
+        "experiments.jsonl": "067b7927ea7d1e7555e07aaefcb53889422d922669d6ba0c07be2cbcad693134",
+        "experiments.sqlite": "d0690e31a67f11158a2431312ffd4816c99fb9af6a8c1b7f2544a00a18c0b1be",
+        "manifest.json": "0415e45ffd45c60b436316833a2732520a5e5989683d203c0cf13e41a07c9e94",
+        "summary.json": "9c7d19b32961808f29ce4c95b97471acfd13c3924107d5dc491adcaba188a550"
+      },
+      "seed": 2005
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-stress",
+      "completion_receipt_sha256": "49d72edbe8bdfab180218a1a25847428c8a03e9edf33fc0d5e256191b874374e",
+      "core_artifact_sha256": {
+        "candidates.json": "32e726bbf897db4b135a0a02b57cda893f2093579b68d90e565783114c031b34",
+        "experiments.jsonl": "a978ad8b06ba14050a3ffa81f035b851f839e45e623eb50c15fccef31a8c791e",
+        "experiments.sqlite": "a870d4fbb1d4f03f8fadb5a53ca3273694e4d98ceed17d142b3ecf4aae924465",
+        "manifest.json": "bde98cbfaa0a98112f0ae6c623ab1b982e227a45439990f7b20874f5656484f1",
+        "summary.json": "83c4557b01bc9b22d5cc33a9ab6a924b18e404a89166d267a1a9b098bce01645"
+      },
+      "seed": 2006
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-stress",
+      "completion_receipt_sha256": "0b366d67001f245b8a77d4e1542e7b6eaa4b766b19883598759e59f438fcbfdb",
+      "core_artifact_sha256": {
+        "candidates.json": "5fb0724677fe93c16c990ff4e23f98877504f4b5af1be848f0f1daabbe8d1800",
+        "experiments.jsonl": "776975849ed878295a607b04f0c6df153d0c0e54056ab874c7d85d1932989912",
+        "experiments.sqlite": "6306ccbc00977161063919659c984e006cf064a3cd979bfd2bb8d3638e3e46dc",
+        "manifest.json": "a34eca766e36784ee17eaf2ac262b8e02312a3db01ed7261f9bc16c95132349d",
+        "summary.json": "f47432a4596d51817d43c7713df2852eacb54387859510dbb70a3deb80c6440b"
+      },
+      "seed": 2007
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-stress",
+      "completion_receipt_sha256": "25d8110abcc4a2c3b1f19801faf6a3b69b9f148dd0c6668beabe864ee750bdee",
+      "core_artifact_sha256": {
+        "candidates.json": "f0133cfe85747a5a90332592d7a8083fd763e60f3c20d963c32ae39c40cede62",
+        "experiments.jsonl": "30ccf8d3383c753471d2e465b06519b6d12b8e14cbee554ea15fe257673f49f1",
+        "experiments.sqlite": "f8baf2983db22c2e47e3d17d5a007f5b02864681c5fa40a3a6247d21e4e32c42",
+        "manifest.json": "f7da52807c75cd03a96f1dbd19620836403ec8167d80e5a482a966517b1a1de9",
+        "summary.json": "ecea43e0befd208d8d0bbdc9bafaa4a813a2b1037375a45d25b90738c14670b6"
+      },
+      "seed": 2008
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-stress",
+      "completion_receipt_sha256": "4525a03f925520cfa6cd4bd546d58fef16cb0a50336911c06af4f9adec7c5900",
+      "core_artifact_sha256": {
+        "candidates.json": "4ea3c8881bc94b321f7875251b3f66a13dfa937d8071fe20a7c168387ccf1a6a",
+        "experiments.jsonl": "19bbd58afb814d4aace5fef50469d4c9e1b8e42c41127ae524335c1b094ff62a",
+        "experiments.sqlite": "e33d442c486226c75a6aa5714126f228b9dacefa6738fdce9c76097dd7ed8b95",
+        "manifest.json": "5c4363901733e880659b108e83ae28508fc3578602d66d740fe88dca5e51d044",
+        "summary.json": "7b7435478741866bbf35eb8c3fe9e6c6f9a550e3ac7164a0f797faa9af1adb7d"
+      },
+      "seed": 2009
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-stress",
+      "completion_receipt_sha256": "7c84d0dff60005c6fba504c7c49a3addb9e84b8f5c435b8ee83fe709a6e46508",
+      "core_artifact_sha256": {
+        "candidates.json": "01c2095cacb543e67f45be5a50b6d3ae0c0ef3a4544b99297b75e1e343aca506",
+        "experiments.jsonl": "e42f5ed4673e4b2cca49f074a76b419f8670b2f7220c449ed5180ca86267e99f",
+        "experiments.sqlite": "9a981b9c89472d8f15a2ef98bb1e9ca60e21ba4e780cd952252958290b5ac69d",
+        "manifest.json": "1abd9a3a6411838540ac515551e1f6fa6d4928db8b6ee635cabdafb857d725bb",
+        "summary.json": "4604dc52a42541cd37713a92f14e09678121723c04d8292736c890e4b419cc74"
+      },
+      "seed": 2010
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-stress",
+      "completion_receipt_sha256": "66524be78ea8edfdf72f9d5458856dda90cdfde99071c762824dcf8ce498ca76",
+      "core_artifact_sha256": {
+        "candidates.json": "5574b1254af8a4223e42f1fc39e79c14daa9428c7bcb349aa1a1cdd8109ef0ca",
+        "experiments.jsonl": "c50451ea853efe57a99f6e8a0b2ffa86b0cb08fcdeb9e8bdbd41256ce00a2e03",
+        "experiments.sqlite": "36b17ab5c38d97cae55859dfbd20eb001c738c5510c3779ed8a3122c87f7be5e",
+        "manifest.json": "ee47e690689db081eee74e42a90570cc4dd9652cb0692cfe3865cd9dc7e8927d",
+        "summary.json": "7cab35118cb16ab98b60487128f3928b53963e283202bf9b541e309f5941ccba"
+      },
+      "seed": 2011
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-stress",
+      "completion_receipt_sha256": "c9b40348d09dec34283dbe42a62dcd5c50067034fd8b7e377c777ab68d12d02f",
+      "core_artifact_sha256": {
+        "candidates.json": "d2e1c44e1b52142d14c6b2792497bd2634896fc42c52fcd40925ddae9d9de8ec",
+        "experiments.jsonl": "5df6f5a8f515d0e34d9edcd04437435dfbfa75b3432dbf550cd74943286413c4",
+        "experiments.sqlite": "07957a6a36c510a8287271c983d485d8de44a287c3903d2540df1821d517a8a0",
+        "manifest.json": "5d1fd822d93af1686bfdae1fa7458f8601ec1e49553379faf60b9d2a340c520c",
+        "summary.json": "9b9741977ddaaf04dfe9b7fb154ae07de3c69beaea20928fda85e529d47caae5"
+      },
+      "seed": 2012
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-stress",
+      "completion_receipt_sha256": "ef7cdb7e739afb42b6310f35c2851e75b82ce4bbc9d0632e51bbd368bc3bcb10",
+      "core_artifact_sha256": {
+        "candidates.json": "2174df6ebf7e75d741ca7f79320fb06a939005402839ccc081d7eb37a0ef2599",
+        "experiments.jsonl": "9825beb1055f266b9a04db36505768464c53abf90b45b307e1ac5b88731f12f2",
+        "experiments.sqlite": "f6c10022934698185ed4f5aee2049798172117f2df8e5672ca70ab44db4fafb7",
+        "manifest.json": "002a5786fdcf7641de1c3143fe8ad244f42751ebac54986e23bff8187995c1bc",
+        "summary.json": "e3a03f4cf9a6bd6a16dd0a41b39bc7bddd019b3c305fa3126123b97d6beee494"
+      },
+      "seed": 2013
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-stress",
+      "completion_receipt_sha256": "ddc84ebe5d77f72d2c539c24177351f6a5903ea85d97d4489704e9eb3f1087cd",
+      "core_artifact_sha256": {
+        "candidates.json": "ecc2bcbe592701b8cbeaed094bfd5069d8b4f3eac8c85ac6cac60e5c59f44ff2",
+        "experiments.jsonl": "cf74ff17330351130dcf3c775c808cb811385292f81e03db37fbca2faaa54b6e",
+        "experiments.sqlite": "fe5f36d4363c80b613d1beb3752d374cc53e0a64f805440dd0667f6a14884a62",
+        "manifest.json": "c709c496d09663f537c7cf9ca79e0f52a8b9deb8fd76b39e44e0ad04cf4468b0",
+        "summary.json": "9f56cb517e3c5ae514282f1a6e8d986583da37e879a61f00609697c002f50a92"
+      },
+      "seed": 2014
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-stress",
+      "completion_receipt_sha256": "83522364123c2bba0593322092034e61cdf7850c59cc47c0c490f58a58786111",
+      "core_artifact_sha256": {
+        "candidates.json": "097272c0c910fb75c94b78c082e57a3ff9e8b3c0e2b6ab2197143b3b1a6bbdca",
+        "experiments.jsonl": "92c85c26ebb8e049aa45958c287050857ec953aeafcf9d11807627d663c06dab",
+        "experiments.sqlite": "1f69ef27ba7735b0bab14a2ac5d3c3a80cf6d081819bbb016fda6534c741a83c",
+        "manifest.json": "9d77f31dcfd26d2158848725a00fe4d28c81603bf0e5fb2b487469c713a73e44",
+        "summary.json": "6b47db11bffeee4cc8a83af45d79ceb1d2222451acfc9f3384ae2b634722ab8e"
+      },
+      "seed": 2015
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-stress",
+      "completion_receipt_sha256": "25598381702836d2dcc8e31033479e5560477195124a6e73541b7f20028af352",
+      "core_artifact_sha256": {
+        "candidates.json": "e7994567afec1fc0e162725ff58691e74a67199a71756b21c86d2589f20d4aec",
+        "experiments.jsonl": "011219db17d232188daf20af726b003bcad3cd0e998770eed07de7608f6d54d9",
+        "experiments.sqlite": "99bc6025a7555dbd6117fe12a69251e3183eeb43713cec822f9ab0eeb2978e8b",
+        "manifest.json": "150ad89914e1e9a55708e30779d91c4b0552471665766d799a45c9474992b2dc",
+        "summary.json": "550e90fc9a4754ee782eea21130c232075f63c8e87e433446b9d29b605689174"
+      },
+      "seed": 2016
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-stress",
+      "completion_receipt_sha256": "1f1eff2826f9d954f19d5395ff240f61c846aebb6f466ca2948d58af0d074809",
+      "core_artifact_sha256": {
+        "candidates.json": "0491cdfb9753bf18f698a6be6325a61160688774d970b79f68c3ede9bb516db3",
+        "experiments.jsonl": "3a93a15db072e792d270f97612f4a168372111946c2821d60193c9a62c30d855",
+        "experiments.sqlite": "d94997592822fe695060b5c9b7a39b2fba47f0aa6e311777f48cf7c4e395b022",
+        "manifest.json": "dd64da19dfa651ec96f8470fa2b1791d41151b96111a23688e8d9eddadabaf56",
+        "summary.json": "8ee00c6107db24a9a22503900e2742e9f3fcca96727908acbf59b5119c11ebc8"
+      },
+      "seed": 2017
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-stress",
+      "completion_receipt_sha256": "439a83b7c41cafa4f70a36b83ce4f353866a4a25fbe35cdb5d2c932d70aad4bf",
+      "core_artifact_sha256": {
+        "candidates.json": "1ecdf179d384cb1d3f7d043c1a52d46e7f201e923a4fa6bba7108291facddff9",
+        "experiments.jsonl": "2e82a25d5642e12fe63034ac897af05e870bc8ed6428a949a6da2d048d09f680",
+        "experiments.sqlite": "9f51cadaf4b0c8806c8e473ff980579034c8fd2f6f035162dcd1b973027e9fb8",
+        "manifest.json": "b8d2093107de14f99e0c1d45c3b88270db16d94f75a94fa0aab65176994cb9b5",
+        "summary.json": "ff1f19f9c0b5d6194323a78e42b82e766ef685182aa43b1c2dfd41aac7f65b07"
+      },
+      "seed": 2018
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-stress",
+      "completion_receipt_sha256": "2995b7b2d1e310479f48a251aded2ab862390ab76aa6ff11a897298349aa75e5",
+      "core_artifact_sha256": {
+        "candidates.json": "111b3fd4d00facbb951f78e84727e27dac56da6c631d389ded054c1960a8dc25",
+        "experiments.jsonl": "ef2686ce7032e9b06a2611e574cca19ce0cd2e4615602b965cdfc268e39ec350",
+        "experiments.sqlite": "fb85fc97d5d0b594db9a1c9daf78432b4a5eca6e1db0ffa012710cff47b86cdb",
+        "manifest.json": "86b152d662e17bd03faedb5352a84c25a01c43886c31a696e8a9f4b941760b38",
+        "summary.json": "ca28156dff5ec1ce7959027ccae1f982d6e2d76bc8c92b2385c3210b26ec0391"
+      },
+      "seed": 2019
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "abrupt-stress",
+      "completion_receipt_sha256": "a72d679b8bbe14629493c7834f79983d7bcada47550805424be479dcae41e481",
+      "core_artifact_sha256": {
+        "candidates.json": "bb2bc959fde902aaabb8456cfbf7e5b50ed6139a0816904b5695f023bbf61b29",
+        "experiments.jsonl": "bd1e3ea8f1f24bacba53fb6adbe41f718c612f05b5ffee2cca72a248509796eb",
+        "experiments.sqlite": "3797102ccd09956af37310a9d72ab34b60d03e3a18453c51d9ac42671ffbf35a",
+        "manifest.json": "9fa11c3b90b33c1a73a6d34e2d6ce2f6eb952c0936d8c143029172d35213bac9",
+        "summary.json": "3c8fdfb856f8d46e422be1288f945b0e7f0f93902ba4794a7cf3e318e37d3b12"
+      },
+      "seed": 2020
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "recurring-stress",
+      "completion_receipt_sha256": "24a5b053b8f2c6a9d64dbdc240dc740db65dfc0bd252668c610ecf16730279a0",
+      "core_artifact_sha256": {
+        "candidates.json": "7ea947854a5cff6020aa114ab09466ed6fa89af1e8a3a8d10a8fef7fa7076561",
+        "experiments.jsonl": "e737104e236c563e6f39b0698fa789752ebfdf7001f9c2796f30252641f5dc8a",
+        "experiments.sqlite": "76e6eba14ff714538245f2f5704fe2b24c30adf7f01c8e3315861a932bb0d85c",
+        "manifest.json": "55649e323f98791575728d8943195e04c35c47e7233161fff7ffaad26eaf215c",
+        "summary.json": "fb888f20683dd1266fe69fe2aef630177968883fef2700648e53e3a347e07936"
+      },
+      "seed": 2001
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "recurring-stress",
+      "completion_receipt_sha256": "19581b980b1b0cee7750e0dee9eabcb3b998b03c911352636cd664878dc677f1",
+      "core_artifact_sha256": {
+        "candidates.json": "0cd573591f6356c5de4fbac0871479be0e13dffe6023cee219583ff2fc6fccf6",
+        "experiments.jsonl": "2288ad6f42599d31499765ac1654d4f46ba116cf606669a56fccd044c0bc5284",
+        "experiments.sqlite": "5491efcec79e7cf0e32001463f9e3f6eb30a8d9af067adcf52f6020882630d75",
+        "manifest.json": "af80343ffd22c830dfd2b0b7a2616d8f50475321dc5fb657a89a5b0019205188",
+        "summary.json": "1cb2c05a171aea30b12eaaff52b9720a3754b210b3c4d268e85755527bbf783d"
+      },
+      "seed": 2002
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "recurring-stress",
+      "completion_receipt_sha256": "d681d42436318e8cfbbd82b11011297cadd0865aaecf994573f1eb42cbeac9e4",
+      "core_artifact_sha256": {
+        "candidates.json": "c1fb38ea4a62a4dd1ea76f283bb8021f60dbac7be519d2dafbbf9fefc87098ed",
+        "experiments.jsonl": "afd0bad3778231273d890bf4f6d826d69359b12b7c1e461723f76afba657c425",
+        "experiments.sqlite": "4ee1d8541d9eb8fbe9473f5ee7b86f95ead8d7cfdc537457b4616796e0e0d99e",
+        "manifest.json": "3f8bedf078408f3f4ba7b1616f0cae20f02cf78473c3eae84b89be4db7c56f76",
+        "summary.json": "d3161a8e806cf4dde2989f0aca5953d481a8bb9425817b80d4d495e50f506476"
+      },
+      "seed": 2003
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "recurring-stress",
+      "completion_receipt_sha256": "ca71f4865d264d8d733a129d187b9b17f2b23db5138364ed7bb0dea7b572d724",
+      "core_artifact_sha256": {
+        "candidates.json": "31f9ebbf8d9c2f7be6d535363aacc92b0b391698a6929d1493545bf0c996a88e",
+        "experiments.jsonl": "f7956b8205cd763150073bcfbab5e6bacb5af0ffa3f310713cfc5aaa04b43a10",
+        "experiments.sqlite": "1e01e0ffacad5acb1aecff24963eaaedb6ed4a9db217136e2f622716187d94a7",
+        "manifest.json": "ab9151b7e65c8ac461fec9645bf747e446917ab358f008ea5cd4adbfd2818100",
+        "summary.json": "21268962f63994cd73f3d0b1c0a39f91512b8d2c15e507e91d16fba3a65d83ca"
+      },
+      "seed": 2004
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "recurring-stress",
+      "completion_receipt_sha256": "bcb2200ac2e34b76a33360a7a8471a4c3d5c3ebe91a8014bf4c0a1e16875526e",
+      "core_artifact_sha256": {
+        "candidates.json": "634bf607e16934524df1850a826fedd55c56db6aa5022e48b97746ea406b1114",
+        "experiments.jsonl": "e6711fcec7fbb6b92cffa18a0cac9bc85f332c8896e43ec760ead0904cf9ad46",
+        "experiments.sqlite": "586d99f684650ae82b399822caee56326c6b13100762a8535f5ee2d1e03e05ed",
+        "manifest.json": "cf15f5670b20929efa76a609193c076f6f5413000dcd86205fe3b062671f9a29",
+        "summary.json": "e5c496c42aff7a565928418d714b50a4e868283fbf7eb3ecb0b56b67ffa61c72"
+      },
+      "seed": 2005
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "recurring-stress",
+      "completion_receipt_sha256": "0ee7d445429f0c6da30ec6ff3ff8df0ca937ab3c0a940af37ba7b0b00911fd64",
+      "core_artifact_sha256": {
+        "candidates.json": "473fb3dda7ab2cb0770b325be19aa05b545e569cf720ad96d13c5dbe0e2e7332",
+        "experiments.jsonl": "e7c5fb7fb61cf099ec821a3a50de2e81d62fe3590345a3505af24d206eade957",
+        "experiments.sqlite": "499a2dea0a69647c679a7f5726a9419326e9ea9fb04f949be126b897085c4c1a",
+        "manifest.json": "753af72086ab17ea898e30eaeeac86f26e55bc0495f11be663ebc8bd1820d3fc",
+        "summary.json": "6af121b5e248c917145939dbaeb139756df3f3a5bdf1834b6747419f1de07f0d"
+      },
+      "seed": 2006
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "recurring-stress",
+      "completion_receipt_sha256": "51a7f86df7420d9b4b2db2426877079a8b31fc5c31a3b2f569b45df869dec04f",
+      "core_artifact_sha256": {
+        "candidates.json": "4fa37a1856952f8c5cf32cf9a8487dee1a6d880248222090d40adeafcf44f3ba",
+        "experiments.jsonl": "8d6efc4c7e5cc584927b937a5aa1abceea3e3d19c93c15fb3059f6e1d245c63b",
+        "experiments.sqlite": "2c9a23f79f56249c71efac1c7425c0d265904fb463075551b026fa9849e99af0",
+        "manifest.json": "ff2c7654b70c45f090502b15c15ad7f82f7eb0d3f80abf9d37010c1e04139dc7",
+        "summary.json": "e870a8de6499ed4a89f4d0be2c666b82dae41a3a7456ddab9798effb933f9dfb"
+      },
+      "seed": 2007
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "recurring-stress",
+      "completion_receipt_sha256": "4b9e8d564e0313963e75f04576f8c4b2b00755989f6e63f4ac7eb04e9bb16632",
+      "core_artifact_sha256": {
+        "candidates.json": "c599b35d31b537898810764124da67bbf41be995d6302faa251b1b4feb1b7471",
+        "experiments.jsonl": "3a486e0ba05a682339e420ee7f0a5512cf0d781af5748cd32a369293b701fb14",
+        "experiments.sqlite": "ab436c8498d7478b339f1596a9294c7981721007b05359d6b8d9839e148c713c",
+        "manifest.json": "158ba749dd074ecc05da18f1555b328fed89f38d514cc36b1cf2ab9eb71b3453",
+        "summary.json": "87e01bed353e2fcb5fc50fced0f214205ac8495ed8447669cf54a448eb8eac30"
+      },
+      "seed": 2008
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "recurring-stress",
+      "completion_receipt_sha256": "4084ad79212f2ead757192190fc7e80106f9dc3177d105a28d82bf64281f0747",
+      "core_artifact_sha256": {
+        "candidates.json": "642d23002edc5ee25828c4668f8406f4b1645d12884dc630ff9d03f1a686c68e",
+        "experiments.jsonl": "aa89e4be31e02c625254075d0b1827c8b0f86feec6489d7822c56b9a4b967ab2",
+        "experiments.sqlite": "8677518f8bd56d3b46d3cf19fe153ba8267c3fa05a3a332af2134a30cd9f2224",
+        "manifest.json": "0dbacd55d0053dba64ea71fe11d36e4b9c2f00d8a8dc439a777d6048b2fa4264",
+        "summary.json": "e933b2ad27ff5b845b2774316dc543ee4299933e754a53acfc2ea46a59aff154"
+      },
+      "seed": 2009
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "recurring-stress",
+      "completion_receipt_sha256": "00839531253649f3d2fe1fdbbff7dd3dfe51e993637ff79a9a9a9664a04284af",
+      "core_artifact_sha256": {
+        "candidates.json": "52c1bdc8fd83884d6b322d7a92282d1866b9cd355998f452c74caf0a42170063",
+        "experiments.jsonl": "fad0ec3b7d1953432f7749f107280e1ee07c8ed6db800ddb3547276b53feec9f",
+        "experiments.sqlite": "13bc2c19ddc80747bb28687c71b55582802284c45b38d9c2ae335b7fe870544a",
+        "manifest.json": "d918136a176dc38b8bb931aa616fc58e5a0ae4bcf5b0111097da4766a3356629",
+        "summary.json": "5c3d6e9e0f33410c5e38ca05623aafc38158820ac6c5aa5ce6c389efb6e06169"
+      },
+      "seed": 2010
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "recurring-stress",
+      "completion_receipt_sha256": "89d4b5fe2cda51eaa2d48cc0aced3d10d02a70a849165ce2e5af4b1f72e9de5f",
+      "core_artifact_sha256": {
+        "candidates.json": "f8800b21f91dc0c3d8cfa5d243ec32d497789f84a088a623c062e95de08786ab",
+        "experiments.jsonl": "103633d269a1e3a0915526d22fbcb54f58a796c1471b8e0670989a7145307b06",
+        "experiments.sqlite": "bdef26196f2918c7d2e2858267954f4e49b264dfa48a0619ff84b4d6bdaef9f9",
+        "manifest.json": "b91d6708dde1482ff943f9e1c19f53dc230f136ec1e9beda46aac0becd105739",
+        "summary.json": "b45f3919e32676789e8e4d2e8451a11c660605377b2357fa074caf0fcf535aa5"
+      },
+      "seed": 2011
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "recurring-stress",
+      "completion_receipt_sha256": "16ee93543e32512f7403b158b5035aca24b6caee86a4c3f55a4f6efc4e460bed",
+      "core_artifact_sha256": {
+        "candidates.json": "aa94f80603426de921891ba3cc2949a9f6d3c7b6e341ec43e296af9e09b9d405",
+        "experiments.jsonl": "28e0b3e1dbe9f805b9d09e737cc78e3e18f763ca7fb05c69a0d26d8ed83c0ee0",
+        "experiments.sqlite": "9d4c0d47c74ede429b53df481b9f68fed67440fef705dfbaef5e64bd29c9e7a4",
+        "manifest.json": "550ae206872bc5d82ce775edd1c2dd47e9165a008135081f3db3f1d09e9773fe",
+        "summary.json": "8e846f20dd2992a37d47e18442b7df16d53017c7fbe4b8ce24c780fb8f7d5bca"
+      },
+      "seed": 2012
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "recurring-stress",
+      "completion_receipt_sha256": "2ea8b97e8bf2411945b879cb60a8e26d07b04801cfaa62501770f767e34c0772",
+      "core_artifact_sha256": {
+        "candidates.json": "883fecf309adc198a3bc34389e95c29b78225b9a996b0f1308df4bc284ff9640",
+        "experiments.jsonl": "3d7e0bba40ede727e4210f7c0662caeb9cb70a70442d25cc344dd18e9e00d2f3",
+        "experiments.sqlite": "191764dfd2686db841344c1c943ef5d8e10b749908b8d60e50809090ff9fa240",
+        "manifest.json": "7c6b1c2f3b21a09587c16611c75df00b1b83a1922747a689c31fe73a63ab1e15",
+        "summary.json": "1bbc8c071808ac252f2fd4216c35e08892697db194ebc71a74da5fb831787469"
+      },
+      "seed": 2013
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "recurring-stress",
+      "completion_receipt_sha256": "53fbccf7651582cde4c83289950fee5aa9915af8867d677b6c7ae3ca2322a129",
+      "core_artifact_sha256": {
+        "candidates.json": "5b4a82bd17366900a1ca5fe5d53eb3bdeffbb3ee7fc60b03b252d0d6a0af7890",
+        "experiments.jsonl": "99c8f3467f5439024279f72e21a56df1245a4d1ecc7c46efd53d5de416aa1b9e",
+        "experiments.sqlite": "30efbf67f4d40b7fda665397b30df08be65897a980f93a7714448b9bfec0ec34",
+        "manifest.json": "04d394bf70cd4950a0a675e701edcd161ca00261eef9ef5e639499ea7c764750",
+        "summary.json": "2b7afd42db614d3b6fc8089d778628cb6294f599f8aaca872d9845675911baf3"
+      },
+      "seed": 2014
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "recurring-stress",
+      "completion_receipt_sha256": "69229a5122577b7f09ce579b80a3c917118561b24b66be2008ab4f87010b68b6",
+      "core_artifact_sha256": {
+        "candidates.json": "3df8bf14100a9483fb5422a5eec12e4ead9cd33b2d037202a5ba6bf0dcb3d63e",
+        "experiments.jsonl": "83fef7db3c49a47a69385a8c528427fdbddb7b6d6588d268e7ba1a03456f55ab",
+        "experiments.sqlite": "28320cebdb3f2ee1fcfcf06f427c2db307b8e79c23e10defed389c5dc3425e0c",
+        "manifest.json": "e194697d167154e79cc256957f3a2dd5fe87f8efe25f10c9ebe6f5bb64332e02",
+        "summary.json": "7375df4b9f1ce2e6a592666ce7f9b9f5e5d71c8b0fd2fec1a8937815c6bbf913"
+      },
+      "seed": 2015
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "recurring-stress",
+      "completion_receipt_sha256": "64b7bb28bfcc3775d3434ee7e75e5896e67162ce054fe0b6d66cc3da29398d40",
+      "core_artifact_sha256": {
+        "candidates.json": "da290f4085fcdbebb03d1a53be26c0877e005590098136b0dfd7b379fa779cce",
+        "experiments.jsonl": "d70b3e33839821967cd6312e8c01f7e41d599f9701679d68bdc6c94b54e28f16",
+        "experiments.sqlite": "6acbbae8c16000747a4881080861eaacaf25ee2a26a1591623e6cfb8f01a3870",
+        "manifest.json": "7bda2c65358dd69e01d29abe18dcd294b8c960b16e2e6b283a1a1871ad54af0a",
+        "summary.json": "061a53fec5e8eefd215ef86973ad53894407be6a60456c6e27133e87a58fd963"
+      },
+      "seed": 2016
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "recurring-stress",
+      "completion_receipt_sha256": "e5597fe4fcb01cd58e7fb195c9bf4ccbcb776a8e8970f6041acb6b80094569cf",
+      "core_artifact_sha256": {
+        "candidates.json": "ae4373fe8d0350df215d180cd9bdfd4be9e72db9de26cbe948ffa48c858d7f13",
+        "experiments.jsonl": "02dce920ef10c65b3cb52089ecc2d57085febefa112fb6b6a48c42049d70f52d",
+        "experiments.sqlite": "429757f7f8480e3a43ea964a875b1f6372a5e4d963aece4ea32f5f173435e187",
+        "manifest.json": "ed16a89d4ba6ff641f83fe9f64e9f33c0f1f77609f91a30e54f231b6aff8324f",
+        "summary.json": "95d45a0984ac722c22a512c7c03b460fc77d1235a5c4ea629951a10ddfe7d632"
+      },
+      "seed": 2017
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "recurring-stress",
+      "completion_receipt_sha256": "e15e73ccd3226fb46904cb88d28f9dff00912af8ee84f2194294aea4b9e00823",
+      "core_artifact_sha256": {
+        "candidates.json": "a3413074ef8e20ca3c5c203760970baae87b94c1e961bc4c19f6eaecb19b1d41",
+        "experiments.jsonl": "5cd92dce4fb24acb6f03e8e68f6c341c676be14f96cff0355aec174575b774ae",
+        "experiments.sqlite": "17e2b9b5ad3c3635b0ab71de882e97855cd4299cd9647f2f863eb4de105f9155",
+        "manifest.json": "32d5cc635eb9e6937fccedee9792154d2087abdb3dc537bf46f9dc2c6a61fc15",
+        "summary.json": "1d9eab1f99bb30f28084d4a77e0994229a13c3187c691722b7ec38ef07a65ee4"
+      },
+      "seed": 2018
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "recurring-stress",
+      "completion_receipt_sha256": "4a71fd516cd26040dd7967048034a476561dd85bb2dfba5ac2f803586f5b5a76",
+      "core_artifact_sha256": {
+        "candidates.json": "77e5d1d6182bee4474b8ffe71fd21ef527d5580989f2505099264e5b249738d2",
+        "experiments.jsonl": "a91f9e7b85ad7ed19fefb5754c60508b23678066baa11eb06c1cc2f60d40cda3",
+        "experiments.sqlite": "97704b3982d65a97cf71acaf29e703a0ef42c3b2921bf008fd82fa42d2b4370d",
+        "manifest.json": "125b3986474b6b670fcf3ec9e4fc25d5bdcf324603003bab62d6fc58d1c35361",
+        "summary.json": "c4c57c20e0a66438974e22914edb2b6f8201fd61954c3af3ba25007148da103d"
+      },
+      "seed": 2019
+    },
+    {
+      "attempt": "attempt_0001",
+      "case_id": "recurring-stress",
+      "completion_receipt_sha256": "cd3c03eb60a88180c5e0f01766eecf03a28188a87f4fe249552de9be6a3fc7c9",
+      "core_artifact_sha256": {
+        "candidates.json": "91deba66bfe6052dfb293c56b7dc8baf7d0b1b943dead101243be5336d12bec6",
+        "experiments.jsonl": "18987f39772fe608fd67bd11a6618f7535ba6ae146f04d97448935df7bc64be5",
+        "experiments.sqlite": "25ce0ae7a81550d98198b90d35768e9b403075976b0707dd16de8ad91e41ca05",
+        "manifest.json": "a98d79648354dab7fa83bb92eaa08e44f85a65cc6c8c8505217cba238bc5d0a1",
+        "summary.json": "a41e3c8e600e72ec3d8b67cc39c2608ec0c7632ee90e5482ea5f47687f4981b8"
+      },
+      "seed": 2020
+    }
+  ]
+}

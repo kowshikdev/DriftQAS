@@ -1,0 +1,21 @@
+{
+  "complete_paired_episodes": 80,
+  "files_sha256": {
+    "audit_receipts.json": "b1be9cfebd336ccd929cecc9fd4fc69f2b07c902dc27a2fbeba706ae29607a78",
+    "calibrated_policy_summary.csv": "0ad694b3259000d65eaf87a0bcd2f3a4fbb40d96233f60fcfc452e030b486026",
+    "calibrated_seed_coverage.csv": "f25b6d3393cfd56a29428a8cf8d6712bf32429e68bc661430f9c5eb6213eb109",
+    "calibrated_summary.json": "59838a3147ade8d80ecd13a51a8133cda1225430272e3793aea8c61d3246a159",
+    "diagnostics_summary.json": "76047f2ea95d206fcf1590f9ab19b0543eed0ad0759c57486618ccc1e80dd1ce",
+    "episodes.csv": "af5d262b48400775a08d9cd7c4893921aa5a3aacd5f2e22bc44b7c607613b431",
+    "exposure_episodes.csv": "79fd61415b7d87e79b7601e2a7ee59f096c1dca8ca33283a3ef67a52a09c02f9",
+    "paired_comparisons.csv": "4ecb852749c75d8529c88fdfb1cb8ff9652b7c0b9435997a358c59fc15063553",
+    "policy_summary.csv": "976b885c2e1e35515b53f0cb300f9ddd9e3ca964560b829c28a8c631b0fedd62",
+    "report.md": "e56e1d9c65e65be5551c259b4826e596024700830428b4d876cdcc526824b985",
+    "suite_manifest.json": "ad939d67fbc2bc8561dba546b7572574125f3b68612cd6904861a3c97e8fd7ec",
+    "suite_status.json": "e6cc397eace6c4fd4736bf6a59d1b5e790c51692e9c896cd3302dbbae87b0dd6",
+    "suite_summary.json": "c038f2a5f99b7d3fe829907aa0091aa8822e64ef19b0bd7b300806a3ccc936c7"
+  },
+  "schema_version": 1,
+  "scope": "Compact verified reports and raw artifact hashes only. Raw databases, counts, QASM and original completion receipts are not included. This export cannot be used as input to analyze-suite, diagnose-suite, or interval fitting/evaluation. Rerun the declared configuration to regenerate complete suites.",
+  "suite_protocol_digest": "424b12c357430b32fbde3d6b24ea7d1ba7a53bdbf1ea36765099a99135090980"
+}

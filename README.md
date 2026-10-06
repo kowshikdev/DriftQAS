@@ -115,7 +115,7 @@ python -m driftqas analyze-suite --suite-dir results/ising-pilot
 ```
 
 Each suite freezes its case/seed/policy matrix, primary comparison, code digest, and resolved
-versions before execution. The primary contrast is DriftQAS minus reuse in mean selection
+versions before execution. For the original GP suites, the primary contrast is DriftQAS minus reuse in mean selection
 regret; negative differences favor DriftQAS. Epochs and cases are averaged within a seed
 before seed clusters are bootstrapped. Missing pairs and damaged artifacts block reporting.
 Intervals are withheld below five seeds; five is still a small development sample.
@@ -157,6 +157,13 @@ matching freeze and disjoint seed partitions; changing source, versions or setti
 rejected before execution. The primary contrast is circuit-aware racing minus blind racing
 reuse, not a claim of beating every baseline. Stable/mild/stress cases remain in the primary
 average. Coverage must be interpreted alongside interval widths and seed-level dependence.
+
+The frozen **20-seed H₂ held-out study** reduced mean regret by **66.4% versus blind racing
+reuse** (paired difference −0.00710821; 95% interval [−0.00909278, −0.00505381]). It does
+not establish an advantage over the GP, fresh, global or uniform controls. Calibrated joint
+coverage was 19/20 seeds, with wider intervals; the secondary Ising development study
+showed no selection benefit. See [all results and limitations](docs/exposure_results.md)
+and [the verified exports](examples/benchmarks/v04/README.md).
 
 ## Budget and scoring
 
@@ -208,6 +215,7 @@ advantage, or hardware-speedup claim is made.
 - [Development result interpretation](docs/development_results.md)
 - [Repeated-seed benchmark protocol and ablations](docs/benchmark_protocol.md)
 - [Exposure, racing, and frozen interval-calibration protocol](docs/exposure_protocol.md)
+- [Frozen v0.4 results, resource use, coverage and evidence](docs/exposure_results.md)
 
 ## References
 

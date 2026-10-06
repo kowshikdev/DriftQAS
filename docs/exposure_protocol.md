@@ -173,3 +173,7 @@ New exports: `exposure_pairs.csv`, `exposure_episodes.csv`, `prediction_diagnost
 `diagnostics_summary.json`, `calibrated_seed_coverage.csv`, `calibrated_policy_summary.csv`
 and `calibrated_summary.json`. These are derived reports, not replacements for complete
 event logs, receipts and manifests.
+
+The [completed study](exposure_results.md) reports every control, per-case effects, actual
+shots, calibrated coverage and widths. Verified compact exports and the raw-evidence
+catalogue are in [the study directory](../examples/benchmarks/v04/README.md).
