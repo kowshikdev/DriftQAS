@@ -53,6 +53,10 @@ coverage/ranking checks are required before a research performance claim.
 - Periodic refresh rechecks up to three previously observed leading candidates every epoch.
 - DriftQAS refreshes leading candidates whose compiled footprint is exposed to observed drift.
 
+Three additional DriftQAS ablations isolate global relevance, removal of the forced refresh
+queue, and fixed high-shot search. Their definitions and repeated-seed inference are in
+[the benchmark protocol](benchmark_protocol.md).
+
 Outside refresh actions, informed policies select by predicted mean minus 0.5 model SD.
 An unseen current candidate receives the low-shot allocation; a promising measured candidate
 is promoted toward the high-shot allocation. Current-epoch repetition is capped at roughly
@@ -88,7 +92,9 @@ recommendation. A single development seed is not a statistical research comparis
 
 ## Remaining milestones
 
-The complete plan also calls for held-out repeated-seed studies, broader drift/mismatch
-controls, ablations, calibrated predictive uncertainty, a source-aware acquisition algorithm,
+Repeated-seed suite infrastructure, isolated ablations, and coverage diagnostics are implemented.
+The complete plan still calls for completed held-out studies, broader drift/mismatch
+controls, calibrated predictive uncertainty, a source-aware acquisition algorithm,
 architecture mutations, and noisy parameter-training costs inside the online budget.
-Automatic interruption recovery and a QPU/calibration adapter remain unimplemented.
+Suite recovery skips completed episodes and preserves failed attempts, but mid-episode
+continuation and a QPU/calibration adapter remain unimplemented.

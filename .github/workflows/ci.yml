@@ -15,3 +15,5 @@ jobs:
       - run: ruff check .
       - run: pytest -q
       - run: python -m driftqas run --config configs/smoke.yaml --output results/ci-smoke
+      - run: python -m driftqas suite --config configs/suite_smoke.yaml --output results/ci-suite
+      - run: python -m driftqas suite --config configs/suite_smoke.yaml --output results/ci-suite --resume

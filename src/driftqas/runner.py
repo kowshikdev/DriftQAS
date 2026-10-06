@@ -1,11 +1,9 @@
 """Run chronological comparisons, then audit locked recommendations offline."""
 
 import json
-import platform
 from collections import defaultdict
 from dataclasses import asdict
 from hashlib import sha256
-from importlib.metadata import version
 from pathlib import Path
 from time import perf_counter
 
@@ -16,7 +14,8 @@ from driftqas.calibration import snapshot
 from driftqas.circuits import build_bank
 from driftqas.config import Config
 from driftqas.evaluation import audit_energy, sample
-from driftqas.policies import Observation, Policy
+from driftqas.policies import POLICY_COMPONENTS, Observation, Policy
+from driftqas.provenance import runtime_identity
 from driftqas.storage import Store
 from driftqas.tasks import make_task
 
@@ -25,7 +24,8 @@ def measurement_seed(*parts: object) -> int:
     return int.from_bytes(sha256(json.dumps(parts).encode()).digest()[:4], "big")
 
 
-def run(config: Config, output: Path) -> dict:
+def preflight(config: Config) -> tuple:
+    """Validate all resource requirements without preparing or executing circuits."""
     config.validate()
     task = make_task(config.task, config.n_qubits, config.field)
     initial_calibration = snapshot(
@@ -39,9 +39,19 @@ def run(config: Config, output: Path) -> dict:
     )
     groups = len(task.groups)
     reserve = int(config.budget_per_epoch * config.confirmation_fraction) // groups * groups
-    seeds_cost = config.initial_seeds * config.low_shots * groups
+    seed_shots = max(
+        config.high_shots if POLICY_COMPONENTS[name].allocation == "fixed" else config.low_shots
+        for name in config.policies
+    )
+    seeds_cost = config.initial_seeds * seed_shots * groups
     if reserve < 2 * groups or seeds_cost > config.budget_per_epoch - reserve:
         raise ValueError("Budget cannot fund initial seeds and independent confirmation")
+    return task, initial_calibration, reserve
+
+
+def run(config: Config, output: Path) -> dict:
+    task, initial_calibration, reserve = preflight(config)
+    groups = len(task.groups)
     if output.exists() and (not output.is_dir() or any(output.iterdir())):
         raise ValueError(f"Output directory is not empty: {output}. Choose a new run directory.")
     output.mkdir(parents=True, exist_ok=True)
@@ -49,26 +59,8 @@ def run(config: Config, output: Path) -> dict:
         "configuration": asdict(config),
         "task": asdict(task),
         "reference_energy": task.reference_energy,
-        "python": platform.python_version(),
-        "versions": {
-            p: version(p)
-            for p in (
-                "driftqas",
-                "qiskit",
-                "qiskit-aer",
-                "numpy",
-                "scipy",
-                "scikit-learn",
-                "PyYAML",
-                "matplotlib",
-            )
-        },
-        "source_digest": sha256(
-            b"".join(
-                p.name.encode() + b"\0" + p.read_bytes()
-                for p in sorted(Path(__file__).parent.glob("*.py"))
-            )
-        ).hexdigest(),
+        **runtime_identity(),
+        "policy_components": {name: asdict(POLICY_COMPONENTS[name]) for name in config.policies},
         "scope": "frozen-parameter finite-library selection under synthetic CX noise",
         "seed_convention": "SHA256(seed, task, candidate, calibration, phase, repetition); "
         "shared streams across matched policy actions; "
@@ -100,6 +92,7 @@ def run(config: Config, output: Path) -> dict:
     try:
         for name in config.policies:
             policy = Policy(name, bank, config.seed, config.drift_scale, config.forgetting)
+            minimum_shots = policy.minimum_shots(config.low_shots, config.high_shots)
             repetitions: dict[tuple, int] = defaultdict(int)
             policy_started = perf_counter()
             for epoch in range(config.epochs):
@@ -187,9 +180,9 @@ def run(config: Config, output: Path) -> dict:
 
                 if not policy.observations:
                     for candidate in bank[: config.initial_seeds]:
-                        observation, _ = evaluate(candidate, config.low_shots, "seed")
+                        observation, _ = evaluate(candidate, minimum_shots, "seed")
                         policy.add(observation)
-                while budget.search_remaining >= config.low_shots * groups:
+                while budget.search_remaining >= minimum_shots * groups:
                     action = policy.choose(calibration, config.low_shots, config.high_shots)
                     if action is None:
                         break
@@ -222,6 +215,16 @@ def run(config: Config, output: Path) -> dict:
                     observation, _ = evaluate(candidate, shots, phase)
                     policy.add(observation)
                 recommendation = policy.recommend(calibration)
+                means, uncertainty = policy.predict(calibration)
+                index = next(
+                    i
+                    for i, candidate in enumerate(bank)
+                    if candidate.candidate_id == recommendation.candidate_id
+                )
+                prediction = {
+                    "predicted_energy": float(means[index]),
+                    "model_standard_deviation": float(uncertainty[index]),
+                }
                 store.append(
                     "locked_recommendation",
                     {
@@ -230,6 +233,7 @@ def run(config: Config, output: Path) -> dict:
                         "candidate_id": recommendation.candidate_id,
                         "search_shots": budget.spent,
                         "confirmation_shots_reserved": reserve,
+                        **prediction,
                     },
                 )
                 observation, confirmed = evaluate(recommendation, reserve // groups, "confirmation")
@@ -245,6 +249,7 @@ def run(config: Config, output: Path) -> dict:
                     "budget_limit": budget.limit,
                     "by_phase": budget.by_phase,
                     "policy_elapsed_seconds": perf_counter() - policy_started,
+                    **prediction,
                 }
                 outcomes.append(outcome)
                 store.append("epoch_outcome", outcome)
@@ -311,6 +316,9 @@ def run(config: Config, output: Path) -> dict:
         manifest.update({"status": "failed", "error": str(exc)})
         raise
     finally:
+        try:
+            store.export()
+        finally:
+            store.close()
+        # Completion is published last, after both event representations are closed.
         (output / "manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
-        store.export()
-        store.close()

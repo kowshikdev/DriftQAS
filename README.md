@@ -13,11 +13,13 @@ prototype with explicit measurement costs and independent scoring.
 - Explicit grouped Pauli measurements using Qiskit Aer, including within-group covariance.
 - Local CX depolarizing noise with stable, abrupt, gradual, and recurring profiles.
 - Six allocation policies: random, restart, unchanged reuse, global forgetting,
-  periodic refresh, and DriftQAS.
+  periodic refresh, and DriftQAS; three isolated DriftQAS ablations.
 - An ideal-energy prior plus a Gaussian-process model of noisy residuals.
 - Circuit-specific discounting and a transparent refresh/promotion policy.
 - Protected confirmation budgets, reproducible measurement streams, SQLite/JSONL records,
   CSV results, plots, and OpenQASM 3 circuit exports.
+- Declared repeated-seed suites, separate development/held-out seeds, paired bootstrap
+  intervals, empirical coverage diagnostics, and verified episode-level resumption.
 
 **Scope:** candidates and parameters are frozen before the online comparison. This is
 finite-library selection under synthetic entangler noise. Preparation cost is reported
@@ -41,7 +43,6 @@ py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m driftqas run --config configs/smoke.yaml
 ```
 
-Use the feature branch or PR checkout if this implementation has not been merged into `main`.
 Calling the virtual environment's Python directly avoids PowerShell activation-policy issues.
 
 ### Linux / macOS
@@ -89,6 +90,44 @@ Small checked-in example results are in [`examples/development`](examples/develo
 See [`docs/development_results.md`](docs/development_results.md) for their interpretation.
 They are single-seed development runs, not evidence of research superiority.
 
+## Repeated-seed benchmarks
+
+```bash
+# Read-only validation and resource bounds for the proposed full study
+python -m driftqas suite --config configs/benchmark_ising.yaml --plan
+
+# Small workflow validation: 2 cases, 3 seeds, 9 policies (intervals withheld)
+python -m driftqas suite --config configs/suite_smoke.yaml --output results/suite-smoke
+
+# Small Ising development pilot: 2 cases, 5 seeds, 9 policies
+python -m driftqas suite --config configs/suite_pilot.yaml --output results/ising-pilot
+
+# Verify completed episodes and retry unfinished episodes in a new attempt directory
+python -m driftqas suite --config configs/suite_pilot.yaml --output results/ising-pilot --resume
+
+# Rebuild reports from a complete, verified suite without simulation
+python -m driftqas analyze-suite --suite-dir results/ising-pilot
+```
+
+Each suite freezes its case/seed/policy matrix, primary comparison, code digest, and resolved
+versions before execution. The primary contrast is DriftQAS minus reuse in mean selection
+regret; negative differences favor DriftQAS. Epochs and cases are averaged within a seed
+before seed clusters are bootstrapped. Missing pairs and damaged artifacts block reporting.
+Intervals are withheld below five seeds; five is still a small development sample.
+
+`report.md`, `episodes.csv`, `policy_summary.csv`, `paired_comparisons.csv`, and
+`suite_summary.json` contain the comparison and coverage diagnostics. Full run artifacts
+remain in `episodes/<case>/seed_<n>/attempt_<n>/`. Completed attempts are sealed with SHA256
+checksums. Resume requires the exact declaration, source, and dependency versions; failed
+attempts are preserved and rerun from the beginning. This does not resume an individual
+episode mid-epoch. See [the benchmark protocol](docs/benchmark_protocol.md).
+
+The larger `benchmark_ising.yaml` is a protocol candidate, not a completed or powered study.
+Its default development partition has 80 paired episodes, 720 policy episodes, and an upper
+bound of 53,084,160 online simulator shots. Inspect `--plan` before running it. Freeze choices
+after development and use a new output directory for `split: held_out`; labels alone cannot
+prove that seeds were never inspected.
+
 ## Budget and scoring
 
 `low_shots` and `high_shots` mean shots **per measurement group**. `budget_per_epoch`
@@ -116,12 +155,13 @@ ruff check .
 ruff format --check .
 ```
 
-CI runs checks and the H₂ smoke example on Python 3.12. Numerical tests cover the reference,
+CI runs checks, the H₂ smoke example, and the repeated-seed smoke suite with verified resumption
+on Python 3.12. Numerical tests cover the reference,
 zero-noise behavior, sampling, Pauli ordering and covariance; protocol tests cover budgets,
 configuration, drift relevance, deterministic replay, and confirmation/audit isolation.
 
-Interrupted runs preserve committed experiment events but automatic continuation is not
-implemented yet. Use a new run directory to replay a configuration.
+Suite resumption skips verified completed episodes and preserves unfinished attempts before
+retrying. Standalone interrupted runs preserve events but need a new directory to replay.
 
 ## Research direction
 
@@ -133,6 +173,7 @@ advantage, or hardware-speedup claim is made.
 - [Implementation methodology](docs/methodology.md)
 - [Complete research and implementation plan](docs/project_plan.md)
 - [Development result interpretation](docs/development_results.md)
+- [Repeated-seed benchmark protocol and ablations](docs/benchmark_protocol.md)
 
 ## References
 

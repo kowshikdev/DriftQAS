@@ -32,7 +32,11 @@ class Config:
     forgetting: float = 1.0
 
     def validate(self) -> "Config":
-        if self.task not in {"h2", "ising"} or not 2 <= self.n_qubits <= 6:
+        if (
+            self.task not in {"h2", "ising"}
+            or type(self.n_qubits) is not int
+            or not 2 <= self.n_qubits <= 6
+        ):
             raise ValueError("Task must be h2 or ising; Ising size must be 2–6")
         for name in (
             "candidates",
@@ -46,8 +50,8 @@ class Config:
             value = getattr(self, name)
             if isinstance(value, bool) or not isinstance(value, int) or value <= 0:
                 raise ValueError(f"{name} must be a positive integer")
-        if isinstance(self.seed, bool) or not isinstance(self.seed, int) or self.seed < 0:
-            raise ValueError("seed must be a nonnegative integer")
+        if type(self.seed) is not int or not 0 <= self.seed < 2**32:
+            raise ValueError("seed must be an integer in [0, 2**32)")
         if self.candidates > 64 or self.epochs > 100 or self.training_evaluations < 4:
             raise ValueError("Prototype supports up to 64 candidates/100 epochs and >=4 fit calls")
         if self.low_shots < 2 or self.high_shots < self.low_shots:
@@ -74,14 +78,20 @@ class Config:
         return self
 
 
-def load_config(path: Path) -> Config:
-    with path.open(encoding="utf-8") as f:
-        data = yaml.safe_load(f)
+def config_from_mapping(data: dict) -> Config:
     if not isinstance(data, dict):
         raise ValueError("Configuration must be a YAML mapping")
+    data = data.copy()
     unknown = set(data) - {f.name for f in fields(Config)}
     if unknown:
         raise ValueError(f"Unknown configuration fields: {sorted(unknown)}")
     if "policies" in data:
+        if not isinstance(data["policies"], (list, tuple)):
+            raise ValueError("policies must be a list")
         data["policies"] = tuple(data["policies"])
     return Config(**data).validate()
+
+
+def load_config(path: Path) -> Config:
+    with path.open(encoding="utf-8") as f:
+        return config_from_mapping(yaml.safe_load(f))
