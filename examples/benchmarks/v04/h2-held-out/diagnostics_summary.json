@@ -1,0 +1,53 @@
+{
+  "case_summaries": [
+    {
+      "case_id": "stable",
+      "mean_exposure_shift_spearman": null,
+      "mean_initial_best_regret": 0.0,
+      "mean_transition_opportunity": 0.0,
+      "n_seed_clusters": 20,
+      "n_seeds_with_defined_correlation": 0,
+      "seeds_with_rank_reversal": 0,
+      "zero_exposure_violations": 0
+    },
+    {
+      "case_id": "abrupt-mild",
+      "mean_exposure_shift_spearman": 0.9481736745375919,
+      "mean_initial_best_regret": 0.005944522557291937,
+      "mean_transition_opportunity": 0.003963015038194625,
+      "n_seed_clusters": 20,
+      "n_seeds_with_defined_correlation": 20,
+      "seeds_with_rank_reversal": 20,
+      "zero_exposure_violations": 0
+    },
+    {
+      "case_id": "abrupt-stress",
+      "mean_exposure_shift_spearman": 0.9481736745375919,
+      "mean_initial_best_regret": 0.03814059340377222,
+      "mean_transition_opportunity": 0.025427062269181476,
+      "n_seed_clusters": 20,
+      "n_seeds_with_defined_correlation": 20,
+      "seeds_with_rank_reversal": 20,
+      "zero_exposure_violations": 0
+    },
+    {
+      "case_id": "recurring-stress",
+      "mean_exposure_shift_spearman": 0.9481736745375919,
+      "mean_initial_best_regret": 0.01907029670188611,
+      "mean_transition_opportunity": 0.03085456789454375,
+      "n_seed_clusters": 20,
+      "n_seeds_with_defined_correlation": 20,
+      "seeds_with_rank_reversal": 20,
+      "zero_exposure_violations": 0
+    }
+  ],
+  "notes": [
+    "Rank reversal requires previous winner regret > 1e-8, not an ID change among ties.",
+    "Opportunity uses exact audits for diagnostics only, never for policy decisions.",
+    "Correlation is descriptive within a bank/transition, averaged within a seed first.",
+    "Constant-exposure or constant-shift correlations are undefined, not zero.",
+    "Zero-exposure invariance is specific to the synthetic CX-only noise model."
+  ],
+  "protocol_digest": "424b12c357430b32fbde3d6b24ea7d1ba7a53bdbf1ea36765099a99135090980",
+  "schema_version": 1
+}

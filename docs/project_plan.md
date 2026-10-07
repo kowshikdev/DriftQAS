@@ -48,6 +48,18 @@ The strongest proposed contribution is a measurable connection between **compile
 
 ## 4. Scope and staged releases
 
+**Implementation update (v0.4):** the current v0.4 is an evidence-validation milestone:
+component-matched racing, exposure/ranking checks, and frozen three-partition uncertainty
+evaluation. It remains finite-library selection. The original release sequence below is
+a roadmap, not a statement that unrestricted generation, online noisy training, or hardware
+execution has shipped. See [the v0.4 protocol](exposure_protocol.md).
+
+The [completed v0.4 study](exposure_results.md) now includes 20 fresh H₂ test clusters:
+lower regret than blind racing reuse, without establishing an advantage over the stronger
+controls. Joint posthoc coverage and interval widths are reported together. The unfavorable
+multi-edge Ising development result remains visible; a broader locality claim still needs
+new multi-edge held-out tasks with genuine ranking changes.
+
 | Release | Required behavior | Completion evidence |
 |---|---|---|
 | v0.1 — Quantum evaluation foundation | H₂ VQE; exact and finite-shot energy estimation; noise injection; cost logging | Numerical reference agreement and a reproducible small experiment |

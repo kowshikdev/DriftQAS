@@ -44,6 +44,8 @@ def preflight(config: Config) -> tuple:
         for name in config.policies
     )
     seeds_cost = config.initial_seeds * seed_shots * groups
+    if any(POLICY_COMPONENTS[name].model == "racing" for name in config.policies):
+        seeds_cost = max(seeds_cost, config.candidates * config.low_shots * groups)
     if reserve < 2 * groups or seeds_cost > config.budget_per_epoch - reserve:
         raise ValueError("Budget cannot fund initial seeds and independent confirmation")
     return task, initial_calibration, reserve
@@ -71,7 +73,9 @@ def run(config: Config, output: Path) -> dict:
     print(f"Preparing {config.candidates} circuits for {task.name}...", flush=True)
     started = perf_counter()
     try:
-        bank = build_bank(task, config.candidates, config.seed, config.training_evaluations)
+        bank = build_bank(
+            task, config.candidates, config.seed, config.training_evaluations, config.bank_design
+        )
     except Exception as exc:
         manifest.update({"status": "failed", "error": str(exc)})
         (output / "manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
@@ -91,7 +95,15 @@ def run(config: Config, output: Path) -> dict:
     outcomes = []
     try:
         for name in config.policies:
-            policy = Policy(name, bank, config.seed, config.drift_scale, config.forgetting)
+            policy = Policy(
+                name,
+                bank,
+                config.seed,
+                config.drift_scale,
+                config.forgetting,
+                config.racing_beta,
+                config.racing_floor,
+            )
             minimum_shots = policy.minimum_shots(config.low_shots, config.high_shots)
             repetitions: dict[tuple, int] = defaultdict(int)
             policy_started = perf_counter()
@@ -178,7 +190,7 @@ def run(config: Config, output: Path) -> dict:
                         candidate.candidate_id, calibration, result.energy, result.variance, shots
                     ), result
 
-                if not policy.observations:
+                if not policy.observations and policy.components.model != "ideal":
                     for candidate in bank[: config.initial_seeds]:
                         observation, _ = evaluate(candidate, minimum_shots, "seed")
                         policy.add(observation)
@@ -202,7 +214,11 @@ def run(config: Config, output: Path) -> dict:
                             "predicted_energy": float(means[index]),
                             "model_standard_deviation": float(uncertainty[index]),
                             "requested_total_shots": shots * groups,
-                            "rule": "uniform allocation"
+                            "rule": "least compatible accumulated shots"
+                            if policy.components.allocation == "uniform"
+                            else "compatible-observation incumbent/challenger racing"
+                            if policy.components.model == "racing"
+                            else "uniform allocation"
                             if name == "random"
                             else "staged refresh/promotion or mean - 0.5 * model SD",
                             "historical_relevance": [
@@ -225,6 +241,22 @@ def run(config: Config, output: Path) -> dict:
                     "predicted_energy": float(means[index]),
                     "model_standard_deviation": float(uncertainty[index]),
                 }
+                store.append(
+                    "locked_predictions",
+                    {
+                        "policy": name,
+                        "epoch": epoch,
+                        "calibration_id": calibration.calibration_id,
+                        "predictions": [
+                            {
+                                "candidate_id": candidate.candidate_id,
+                                "predicted_energy": float(means[i]),
+                                "model_standard_deviation": float(uncertainty[i]),
+                            }
+                            for i, candidate in enumerate(bank)
+                        ],
+                    },
+                )
                 store.append(
                     "locked_recommendation",
                     {
@@ -306,8 +338,9 @@ def run(config: Config, output: Path) -> dict:
             "preparation": preparation,
             "audit_wall_seconds": perf_counter() - audit_started,
             "outcomes": outcomes,
-            "claims": "Smoke/development result only; no novelty, superiority, "
-            "hardware speedup, or quantum-advantage claim.",
+            "claims": "Frozen finite-library synthetic simulation; interpret through the "
+            "declared suite partition. No automatic novelty, superiority, hardware speedup, "
+            "or quantum-advantage claim.",
         }
         (output / "summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
         manifest["status"] = "completed"

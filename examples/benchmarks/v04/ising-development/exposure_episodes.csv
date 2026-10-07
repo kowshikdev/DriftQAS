@@ -1,0 +1,11 @@
+case_id,seed,changed_transitions,rank_reversals,mean_transition_opportunity,max_transition_opportunity,mean_initial_best_regret,exposure_shift_spearman,zero_exposure_pairs,zero_exposure_violations
+stable,7,0,0,0.0,0.0,0.0,,24,0
+stable,19,0,0,0.0,0.0,0.0,,24,0
+stable,31,0,0,0.0,0.0,0.0,,24,0
+stable,43,0,0,0.0,0.0,0.0,,24,0
+stable,59,0,0,0.0,0.0,0.0,,24,0
+abrupt-stress,7,1,0,0.0,0.0,0.0,0.9354143466934853,19,0
+abrupt-stress,19,1,0,0.0,0.0,0.0,0.9682458365518541,19,0
+abrupt-stress,31,1,0,0.0,0.0,0.0,0.9725975251592748,20,0
+abrupt-stress,43,1,0,0.0,0.0,0.0,0.9694116958983827,18,0
+abrupt-stress,59,1,0,0.0,0.0,0.0,0.9354143466934853,19,0

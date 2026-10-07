@@ -95,6 +95,11 @@ def fake_backend(monkeypatch):
         events.append("test", {"seed": config.seed})
         events.export()
         events.close()
+        for policy in config.policies:
+            directory = output / "circuits" / policy
+            directory.mkdir(parents=True)
+            for epoch in range(config.epochs):
+                (directory / f"epoch_{epoch}.qasm").write_text("OPENQASM 3.0;\n")
         return summary
 
     monkeypatch.setattr(benchmark, "run", execute)
@@ -324,6 +329,41 @@ def test_finalized_database_contains_all_exported_events(tmp_path):
     assert not (tmp_path / "experiments.live.sqlite").exists()
     with pytest.raises(sqlite3.ProgrammingError):
         events.append("late", {})
+
+
+def test_seal_only_protocol_owned_artifacts_and_still_checks_real_corruption(
+    tmp_path, fake_backend
+):
+    _, execute = fake_backend
+    suite = suite_from_mapping(declaration())
+    episode = suite.episodes()[0]
+    root = tmp_path / "episode"
+    attempt = root / "attempt_0001"
+    execute(config_from_mapping(episode["configuration"]), attempt)
+    incidental = attempt / "transport-temporary" / "uncommitted-data"
+    incidental.parent.mkdir()
+    incidental.write_text("not an experiment artifact")
+    identity = {"test_identity": "fixed"}
+    benchmark._seal(root, attempt, episode, identity)
+    receipt = read_json(root / "completed.json")
+    assert set(receipt["hashes"]) == benchmark.artifact_names(episode)
+    incidental.write_text("environment updated this temporary file")
+    assert benchmark.read_completed(root, episode, identity) is not None
+    canonical_artifact = attempt / "circuits/reuse/epoch_0.qasm"
+    canonical_artifact.write_text("corrupted circuit")
+    with pytest.raises(ValueError, match="checksum"):
+        benchmark.read_completed(root, episode, identity)
+
+
+def test_missing_circuit_export_cannot_be_sealed(tmp_path, fake_backend):
+    _, execute = fake_backend
+    episode = suite_from_mapping(declaration()).episodes()[0]
+    attempt = tmp_path / "attempt_0001"
+    execute(config_from_mapping(episode["configuration"]), attempt)
+    (attempt / "circuits/reuse/epoch_0.qasm").unlink()
+    with pytest.raises(ValueError, match="missing required artifacts"):
+        benchmark._seal(tmp_path, attempt, episode, {"test_identity": "fixed"})
+    assert not (tmp_path / "completed.json").exists()
 
 
 @pytest.mark.parametrize("corrupt", ["duplicate", "missing", "budget", "nonfinite"])

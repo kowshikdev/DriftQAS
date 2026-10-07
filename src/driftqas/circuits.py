@@ -104,26 +104,41 @@ def _template(n: int, blocks: list[dict], hf: bool):
     return circuit, parameters
 
 
-def build_bank(task: Task, size: int, seed: int, max_evaluations: int) -> list[Candidate]:
+def build_bank(
+    task: Task, size: int, seed: int, max_evaluations: int, design: str = "random"
+) -> list[Candidate]:
+    if design not in {"random", "stratified"}:
+        raise ValueError("Bank design must be random or stratified")
     rng = np.random.default_rng(seed)
     candidates = []
     signatures: set[str] = set()
     attempt = 0
+    chain = [[q, q + 1] for q in range(task.n_qubits - 1)]
+    anchors = [chain, []] + [
+        [edge for edge in chain if edge != omitted] for omitted in chain if len(chain) > 1
+    ]
     while len(candidates) < size:
         if attempt > 10000:
             raise ValueError("Requested library is larger than the generated search space")
-        layers = 1 if attempt == 0 else int(rng.integers(0, 4))
+        anchor = anchors[attempt] if design == "stratified" and attempt < len(anchors) else None
+        layers = (
+            (1 if anchor else 0)
+            if anchor is not None
+            else (1 if attempt == 0 else int(rng.integers(0, 4)))
+        )
         blocks = []
         for layer in range(layers + 1):
             rotations = ["ry"]
-            if attempt and rng.integers(2):
+            if anchor is None and attempt and rng.integers(2):
                 rotations.append("rz")
             edges = [
                 [q, q + 1]
                 for q in range(task.n_qubits - 1)
                 if layer < layers and (attempt == 0 or rng.random() < 0.75)
             ]
-            if attempt and rng.random() < 0.5:
+            if anchor is not None:
+                edges = anchor if layer < layers else []
+            elif attempt and rng.random() < 0.5:
                 edges = [list(reversed(edge)) for edge in reversed(edges)]
             blocks.append({"rotations": rotations, "edges": edges})
         spec = {
@@ -136,6 +151,8 @@ def build_bank(task: Task, size: int, seed: int, max_evaluations: int) -> list[C
             "optimization_level": 1,
             "physical_mapping": list(range(task.n_qubits)),
         }
+        if design == "stratified":
+            spec["bank_design"] = design
         signature = json.dumps(spec, sort_keys=True)
         attempt += 1
         if signature in signatures:

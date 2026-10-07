@@ -30,6 +30,9 @@ class Config:
     policies: tuple[str, ...] = ("restart", "reuse", "driftqas")
     drift_scale: float = 0.02
     forgetting: float = 1.0
+    racing_beta: float = 2.0
+    racing_floor: float = 0.002
+    bank_design: str = "random"
 
     def validate(self) -> "Config":
         if (
@@ -75,6 +78,12 @@ class Config:
             raise ValueError("forgetting must be nonnegative and finite")
         if not np.isfinite(self.field) or self.field <= 0:
             raise ValueError("field must be positive and finite")
+        if not np.isfinite(self.racing_beta) or self.racing_beta <= 0:
+            raise ValueError("racing_beta must be positive and finite")
+        if not np.isfinite(self.racing_floor) or self.racing_floor <= 0:
+            raise ValueError("racing_floor must be positive and finite")
+        if self.bank_design not in {"random", "stratified"}:
+            raise ValueError("bank_design must be random or stratified")
         return self
 
 

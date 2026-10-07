@@ -157,14 +157,23 @@ def suite_from_mapping(data: dict) -> Suite:
         raise ValueError(f"Missing suite fields: {sorted(required - set(data))}")
     if not isinstance(data["name"], str) or not _SLUG.fullmatch(data["name"]):
         raise ValueError("Suite name must be a lowercase slug, up to 64 characters")
-    if data["split"] not in ("development", "held_out"):
-        raise ValueError("split must be development or held_out")
+    if data["split"] not in ("development", "calibration", "held_out"):
+        raise ValueError("split must be development, calibration, or held_out")
     partitions = _mapping(data["seed_sets"], "seed_sets")
-    if set(partitions) != {"development", "held_out"}:
-        raise ValueError("Declare both development and held_out seed sets")
+    if not {"development", "held_out"} <= set(partitions) or set(partitions) - {
+        "development",
+        "calibration",
+        "held_out",
+    }:
+        raise ValueError("Declare development and held_out seeds; calibration is optional")
     seed_sets = {name: _seeds(values, name) for name, values in partitions.items()}
-    if set(seed_sets["development"]) & set(seed_sets["held_out"]):
-        raise ValueError("Development and held_out seeds must be disjoint")
+    if data["split"] not in seed_sets:
+        raise ValueError("Declare seeds for the selected split")
+    seen_seeds = set()
+    for seeds in seed_sets.values():
+        if seen_seeds & set(seeds):
+            raise ValueError("Development, calibration and held_out seeds must be disjoint")
+        seen_seeds.update(seeds)
     base = _mapping(data["base"], "base")
     if "seed" in base:
         raise ValueError("Use seed_sets, not a seed in base")

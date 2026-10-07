@@ -1,0 +1,33 @@
+{
+  "case_summaries": [
+    {
+      "case_id": "stable",
+      "mean_exposure_shift_spearman": null,
+      "mean_initial_best_regret": 0.0,
+      "mean_transition_opportunity": 0.0,
+      "n_seed_clusters": 5,
+      "n_seeds_with_defined_correlation": 0,
+      "seeds_with_rank_reversal": 0,
+      "zero_exposure_violations": 0
+    },
+    {
+      "case_id": "abrupt-stress",
+      "mean_exposure_shift_spearman": 0.9562167501992965,
+      "mean_initial_best_regret": 0.0,
+      "mean_transition_opportunity": 0.0,
+      "n_seed_clusters": 5,
+      "n_seeds_with_defined_correlation": 5,
+      "seeds_with_rank_reversal": 0,
+      "zero_exposure_violations": 0
+    }
+  ],
+  "notes": [
+    "Rank reversal requires previous winner regret > 1e-8, not an ID change among ties.",
+    "Opportunity uses exact audits for diagnostics only, never for policy decisions.",
+    "Correlation is descriptive within a bank/transition, averaged within a seed first.",
+    "Constant-exposure or constant-shift correlations are undefined, not zero.",
+    "Zero-exposure invariance is specific to the synthetic CX-only noise model."
+  ],
+  "protocol_digest": "b1380f3f1f72982b1ee4ff17dd256db292aa7913d476ebadd5aabbd98efbc723",
+  "schema_version": 1
+}

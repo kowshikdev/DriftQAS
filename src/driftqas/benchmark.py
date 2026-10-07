@@ -9,6 +9,7 @@ from itertools import zip_longest
 from pathlib import Path
 
 from driftqas.config import config_from_mapping
+from driftqas.protocol import validate_frozen
 from driftqas.provenance import (
     canonical,
     digest,
@@ -53,6 +54,16 @@ def episode_directory(output: Path, episode: dict) -> Path:
     return output / "episodes" / episode["case_id"] / f"seed_{episode['seed']}"
 
 
+def artifact_names(episode: dict) -> set[str]:
+    """Seal protocol-owned artifacts, not incidental transport/runtime files."""
+    config = episode["configuration"]
+    return _REQUIRED | {
+        f"circuits/{policy}/epoch_{epoch}.qasm"
+        for policy in config["policies"]
+        for epoch in range(config["epochs"])
+    }
+
+
 def _verify_event_export(path: Path) -> None:
     """Check committed database events against the portable export before sealing."""
     uri = (path / "experiments.sqlite").resolve().as_uri() + "?mode=ro"
@@ -79,7 +90,10 @@ def _verify_attempt(path: Path, episode: dict, identity: dict) -> dict:
         raise ValueError(f"Episode configuration mismatch: {path}")
     if any(manifest.get(key) != value for key, value in identity.items()):
         raise ValueError(f"Episode source/environment mismatch: {path}")
-    if any(not (path / name).is_file() for name in _REQUIRED):
+    if any(
+        not (path / name).is_file() or (path / name).is_symlink()
+        for name in artifact_names(episode)
+    ):
         raise ValueError(f"Completed episode is missing required artifacts: {path}")
     _verify_event_export(path)
     summary = read_json(path / "summary.json")
@@ -94,9 +108,7 @@ def _seal(root: Path, attempt: Path, episode: dict, identity: dict) -> dict:
         {
             "attempt": attempt.name,
             "hashes": {
-                path.relative_to(attempt).as_posix(): file_digest(path)
-                for path in sorted(attempt.rglob("*"))
-                if path.is_file()
+                name: file_digest(attempt / name) for name in sorted(artifact_names(episode))
             },
         },
     )
@@ -109,7 +121,11 @@ def read_completed(root: Path, episode: dict, identity: dict) -> dict | None:
         return None
     receipt = read_json(receipt_path)
     name, hashes = receipt.get("attempt", ""), receipt.get("hashes", {})
-    if not isinstance(name, str) or not _ATTEMPT.fullmatch(name) or not _REQUIRED <= set(hashes):
+    if (
+        not isinstance(name, str)
+        or not _ATTEMPT.fullmatch(name)
+        or not artifact_names(episode) <= set(hashes)
+    ):
         raise ValueError(f"Invalid completion receipt: {root}")
     attempt = root / name
     for relative, expected in hashes.items():
@@ -150,7 +166,7 @@ def completed_episodes(output: Path) -> tuple[dict, list[tuple[dict, dict]]]:
     return manifest, completed
 
 
-def run_suite(suite: Suite, output: Path, resume: bool = False) -> dict:
+def run_suite(suite: Suite, output: Path, resume: bool = False, frozen: Path | None = None) -> dict:
     # All configs/resources have already passed load_suite's preflight, before any write.
     manifest = {
         "schema_version": 1,
@@ -159,6 +175,12 @@ def run_suite(suite: Suite, output: Path, resume: bool = False) -> dict:
         "runtime": runtime_identity(),
         "plan": suite.plan(),
     }
+    if frozen is not None:
+        manifest["frozen_protocol"] = validate_frozen(suite, frozen, manifest["runtime"])
+    elif suite.split == "calibration" or (
+        suite.split == "held_out" and "calibration" in suite.seed_sets
+    ):
+        raise ValueError("Calibration/held_out study execution requires --frozen protocol.json")
     manifest["protocol_digest"] = digest(manifest)
     if resume:
         previous = load_manifest(output)
