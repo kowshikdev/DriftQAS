@@ -13,6 +13,7 @@ from driftqas.diagnostics import analyze_diagnostics
 from driftqas.protocol import freeze_protocol
 from driftqas.reporting import analyze_suite
 from driftqas.runner import run
+from driftqas.screening import run_screen, screen_plan, select_locality_cell, verify_screen
 from driftqas.suite_config import load_suite
 from driftqas.uncertainty import evaluate_calibration, fit_calibration
 
@@ -57,6 +58,18 @@ def main(argv=None) -> int:
     )
     coverage.add_argument("--suite-dir", type=Path, required=True)
     coverage.add_argument("--calibration", type=Path, required=True)
+    screen = subcommands.add_parser(
+        "screen-suite", help="Development-only exact multi-edge opportunity screen"
+    )
+    screen.add_argument("--config", type=Path, required=True)
+    screen.add_argument("--output", type=Path)
+    screen.add_argument("--plan", action="store_true")
+    verify = subcommands.add_parser("verify-screen", help="Verify a completed opportunity screen")
+    verify.add_argument("--screen-dir", type=Path, required=True)
+    select = subcommands.add_parser("select-locality", help="Apply the declared development gate")
+    select.add_argument("--config", type=Path, required=True)
+    select.add_argument("--screen-dir", type=Path, required=True)
+    select.add_argument("--output", type=Path, required=True)
     args = parser.parse_args(argv)
     try:
         if args.command == "analyze":
@@ -71,6 +84,23 @@ def main(argv=None) -> int:
             print(json.dumps(fit_calibration(args.suite_dir, args.output), indent=2))
         elif args.command == "evaluate-calibration":
             print(json.dumps(evaluate_calibration(args.suite_dir, args.calibration), indent=2))
+        elif args.command == "screen-suite":
+            declared = load_suite(args.config)
+            if args.plan:
+                print(json.dumps(screen_plan(declared), indent=2))
+            else:
+                timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
+                output = args.output or Path("results") / f"screen-{declared.name}-{timestamp}"
+                print(json.dumps(run_screen(declared, output), indent=2))
+        elif args.command == "verify-screen":
+            print(json.dumps(verify_screen(args.screen_dir), indent=2))
+        elif args.command == "select-locality":
+            print(
+                json.dumps(
+                    select_locality_cell(load_suite(args.config), args.screen_dir, args.output),
+                    indent=2,
+                )
+            )
         elif args.command == "suite":
             declared = load_suite(args.config)
             if args.split:

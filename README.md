@@ -165,6 +165,27 @@ coverage was 19/20 seeds, with wider intervals; the secondary Ising development 
 showed no selection benefit. See [all results and limitations](docs/exposure_results.md)
 and [the verified exports](examples/benchmarks/v04/README.md).
 
+## Multi-edge locality milestone (v0.5)
+
+The next question is whether component matching helps beyond **global matching** on
+multi-edge tasks. A development-only screen records complete ideal-trained banks and
+exact audit grids, checks genuine winner-set changes, and identifies unaffected candidates
+with nonempty compiled CX footprints. It executes no controller and consumes no online shots.
+
+```bash
+python -m driftqas screen-suite --config configs/locality_screen.yaml --plan
+python -m driftqas screen-suite --config configs/locality_screen.yaml --output results/locality-screen
+python -m driftqas verify-screen --screen-dir results/locality-screen
+python -m driftqas select-locality --config configs/locality_screen.yaml \
+  --screen-dir results/locality-screen --output results/locality-selection.json
+```
+
+The [predeclared grid, mechanistic gate and selection rule](docs/multiedge_protocol.md)
+keep every development cell visible. Reserved seeds cannot be screened. A failed gate
+stops the study before testing; a passing gate establishes an opportunity, not superiority.
+Any subsequent controller comparison requires its own frozen fresh-seed evaluation.
+The earlier v0.4 results and limitations remain unchanged.
+
 ## Budget and scoring
 
 `low_shots` and `high_shots` mean shots **per measurement group**. `budget_per_epoch`

@@ -1,0 +1,25 @@
+# Tiny engineering validation, not research evidence.
+name: locality-ci
+split: development
+seed_sets:
+  development: [4001]
+  held_out: [6001]
+base:
+  task: ising
+  n_qubits: 3
+  candidates: 4
+  bank_design: stratified
+  training_evaluations: 4
+  epochs: 2
+  budget_per_epoch: 256
+  low_shots: 8
+  high_shots: 16
+  initial_seeds: 1
+  policies: [driftqas_racing, global_racing]
+cases:
+  - id: abrupt
+    overrides: {scenario: abrupt}
+  - id: stable
+    overrides: {scenario: stable}
+primary_target: driftqas_racing
+primary_comparator: global_racing
