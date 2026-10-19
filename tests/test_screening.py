@@ -189,3 +189,61 @@ def test_selection_follows_declared_order_or_stops(tmp_path, monkeypatch, passes
         assert result["selection"] is None
     with pytest.raises(ValueError, match="overwrite"):
         screening.select_locality_cell(suite, tmp_path, tmp_path / "selection.json")
+
+
+def test_gate_requires_both_edge_cases_and_skips_inadmissible_first_cell(tmp_path, monkeypatch):
+    from pathlib import Path
+
+    suite = load_suite(Path("configs/locality_screen.yaml"))
+    summary = {
+        "screen_id": "example",
+        "case_summaries": [
+            {
+                "case_id": c.case_id,
+                "n_seed_clusters": 5,
+                "zero_exposure_violations": 0,
+                "seeds_with_locality_opportunity": 2 if c.case_id == "f05-fit120-edge1" else 3,
+            }
+            for c in suite.cases
+        ],
+    }
+    monkeypatch.setattr(screening, "verify_screen", lambda path: summary)
+    monkeypatch.setattr(screening, "read_json", lambda path: {"declaration": suite.declaration()})
+    result = screening.select_locality_cell(suite, tmp_path, tmp_path / "selection.json")
+    assert not result["ordered_cells"][0]["eligible"]
+    assert result["selection"]["field"] == 1.5
+    assert result["selection"]["training_evaluations"] == 120
+
+
+def test_invariance_failure_is_preserved_as_failed_screen(tmp_path, monkeypatch):
+    monkeypatch.setattr(
+        screening, "audit_energy", lambda task, candidate, cal: sum(cal.errors.values())
+    )
+    output = tmp_path / "invalid-physics"
+    with pytest.raises(ValueError, match="invariance"):
+        screening.run_screen(declaration(), output)
+    assert read_json(output / "screen_status.json")["status"] == "failed"
+    assert not (output / "completed.json").exists()
+    assert any(
+        r["zero_exposure_violations"]
+        for r in read_json(output / "screen_summary.json")["case_summaries"]
+    )
+
+
+def test_nonempty_unaffected_physical_circuit_matches_locally_not_globally():
+    from driftqas.circuits import build_bank
+    from driftqas.evaluation import audit_energy
+    from driftqas.policies import Observation, Policy
+    from driftqas.tasks import make_task
+
+    task = make_task("ising", 4)
+    bank = build_bank(task, 5, 4001, 8, "stratified")
+    old = Calibration(0, {"0-1": 0.005, "1-2": 0.005, "2-3": 0.005}, "abrupt")
+    changed = Calibration(1, {**old.errors, "0-1": 0.12}, "abrupt")
+    candidate = bank[2]
+    assert candidate.footprint and "0-1" not in candidate.footprint
+    energy = audit_energy(task, candidate, old)
+    assert audit_energy(task, candidate, changed) == pytest.approx(energy, abs=1e-10)
+    observation = Observation(candidate.candidate_id, old, energy, 0.01, 32)
+    assert Policy("driftqas_racing", bank, 4001).relevance(observation, changed) == 1
+    assert Policy("global_racing", bank, 4001).relevance(observation, changed) == 0
