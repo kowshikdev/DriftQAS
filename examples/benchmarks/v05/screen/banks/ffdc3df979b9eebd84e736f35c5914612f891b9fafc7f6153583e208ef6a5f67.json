@@ -1,0 +1,537 @@
+[
+  {
+    "candidate_id": "7cc6bac18a601aea",
+    "compiled_depth": 5,
+    "compiled_qasm3": "OPENQASM 3.0;\ninclude \"stdgates.inc\";\nry(1.1652381265122227) $0;\nry(1.2120613239511875) $1;\ncx $0, $1;\nry(0.42387323008773725) $0;\nry(1.2296716713810172) $2;\ncx $1, $2;\nry(0.14325963057630003) $1;\nry(1.2402887316458235) $3;\ncx $2, $3;\nry(0.04157107241153303) $2;\nry(0.010577703595034458) $3;\n",
+    "footprint": {
+      "0-1": 1,
+      "1-2": 1,
+      "2-3": 1
+    },
+    "ideal_energy": -6.494703432622705,
+    "parameter_id": "6b68b5caf39bdc74",
+    "parameters": [
+      1.1652381265122227,
+      1.2120613239511875,
+      1.2296716713810172,
+      1.2402887316458235,
+      0.42387323008773725,
+      0.14325963057630003,
+      0.04157107241153303,
+      0.010577703595034458
+    ],
+    "preparation_seconds": 0.7775168890000259,
+    "spec": {
+      "bank_design": "stratified",
+      "basis_gates": [
+        "ry",
+        "rz",
+        "cx"
+      ],
+      "blocks": [
+        {
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "rotations": [
+            "ry"
+          ]
+        },
+        {
+          "edges": [],
+          "rotations": [
+            "ry"
+          ]
+        }
+      ],
+      "compiler_seed": 4002,
+      "hf": false,
+      "layers": 1,
+      "optimization_level": 1,
+      "physical_mapping": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "qubits": 4
+    },
+    "training_evaluations": 480
+  },
+  {
+    "candidate_id": "166f1222c2dba6cc",
+    "compiled_depth": 1,
+    "compiled_qasm3": "OPENQASM 3.0;\ninclude \"stdgates.inc\";\nry(1.3050012652946212) $0;\nry(1.1501460138905797) $1;\nry(1.1501462271409382) $2;\nry(1.3050016917925462) $3;\n",
+    "footprint": {},
+    "ideal_energy": -6.01440580967206,
+    "parameter_id": "bd324563afb43add",
+    "parameters": [
+      1.3050012652946212,
+      1.1501460138905797,
+      1.1501462271409382,
+      1.3050016917925462
+    ],
+    "preparation_seconds": 0.40854676000003565,
+    "spec": {
+      "bank_design": "stratified",
+      "basis_gates": [
+        "ry",
+        "rz",
+        "cx"
+      ],
+      "blocks": [
+        {
+          "edges": [],
+          "rotations": [
+            "ry"
+          ]
+        }
+      ],
+      "compiler_seed": 4002,
+      "hf": false,
+      "layers": 0,
+      "optimization_level": 1,
+      "physical_mapping": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "qubits": 4
+    },
+    "training_evaluations": 323
+  },
+  {
+    "candidate_id": "1234e738ad6faee0",
+    "compiled_depth": 4,
+    "compiled_qasm3": "OPENQASM 3.0;\ninclude \"stdgates.inc\";\nry(1.566132787228007) $0;\nry(0.6418847778318962) $1;\nry(1.0265935613477164) $2;\ncx $1, $2;\nry(0.9904786883973228) $1;\nry(1.2151328576323843) $3;\ncx $2, $3;\nry(0.45528173392477833) $2;\nry(0.14418096818755607) $3;\n",
+    "footprint": {
+      "1-2": 1,
+      "2-3": 1
+    },
+    "ideal_energy": -6.3225395318444715,
+    "parameter_id": "d92cda7d189fd16e",
+    "parameters": [
+      1.834024032419081,
+      0.6418847778318962,
+      1.0265935613477164,
+      1.2151328576323843,
+      -0.2678912451910737,
+      0.9904786883973228,
+      0.45528173392477833,
+      0.14418096818755607
+    ],
+    "preparation_seconds": 0.8129499799999849,
+    "spec": {
+      "bank_design": "stratified",
+      "basis_gates": [
+        "ry",
+        "rz",
+        "cx"
+      ],
+      "blocks": [
+        {
+          "edges": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "rotations": [
+            "ry"
+          ]
+        },
+        {
+          "edges": [],
+          "rotations": [
+            "ry"
+          ]
+        }
+      ],
+      "compiler_seed": 4002,
+      "hf": false,
+      "layers": 1,
+      "optimization_level": 1,
+      "physical_mapping": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "qubits": 4
+    },
+    "training_evaluations": 480
+  },
+  {
+    "candidate_id": "ebe12b4e6f93841a",
+    "compiled_depth": 3,
+    "compiled_qasm3": "OPENQASM 3.0;\ninclude \"stdgates.inc\";\nry(0.6337440297027968) $0;\nry(1.0074490469413393) $1;\ncx $0, $1;\nry(1.0148547896416527) $0;\nry(0.47079722468636465) $1;\nry(0.9080570842367819) $2;\nry(1.158028392160162) $3;\ncx $2, $3;\nry(0.7056899528044055) $2;\nry(0.26319452873736926) $3;\n",
+    "footprint": {
+      "0-1": 1,
+      "2-3": 1
+    },
+    "ideal_energy": -6.324555320335406,
+    "parameter_id": "3ec90f28094d7e4d",
+    "parameters": [
+      0.6337440297027968,
+      1.0074490469413393,
+      0.9080570842367819,
+      1.158028392160162,
+      1.0148547896416527,
+      0.47079722468636465,
+      0.7056899528044055,
+      0.26319452873736926
+    ],
+    "preparation_seconds": 0.6352360289999979,
+    "spec": {
+      "bank_design": "stratified",
+      "basis_gates": [
+        "ry",
+        "rz",
+        "cx"
+      ],
+      "blocks": [
+        {
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "rotations": [
+            "ry"
+          ]
+        },
+        {
+          "edges": [],
+          "rotations": [
+            "ry"
+          ]
+        }
+      ],
+      "compiler_seed": 4002,
+      "hf": false,
+      "layers": 1,
+      "optimization_level": 1,
+      "physical_mapping": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "qubits": 4
+    },
+    "training_evaluations": 384
+  },
+  {
+    "candidate_id": "2aa5a1fe8a64b925",
+    "compiled_depth": 4,
+    "compiled_qasm3": "OPENQASM 3.0;\ninclude \"stdgates.inc\";\nry(0.7319843286411452) $0;\nry(1.0821269772881879) $1;\ncx $0, $1;\nry(0.8874176116046898) $0;\nry(1.2241063948335278) $2;\ncx $1, $2;\nry(0.373057396011827) $1;\nry(0.10619328235362836) $2;\nry(1.5586028417161306) $3;\n",
+    "footprint": {
+      "0-1": 1,
+      "1-2": 1
+    },
+    "ideal_energy": -6.324643441345637,
+    "parameter_id": "f9c38b233ade00ce",
+    "parameters": [
+      0.7319843286411452,
+      1.0821269772881879,
+      1.2241063948335278,
+      0.7766776279379373,
+      0.8874176116046898,
+      0.373057396011827,
+      0.10619328235362836,
+      0.7819252137781935
+    ],
+    "preparation_seconds": 0.8135409110000182,
+    "spec": {
+      "bank_design": "stratified",
+      "basis_gates": [
+        "ry",
+        "rz",
+        "cx"
+      ],
+      "blocks": [
+        {
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "rotations": [
+            "ry"
+          ]
+        },
+        {
+          "edges": [],
+          "rotations": [
+            "ry"
+          ]
+        }
+      ],
+      "compiler_seed": 4002,
+      "hf": false,
+      "layers": 1,
+      "optimization_level": 1,
+      "physical_mapping": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "qubits": 4
+    },
+    "training_evaluations": 480
+  },
+  {
+    "candidate_id": "9f012fec89d0cd88",
+    "compiled_depth": 4,
+    "compiled_qasm3": "OPENQASM 3.0;\ninclude \"stdgates.inc\";\nry(1.3744289535043805) $0;\nrz(7.830747913171524e-06) $0;\nry(0.19451135470997735) $0;\nry(0.7507481991661011) $1;\nrz(-0.0001237894020219553) $1;\nry(0.4473248752084002) $2;\nrz(-0.0003084221435161369) $2;\ncx $2, $1;\nry(0.7655040600455801) $1;\nry(1.2515164396958833) $2;\nry(1.18696906096678) $3;\nrz(-1.7814802308287605e-05) $3;\nry(0.38182155844152155) $3;\n",
+    "footprint": {
+      "1-2": 1
+    },
+    "ideal_energy": -6.162276441134685,
+    "parameter_id": "906481c43d5adaf4",
+    "parameters": [
+      1.3744289535043805,
+      7.830747913171524e-06,
+      0.7507481991661011,
+      -0.0001237894020219553,
+      0.4473248752084002,
+      -0.0003084221435161369,
+      1.18696906096678,
+      -1.7814802308287605e-05,
+      0.19451135470997735,
+      0.7655040600455801,
+      1.2515164396958833,
+      0.38182155844152155
+    ],
+    "preparation_seconds": 0.8929675159999988,
+    "spec": {
+      "bank_design": "stratified",
+      "basis_gates": [
+        "ry",
+        "rz",
+        "cx"
+      ],
+      "blocks": [
+        {
+          "edges": [
+            [
+              2,
+              1
+            ]
+          ],
+          "rotations": [
+            "ry",
+            "rz"
+          ]
+        },
+        {
+          "edges": [],
+          "rotations": [
+            "ry"
+          ]
+        }
+      ],
+      "compiler_seed": 4002,
+      "hf": false,
+      "layers": 1,
+      "optimization_level": 1,
+      "physical_mapping": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "qubits": 4
+    },
+    "training_evaluations": 480
+  },
+  {
+    "candidate_id": "29156442a06f7c67",
+    "compiled_depth": 2,
+    "compiled_qasm3": "OPENQASM 3.0;\ninclude \"stdgates.inc\";\nry(1.3049987316746063) $0;\nrz(6.188748933994642e-07) $0;\nry(1.150140593842919) $1;\nrz(1.8522304015144428e-07) $1;\nry(1.1501403281453824) $2;\nrz(-7.049835715313147e-07) $2;\nry(1.304997729239935) $3;\nrz(2.4265336483260273e-07) $3;\n",
+    "footprint": {},
+    "ideal_energy": -6.014405809674607,
+    "parameter_id": "f1b89e7b71cbedc3",
+    "parameters": [
+      1.3049987316746063,
+      6.188748933994642e-07,
+      1.150140593842919,
+      1.8522304015144428e-07,
+      1.1501403281453824,
+      -7.049835715313147e-07,
+      1.304997729239935,
+      2.4265336483260273e-07
+    ],
+    "preparation_seconds": 0.7474076190001142,
+    "spec": {
+      "bank_design": "stratified",
+      "basis_gates": [
+        "ry",
+        "rz",
+        "cx"
+      ],
+      "blocks": [
+        {
+          "edges": [],
+          "rotations": [
+            "ry",
+            "rz"
+          ]
+        }
+      ],
+      "compiler_seed": 4002,
+      "hf": false,
+      "layers": 0,
+      "optimization_level": 1,
+      "physical_mapping": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "qubits": 4
+    },
+    "training_evaluations": 446
+  },
+  {
+    "candidate_id": "bc4cef47ad38403d",
+    "compiled_depth": 11,
+    "compiled_qasm3": "OPENQASM 3.0;\ninclude \"stdgates.inc\";\nrz(-0.2867903887258949) $0;\nry(1.5201671011235383) $0;\nrz(-0.011339063227666646) $0;\nry(-0.0127916949135308) $1;\nrz(-0.09786182687625744) $1;\nry(1.3285927939753175) $2;\nrz(0.8156822866092094) $2;\ncx $1, $2;\nry(0.869335595989896) $1;\nrz(0.0042507061607295095) $1;\ncx $1, $0;\nry(-0.31623699236273767) $0;\nry(0.2777923772801107) $1;\nry(0.7434382937424511) $3;\nrz(0.2149803792337383) $3;\ncx $2, $3;\nry(0.2349178498027375) $2;\nrz(-0.7749861602164879) $2;\nry(-0.10451813207320854) $2;\nry(0.3460661624799326) $3;\nrz(-0.055711841891586344) $3;\nry(-0.06946118979898155) $3;\ncx $3, $2;\ncx $2, $1;\ncx $1, $0;\nry(0.1411127548370989) $0;\nry(0.33748756469953667) $1;\nry(0.8642183629254233) $2;\nry(0.001857706467373838) $3;\n",
+    "footprint": {
+      "0-1": 2,
+      "1-2": 2,
+      "2-3": 2
+    },
+    "ideal_energy": -6.465648095425126,
+    "parameter_id": "a01c860dc111cfdf",
+    "parameters": [
+      0.6690365220215417,
+      -0.37390547206769265,
+      -0.0127916949135308,
+      -0.09786182687625744,
+      1.3285927939753175,
+      0.8156822866092094,
+      0.7434382937424511,
+      0.2149803792337383,
+      0.8842967984743183,
+      0.21748483449552478,
+      0.869335595989896,
+      0.0042507061607295095,
+      0.2349178498027375,
+      -0.7749861602164879,
+      0.3460661624799326,
+      -0.055711841891586344,
+      -0.31623699236273767,
+      0.2777923772801107,
+      -0.10451813207320854,
+      -0.06946118979898155,
+      0.1411127548370989,
+      0.33748756469953667,
+      0.8642183629254233,
+      0.001857706467373838
+    ],
+    "preparation_seconds": 1.2530133789998672,
+    "spec": {
+      "bank_design": "stratified",
+      "basis_gates": [
+        "ry",
+        "rz",
+        "cx"
+      ],
+      "blocks": [
+        {
+          "edges": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "rotations": [
+            "ry",
+            "rz"
+          ]
+        },
+        {
+          "edges": [
+            [
+              1,
+              0
+            ]
+          ],
+          "rotations": [
+            "ry",
+            "rz"
+          ]
+        },
+        {
+          "edges": [
+            [
+              3,
+              2
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "rotations": [
+            "ry"
+          ]
+        },
+        {
+          "edges": [],
+          "rotations": [
+            "ry"
+          ]
+        }
+      ],
+      "compiler_seed": 4002,
+      "hf": false,
+      "layers": 3,
+      "optimization_level": 1,
+      "physical_mapping": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "qubits": 4
+    },
+    "training_evaluations": 480
+  }
+]

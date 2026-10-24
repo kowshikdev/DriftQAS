@@ -1,0 +1,29 @@
+{
+  "case_summaries": [
+    {
+      "case_id": "stable",
+      "n_seed_clusters": 20,
+      "seeds_with_locality_opportunity": 0,
+      "seeds_with_winner_set_reversal": 0,
+      "zero_exposure_violations": 0
+    },
+    {
+      "case_id": "abrupt-end",
+      "n_seed_clusters": 20,
+      "seeds_with_locality_opportunity": 19,
+      "seeds_with_winner_set_reversal": 19,
+      "zero_exposure_violations": 0
+    },
+    {
+      "case_id": "abrupt-central",
+      "n_seed_clusters": 20,
+      "seeds_with_locality_opportunity": 19,
+      "seeds_with_winner_set_reversal": 19,
+      "zero_exposure_violations": 0
+    }
+  ],
+  "meaning": "Posthoc diagnostics for ALL declared seeds/cases. No screening, case exclusion, primary-contrast change, policy feedback or tuning. The tie-aware definition is fixed in the pre-test development protocol.",
+  "protocol_digest": "261a7cd4426f3974f510832eb7912b15219ca5d39c2edd79054888187d4c3d35",
+  "schema_version": 1,
+  "split": "held_out"
+}
