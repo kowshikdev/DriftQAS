@@ -24,3 +24,20 @@ Screen preparation used **43,311 ideal objective calls** and **480 distinct exac
 evaluations**, with zero online shots. These are development costs, separate from online
 policy costs. A passing mechanistic gate is not evidence that a controller beats a baseline.
 See `screen/report.md` for every cell, including the failed low-field cells.
+
+## Frozen test outcome
+
+The 20-seed, 60-paired-episode test is complete. The primary global-matching comparison is
+**inconclusive**: difference −0.00601922, 95% seed-cluster interval [−0.02410837, 0.01232203].
+Component matching's mean regret is 0.101401 versus global matching's 0.107421. The original
+GP baselines perform substantially better (GP reuse: 0.0157630). No superiority claim follows.
+
+Locality opportunities occur on 19/20 seeds in each changing case, with zero invariance
+violations. All seeds and cases remain included. Calibration was not executed; raw model
+coverage is diagnostic. Read [the complete interpretation](../../../docs/multiedge_results.md)
+and [every control and contrast](held-out/report.md).
+
+`held-out/` is a compact, verified export, not a complete input to suite analysis. The
+separately downloadable `DriftQAS_v05_locality_raw_evidence.zip` contains the complete raw
+test suite; [its catalogue and hash](evidence_bundle.json) identify the archive. The complete
+development screen above is directly verifiable without that ZIP.

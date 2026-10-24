@@ -186,6 +186,12 @@ stops the study before testing; a passing gate establishes an opportunity, not s
 Any subsequent controller comparison requires its own frozen fresh-seed evaluation.
 The earlier v0.4 results and limitations remain unchanged.
 
+The completed **20-seed multi-edge test** is inconclusive against global matching
+(paired difference −0.00601922; 95% interval [−0.02410837, 0.01232203]). The original GP
+baselines perform substantially better. Genuine locality opportunities appear on 19/20
+seeds per changing case, showing that an adaptation opportunity alone does not establish
+controller superiority. See [all v0.5 results and limitations](docs/multiedge_results.md).
+
 ## Budget and scoring
 
 `low_shots` and `high_shots` mean shots **per measurement group**. `budget_per_epoch`
@@ -237,6 +243,8 @@ advantage, or hardware-speedup claim is made.
 - [Repeated-seed benchmark protocol and ablations](docs/benchmark_protocol.md)
 - [Exposure, racing, and frozen interval-calibration protocol](docs/exposure_protocol.md)
 - [Frozen v0.4 results, resource use, coverage and evidence](docs/exposure_results.md)
+- [Multi-edge locality protocol and development gate](docs/multiedge_protocol.md)
+- [Frozen v0.5 stronger-control results and evidence](docs/multiedge_results.md)
 
 ## References
 
