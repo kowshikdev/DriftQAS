@@ -1,0 +1,43 @@
+{
+  "case_summaries": [
+    {
+      "case_id": "stable",
+      "mean_exposure_shift_spearman": null,
+      "mean_initial_best_regret": 0.0,
+      "mean_transition_opportunity": 0.0,
+      "n_seed_clusters": 20,
+      "n_seeds_with_defined_correlation": 0,
+      "seeds_with_rank_reversal": 0,
+      "zero_exposure_violations": 0
+    },
+    {
+      "case_id": "abrupt-end",
+      "mean_exposure_shift_spearman": 0.9279808603145338,
+      "mean_initial_best_regret": 0.11695529937637113,
+      "mean_transition_opportunity": 0.0779701995842474,
+      "n_seed_clusters": 20,
+      "n_seeds_with_defined_correlation": 20,
+      "seeds_with_rank_reversal": 19,
+      "zero_exposure_violations": 0
+    },
+    {
+      "case_id": "abrupt-central",
+      "mean_exposure_shift_spearman": 0.9128535465948167,
+      "mean_initial_best_regret": 0.12075560078780594,
+      "mean_transition_opportunity": 0.08050373385853729,
+      "n_seed_clusters": 20,
+      "n_seeds_with_defined_correlation": 20,
+      "seeds_with_rank_reversal": 19,
+      "zero_exposure_violations": 0
+    }
+  ],
+  "notes": [
+    "Rank reversal requires previous winner regret > 1e-8, not an ID change among ties.",
+    "Opportunity uses exact audits for diagnostics only, never for policy decisions.",
+    "Correlation is descriptive within a bank/transition, averaged within a seed first.",
+    "Constant-exposure or constant-shift correlations are undefined, not zero.",
+    "Zero-exposure invariance is specific to the synthetic CX-only noise model."
+  ],
+  "protocol_digest": "261a7cd4426f3974f510832eb7912b15219ca5d39c2edd79054888187d4c3d35",
+  "schema_version": 1
+}

@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt  # noqa: E402
 from driftqas.provenance import file_digest, read_json  # noqa: E402
 
 LABELS = {
-    "reuse_racing": "Blind racing reuse (primary)",
+    "reuse_racing": "Blind racing reuse",
     "reuse": "Original GP reuse",
     "driftqas": "Original GP DriftQAS",
     "fresh_racing": "Fresh racing",
@@ -21,7 +21,7 @@ LABELS = {
 }
 
 
-def plot(export_dir: Path, output: Path):
+def plot(export_dir: Path, output: Path, title: str = "Frozen H₂ held-out study"):
     if output.exists():
         raise ValueError(f"Refusing to overwrite study figure: {output}")
     receipt = read_json(export_dir / "export_receipt.json")
@@ -41,21 +41,25 @@ def plot(export_dir: Path, output: Path):
         if row["scope"] == "all_cases" and row["metric"] == "mean_selection_regret"
     }
     if set(rows) != set(LABELS) or any(row["ci95_low"] is None for row in rows.values()):
-        raise ValueError("The v0.4 figure needs every declared control and finite intervals")
+        raise ValueError("The figure needs every declared control and finite intervals")
+    if sum(bool(row["primary"]) for row in rows.values()) != 1:
+        raise ValueError("The figure needs exactly one predeclared primary contrast")
+    order = sorted(LABELS, key=lambda policy: not rows[policy]["primary"])
+    labels = [LABELS[p] + (" (primary)" if rows[p]["primary"] else "") for p in order]
     plt.rcParams.update({"svg.hashsalt": "driftqas-v04", "font.size": 10})
     fig, ax = plt.subplots(figsize=(10, 5.5))
-    for index, policy in enumerate(LABELS):
+    for index, policy in enumerate(order):
         row = rows[policy]
         color = "#087f8c" if row["primary"] else "#5a6472"
         ax.hlines(index, row["ci95_low"], row["ci95_high"], color=color, linewidth=2)
         ax.plot(row["mean_difference"], index, "o", color=color, markersize=7)
-    ax.set_yticks(range(len(LABELS)), LABELS.values())
+    ax.set_yticks(range(len(order)), labels)
     ax.invert_yaxis()
     ax.axvline(0, color="#19212d", linewidth=1, linestyle="--")
     ax.set_xlabel("Mean regret difference: component-matched racing minus comparator")
     ax.set_title(
-        f"Frozen H₂ held-out study · {summary['n_seed_clusters']} seed clusters\n"
-        "All four cases and epochs included; negative favors component matching",
+        f"{title} · {summary['n_seed_clusters']} seed clusters\n"
+        "All declared cases and epochs included; negative favors component matching",
         loc="left",
         pad=18,
         fontsize=12,
@@ -81,8 +85,9 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--export-dir", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--title", default="Frozen H₂ held-out study")
     args = parser.parse_args()
-    plot(args.export_dir, args.output)
+    plot(args.export_dir, args.output, args.title)
 
 
 if __name__ == "__main__":

@@ -25,6 +25,7 @@ CALIBRATED = (
     "calibrated_seed_coverage.csv",
     "calibrated_policy_summary.csv",
 )
+LOCALITY = ("locality_summary.json", "locality_transitions.csv")
 
 
 def export(suite_dir: Path, output: Path) -> dict:
@@ -36,6 +37,10 @@ def export(suite_dir: Path, output: Path) -> dict:
     analyze_suite(suite_dir)
     analyze_diagnostics(suite_dir)
     names = [*REPORTS]
+    if (suite_dir / LOCALITY[0]).exists():
+        if read_json(suite_dir / LOCALITY[0])["protocol_digest"] != manifest["protocol_digest"]:
+            raise ValueError("Locality diagnostics do not match suite")
+        names.extend(LOCALITY)
     if (suite_dir / CALIBRATED[0]).exists():
         calibrated = read_json(suite_dir / CALIBRATED[0])
         if calibrated["held_out_suite_digest"] != manifest["protocol_digest"]:

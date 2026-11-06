@@ -1,0 +1,202 @@
+{
+  "declaration": {
+    "bootstrap_samples": 10000,
+    "bootstrap_seed": 2026,
+    "cases": [
+      {
+        "case_id": "stable",
+        "configuration": {
+          "bank_design": "stratified",
+          "base_error": 0.005,
+          "budget_per_epoch": 1024,
+          "candidates": 8,
+          "changed_edge": "1-2",
+          "confirmation_fraction": 0.2,
+          "drift_error": 0.12,
+          "drift_scale": 0.02,
+          "epochs": 4,
+          "field": 1.5,
+          "forgetting": 1.0,
+          "high_shots": 128,
+          "initial_seeds": 2,
+          "low_shots": 32,
+          "n_qubits": 4,
+          "policies": [
+            "reuse",
+            "driftqas",
+            "ideal_only",
+            "fresh_racing",
+            "reuse_racing",
+            "global_racing",
+            "driftqas_racing",
+            "driftqas_racing_uniform"
+          ],
+          "racing_beta": 2.0,
+          "racing_floor": 0.002,
+          "scenario": "stable",
+          "seed": 0,
+          "task": "ising",
+          "training_evaluations": 120
+        }
+      },
+      {
+        "case_id": "abrupt-end",
+        "configuration": {
+          "bank_design": "stratified",
+          "base_error": 0.005,
+          "budget_per_epoch": 1024,
+          "candidates": 8,
+          "changed_edge": "0-1",
+          "confirmation_fraction": 0.2,
+          "drift_error": 0.12,
+          "drift_scale": 0.02,
+          "epochs": 4,
+          "field": 1.5,
+          "forgetting": 1.0,
+          "high_shots": 128,
+          "initial_seeds": 2,
+          "low_shots": 32,
+          "n_qubits": 4,
+          "policies": [
+            "reuse",
+            "driftqas",
+            "ideal_only",
+            "fresh_racing",
+            "reuse_racing",
+            "global_racing",
+            "driftqas_racing",
+            "driftqas_racing_uniform"
+          ],
+          "racing_beta": 2.0,
+          "racing_floor": 0.002,
+          "scenario": "abrupt",
+          "seed": 0,
+          "task": "ising",
+          "training_evaluations": 120
+        }
+      },
+      {
+        "case_id": "abrupt-central",
+        "configuration": {
+          "bank_design": "stratified",
+          "base_error": 0.005,
+          "budget_per_epoch": 1024,
+          "candidates": 8,
+          "changed_edge": "1-2",
+          "confirmation_fraction": 0.2,
+          "drift_error": 0.12,
+          "drift_scale": 0.02,
+          "epochs": 4,
+          "field": 1.5,
+          "forgetting": 1.0,
+          "high_shots": 128,
+          "initial_seeds": 2,
+          "low_shots": 32,
+          "n_qubits": 4,
+          "policies": [
+            "reuse",
+            "driftqas",
+            "ideal_only",
+            "fresh_racing",
+            "reuse_racing",
+            "global_racing",
+            "driftqas_racing",
+            "driftqas_racing_uniform"
+          ],
+          "racing_beta": 2.0,
+          "racing_floor": 0.002,
+          "scenario": "abrupt",
+          "seed": 0,
+          "task": "ising",
+          "training_evaluations": 120
+        }
+      }
+    ],
+    "name": "locality-ising-v05",
+    "primary_comparator": "global_racing",
+    "primary_metric": "mean_selection_regret",
+    "primary_scope": "equal-weight mean over all declared cases and epochs",
+    "primary_target": "driftqas_racing",
+    "seed_sets": {
+      "calibration": [
+        5001,
+        5002,
+        5003,
+        5004,
+        5005,
+        5006,
+        5007,
+        5008,
+        5009,
+        5010,
+        5011,
+        5012,
+        5013,
+        5014,
+        5015,
+        5016,
+        5017,
+        5018,
+        5019,
+        5020
+      ],
+      "development": [
+        4001,
+        4002,
+        4003,
+        4004,
+        4005
+      ],
+      "held_out": [
+        6001,
+        6002,
+        6003,
+        6004,
+        6005,
+        6006,
+        6007,
+        6008,
+        6009,
+        6010,
+        6011,
+        6012,
+        6013,
+        6014,
+        6015,
+        6016,
+        6017,
+        6018,
+        6019,
+        6020
+      ]
+    }
+  },
+  "frozen_id": "dbb4c9da5440991f8f32f0c1dbd9c9bfb53e8ea1bc2763a4441195570a74a8b5",
+  "interval_calibration": {
+    "alpha": 0.05,
+    "method": "per-policy seed-cluster maximum normalized absolute residual",
+    "shrink_intervals": false,
+    "standard_deviation_floor": 0.002
+  },
+  "meaning": "Content-addressed pre-execution declaration, not proof of an unseen test. Calibration scales are posthoc diagnostics and never alter the online policy.",
+  "runtime": {
+    "python": "3.12.14",
+    "source_digest": "127cd7ef78d1cdad60df123d2d59d484a3c0a3b41f627fef316a5ead451b047d",
+    "thread_environment": {
+      "MKL_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1"
+    },
+    "versions": {
+      "PyYAML": "6.0.3",
+      "driftqas": "0.5.0",
+      "matplotlib": "3.10.8",
+      "numpy": "2.3.5",
+      "qiskit": "2.5.2",
+      "qiskit-aer": "0.17.2",
+      "scikit-learn": "1.8.0",
+      "scipy": "1.17.0"
+    }
+  },
+  "schema_version": 1
+}

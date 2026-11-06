@@ -1,0 +1,58 @@
+{
+  "ordered_cells": [
+    {
+      "counts": {
+        "abrupt-0-1": 0,
+        "abrupt-1-2": 0,
+        "stable-1-2": 0
+      },
+      "eligible": false,
+      "field": 0.5,
+      "training_evaluations": 120
+    },
+    {
+      "counts": {
+        "abrupt-0-1": 5,
+        "abrupt-1-2": 5,
+        "stable-1-2": 0
+      },
+      "eligible": true,
+      "field": 1.5,
+      "training_evaluations": 120
+    },
+    {
+      "counts": {
+        "abrupt-0-1": 0,
+        "abrupt-1-2": 0,
+        "stable-1-2": 0
+      },
+      "eligible": false,
+      "field": 0.5,
+      "training_evaluations": 480
+    },
+    {
+      "counts": {
+        "abrupt-0-1": 5,
+        "abrupt-1-2": 5,
+        "stable-1-2": 0
+      },
+      "eligible": true,
+      "field": 1.5,
+      "training_evaluations": 480
+    }
+  ],
+  "rule": "First admissible cell in field/cap order (0.5,120), (1.5,120), (0.5,480), (1.5,480); at least 3/5 seeds with locality opportunity on BOTH abrupt edge cases; no controller outcomes used. A failed gate stops before reserved seeds.",
+  "schema_version": 1,
+  "screen_id": "d6df0835992d8169ddf5d47b94d583d962fb5769a3e2e17d5c59109f2b1a13ee",
+  "selection": {
+    "counts": {
+      "abrupt-0-1": 5,
+      "abrupt-1-2": 5,
+      "stable-1-2": 0
+    },
+    "eligible": true,
+    "field": 1.5,
+    "training_evaluations": 120
+  },
+  "status": "selected"
+}

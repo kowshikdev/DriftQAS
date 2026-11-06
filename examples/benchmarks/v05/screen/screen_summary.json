@@ -1,0 +1,108 @@
+{
+  "audit_evaluations_executed": 480,
+  "audit_rows": 1920,
+  "case_summaries": [
+    {
+      "case_id": "f05-fit120-stable",
+      "max_previous_optimal_set_regret": 0.0,
+      "n_seed_clusters": 5,
+      "seeds_with_locality_opportunity": 0,
+      "seeds_with_winner_set_reversal": 0,
+      "zero_exposure_violations": 0
+    },
+    {
+      "case_id": "f05-fit120-edge0",
+      "max_previous_optimal_set_regret": 0.0,
+      "n_seed_clusters": 5,
+      "seeds_with_locality_opportunity": 0,
+      "seeds_with_winner_set_reversal": 0,
+      "zero_exposure_violations": 0
+    },
+    {
+      "case_id": "f05-fit120-edge1",
+      "max_previous_optimal_set_regret": 0.0,
+      "n_seed_clusters": 5,
+      "seeds_with_locality_opportunity": 0,
+      "seeds_with_winner_set_reversal": 0,
+      "zero_exposure_violations": 0
+    },
+    {
+      "case_id": "f15-fit120-stable",
+      "max_previous_optimal_set_regret": 0.0,
+      "n_seed_clusters": 5,
+      "seeds_with_locality_opportunity": 0,
+      "seeds_with_winner_set_reversal": 0,
+      "zero_exposure_violations": 0
+    },
+    {
+      "case_id": "f15-fit120-edge0",
+      "max_previous_optimal_set_regret": 0.3156841142311455,
+      "n_seed_clusters": 5,
+      "seeds_with_locality_opportunity": 5,
+      "seeds_with_winner_set_reversal": 5,
+      "zero_exposure_violations": 0
+    },
+    {
+      "case_id": "f15-fit120-edge1",
+      "max_previous_optimal_set_regret": 0.3090563232157759,
+      "n_seed_clusters": 5,
+      "seeds_with_locality_opportunity": 5,
+      "seeds_with_winner_set_reversal": 5,
+      "zero_exposure_violations": 0
+    },
+    {
+      "case_id": "f05-fit480-stable",
+      "max_previous_optimal_set_regret": 0.0,
+      "n_seed_clusters": 5,
+      "seeds_with_locality_opportunity": 0,
+      "seeds_with_winner_set_reversal": 0,
+      "zero_exposure_violations": 0
+    },
+    {
+      "case_id": "f05-fit480-edge0",
+      "max_previous_optimal_set_regret": 0.0,
+      "n_seed_clusters": 5,
+      "seeds_with_locality_opportunity": 0,
+      "seeds_with_winner_set_reversal": 0,
+      "zero_exposure_violations": 0
+    },
+    {
+      "case_id": "f05-fit480-edge1",
+      "max_previous_optimal_set_regret": 0.0,
+      "n_seed_clusters": 5,
+      "seeds_with_locality_opportunity": 0,
+      "seeds_with_winner_set_reversal": 0,
+      "zero_exposure_violations": 0
+    },
+    {
+      "case_id": "f15-fit480-stable",
+      "max_previous_optimal_set_regret": 0.0,
+      "n_seed_clusters": 5,
+      "seeds_with_locality_opportunity": 0,
+      "seeds_with_winner_set_reversal": 0,
+      "zero_exposure_violations": 0
+    },
+    {
+      "case_id": "f15-fit480-edge0",
+      "max_previous_optimal_set_regret": 0.23977088156276682,
+      "n_seed_clusters": 5,
+      "seeds_with_locality_opportunity": 5,
+      "seeds_with_winner_set_reversal": 5,
+      "zero_exposure_violations": 0
+    },
+    {
+      "case_id": "f15-fit480-edge1",
+      "max_previous_optimal_set_regret": 0.23530842320799739,
+      "n_seed_clusters": 5,
+      "seeds_with_locality_opportunity": 5,
+      "seeds_with_winner_set_reversal": 5,
+      "zero_exposure_violations": 0
+    }
+  ],
+  "ideal_objective_calls": 43311,
+  "meaning": "Development-only exact audits; no policy performance, online feedback, test-seed screening, or evidence of controller superiority.",
+  "online_shots": 0,
+  "schema_version": 1,
+  "screen_id": "d6df0835992d8169ddf5d47b94d583d962fb5769a3e2e17d5c59109f2b1a13ee",
+  "unique_banks": 20
+}

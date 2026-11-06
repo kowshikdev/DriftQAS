@@ -60,6 +60,12 @@ controls. Joint posthoc coverage and interval widths are reported together. The 
 multi-edge Ising development result remains visible; a broader locality claim still needs
 new multi-edge held-out tasks with genuine ranking changes.
 
+**v0.5 implementation update:** the next delivered milestone adds development-only
+multi-edge opportunity screening, a fixed admissibility/selection gate, and a frozen
+comparison against global matching. It remains fixed-library simulation; the optional
+hardware stage in the original table below is still future work. See the
+[multi-edge protocol](multiedge_protocol.md) and [study interpretation](multiedge_results.md).
+
 | Release | Required behavior | Completion evidence |
 |---|---|---|
 | v0.1 — Quantum evaluation foundation | H₂ VQE; exact and finite-shot energy estimation; noise injection; cost logging | Numerical reference agreement and a reproducible small experiment |

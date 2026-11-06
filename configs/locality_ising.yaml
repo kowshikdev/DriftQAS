@@ -1,0 +1,38 @@
+# Selected by the predeclared development-audit gate; no policy performance used.
+# Calibration is reserved, not executed or transferred from v0.4 in this milestone.
+name: locality-ising-v05
+split: development
+seed_sets:
+  development: [4001, 4002, 4003, 4004, 4005]
+  calibration: [5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012, 5013, 5014, 5015, 5016, 5017, 5018, 5019, 5020]
+  held_out: [6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6011, 6012, 6013, 6014, 6015, 6016, 6017, 6018, 6019, 6020]
+base:
+  task: ising
+  n_qubits: 4
+  field: 1.5
+  candidates: 8
+  bank_design: stratified
+  training_evaluations: 120
+  epochs: 4
+  base_error: 0.005
+  drift_error: 0.12
+  changed_edge: 1-2
+  budget_per_epoch: 1024
+  confirmation_fraction: 0.2
+  low_shots: 32
+  high_shots: 128
+  initial_seeds: 2
+  racing_beta: 2.0
+  racing_floor: 0.002
+  policies: [reuse, driftqas, ideal_only, fresh_racing, reuse_racing, global_racing, driftqas_racing, driftqas_racing_uniform]
+cases:
+  - id: stable
+    overrides: {scenario: stable}
+  - id: abrupt-end
+    overrides: {scenario: abrupt, changed_edge: 0-1}
+  - id: abrupt-central
+    overrides: {scenario: abrupt, changed_edge: 1-2}
+primary_target: driftqas_racing
+primary_comparator: global_racing
+bootstrap_samples: 10000
+bootstrap_seed: 2026

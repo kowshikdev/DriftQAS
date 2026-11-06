@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "filename": "DriftQAS_v05_locality_raw_evidence.zip",
+  "size_bytes": 7641410,
+  "sha256": "f141e162c17f4fc26a4e46c1fe2aa5a7e2a107072377f830e49248e5426fe2f3",
+  "canonical_and_receipt_files": 2282,
+  "paired_episodes": 60,
+  "held_out_seed_clusters": 20,
+  "suites": [
+    {
+      "directory": "v05-ising-held-out",
+      "status": "completed",
+      "protocol_digest": "261a7cd4426f3974f510832eb7912b15219ca5d39c2edd79054888187d4c3d35",
+      "paired_episodes": 60,
+      "interpretation": "Verified complete raw suite."
+    }
+  ],
+  "frozen_id": "dbb4c9da5440991f8f32f0c1dbd9c9bfb53e8ea1bc2763a4441195570a74a8b5",
+  "scope": "Complete raw held-out suite: counts, locked predictions, audits, ledgers, banks, QASM, manifests and original receipts, plus an embedded per-file SHA256 index. Source code and incidental runtime files are excluded. The complete development screen is separately checked into this repository. Calibration was reserved, not executed."
+}

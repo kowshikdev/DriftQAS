@@ -29,3 +29,6 @@ jobs:
       - run: python -m driftqas diagnose-suite --suite-dir results/ci-held-out
       - run: python -m driftqas evaluate-calibration --suite-dir results/ci-held-out --calibration results/ci-intervals.json
       - run: python -m driftqas suite --config configs/exposure_ci.yaml --split held_out --frozen results/ci-frozen.json --output results/ci-held-out --resume
+      - run: python -m driftqas screen-suite --config configs/locality_ci.yaml --plan
+      - run: python -m driftqas screen-suite --config configs/locality_ci.yaml --output results/ci-locality-screen
+      - run: python -m driftqas verify-screen --screen-dir results/ci-locality-screen
